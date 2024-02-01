@@ -86,5 +86,6 @@ Route::resource('/gallery_category', App\Http\Controllers\GalleryCategoryControl
 
 Route::resource('/gallery', App\Http\Controllers\GalleryController::class);
 Route::post('/gallery/{id}', [App\Http\Controllers\GalleryController::class, 'store'])->name('store');
+Route::post('gallery/update/{id}',[App\Http\Controllers\GalleryController::class, 'update'])->name('gallery.update');
 Route::get('/galleries/{id}', [App\Http\Controllers\GalleryController::class, 'galleryList'])->name('gallery_list');
 

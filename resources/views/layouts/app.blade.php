@@ -25,7 +25,7 @@
 		<meta name="Description" content="SC/ST" />
 		<meta name="Author" content="" />
 		<!-- Title -->
-		<title>SC/ST</title>
+		<title>SIRI</title>
 		<!--- Favicon --->
 		<link rel="icon" href="{{ asset('img//favicon.png')}}" type="image/x-icon" />
 		<!-- Bootstrap css -->

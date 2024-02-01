@@ -74,8 +74,8 @@ class GalleryController extends Controller
     public function edit($id)
     {
         $gal = Gallery::find($id);
-//$sliders=getCategorySliders($id);
-        return view('gallery.edit', compact('gal'));
+        $gal_cat = GalleryCategory::get();
+        return view('gallery.edit_gallery', compact('gal','gal_cat'));
     }
 
     /**
@@ -88,10 +88,16 @@ class GalleryController extends Controller
     public function update(Request $request, $id)
     {
         $gal = Gallery::find($id);
-        $gal->name = $request->gallery_name;
+        $gal->name = $request->name;
         $gal->status = $request->gallery_status;
+        if($request->image){
+            $fileName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/admin/uploads/gallery'), $fileName);
+            $gal->file = $fileName;
+        }
+       
         $gal->update();
-        return redirect()->route('gallery_category.edit', $id)->with('success', 'gallery saved successfully');
+        return redirect()->back()->with('success', 'gallery saved successfully');
     }
 /**
  * Remove the specified resource from storage.
