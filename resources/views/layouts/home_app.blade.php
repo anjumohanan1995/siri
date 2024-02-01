@@ -184,7 +184,7 @@
                                                 </li>
 
                                                 <li class="menu-item">
-                                                    <a href="contact_us.html">contact us</a>
+                                                    <a href="{{route('home.contact')}}">contact us</a>
                                                 </li>
 
                                             </ul>
@@ -209,7 +209,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <a href="contact-us.html" class="pq-button">
+                            <a href="{{route('home.contact')}}" class="pq-button">
                                 <div class="pq-button-block">
                                     <span class="pq-button-line-left"></span>
                                     <span class="pq-button-text">Get a Quote</span>

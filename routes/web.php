@@ -97,5 +97,6 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/cmsServices', 'cmsServices')->name('home.cmsServices');
    Route::get('/consultingSiri', 'consultingSiri')->name('home.consultingSiri');
    Route::get('/Solutions', 'Solutions')->name('home.solutions');
+   Route::get('/Contact-Us', 'contact')->name('home.contact');
 
 });

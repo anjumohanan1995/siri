@@ -27,4 +27,7 @@ class FrontendController extends Controller
     public function Solutions(){
         return view('home.solutions');
     }
+    public function contact(){
+        return view('home.contact_us');
+    }
 }
