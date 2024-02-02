@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SlidercategoryController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\GalleryCategoryController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ use App\Http\Controllers\GalleryCategoryController;
 
 Route::get('/', function () {
 
-   // return view('welcome');
+   return view('welcome');
 });
 
 
@@ -89,3 +90,17 @@ Route::post('/gallery/{id}', [App\Http\Controllers\GalleryController::class, 'st
 Route::post('gallery/update/{id}',[App\Http\Controllers\GalleryController::class, 'update'])->name('gallery.update');
 Route::get('/galleries/{id}', [App\Http\Controllers\GalleryController::class, 'galleryList'])->name('gallery_list');
 
+Route::controller(FrontendController::class)->group(function(){
+   Route::get('/approach', 'approach')->name('home.approach');
+   Route::get('/charger_services', 'chargerServices')->name('home.chargerServices');
+   Route::get('/Products', 'products')->name('home.products');
+   Route::get('/cmsServices', 'cmsServices')->name('home.cmsServices');
+   Route::get('/consultingSiri', 'consultingSiri')->name('home.consultingSiri');
+   Route::get('/Solutions', 'Solutions')->name('home.solutions');
+   Route::get('/Contact-Us', 'contact')->name('home.contact');
+
+   Route::get('/Verticals/{slug}', 'verticals')->name('home.verticals');
+   Route::get('/About-us', 'aboutUs')->name('home.aboutUs');
+   Route::get('/Team', 'team')->name('home.team');
+  
+});
