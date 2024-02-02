@@ -30,4 +30,13 @@ class FrontendController extends Controller
     public function contact(){
         return view('home.contact_us');
     }
+    public function verticals($slug){
+        return view ('home.verticals', compact('slug'));
+    }
+    public function aboutUs(){
+        return view('home.aboutUs');
+    }
+    public function team(){
+        return view('home.team');
+    }
 }

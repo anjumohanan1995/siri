@@ -75,7 +75,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="/">
                                 <img class="img-fluid logo" src="{{asset('images_home/header-logo.png')}}" alt="ecofuel">
                             </a>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -134,26 +134,26 @@
                                             <a href="#">Verticals</a><i class="fa fa-chevron-down pq-submenu-icon"></i>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
-                                                    <a href="fleets.html">Fleets</a>
+                                                    <a href="{{ route('home.verticals', ['slug' => 'fleets']) }}">Fleets</a>
                                                 </li>
                                                 <li class="menu-item">
-                                                    <a href="commercial.html">Commercial</a>
+                                                    <a href="{{ route('home.verticals', ['slug' => 'commercial']) }}">Commercial</a>
                                                 </li>
 
                                                 <li class="menu-item">
-                                                    <a href="residential.html">Residential</a>
+                                                    <a href="{{ route('home.verticals', ['slug' => 'residential']) }}">Residential</a>
                                                 </li>
                                                 <li class="menu-item">
-                                                    <a href="cpos.html">CPOs</a>
+                                                    <a href="{{ route('home.verticals', ['slug' => 'cpos']) }}">CPOs</a>
                                                 </li>
                                                 <li class="menu-item">
-                                                    <a href="retail_Hospitality.html">Retail & Hospitality</a>
+                                                    <a href="{{ route('home.verticals', ['slug' => 'retail_Hospitality']) }}">Retail & Hospitality</a>
                                                 </li>
                                                 <li class="menu-item">
-                                                    <a href="oems.html">OEMs</a>
+                                                    <a href="{{ route('home.verticals', ['slug' => 'oems']) }}">OEMs</a>
                                                 </li>
                                                 <li class="menu-item">
-                                                    <a href="energy_storage.html">Energy Storage</a>
+                                                    <a href="{{ route('home.verticals', ['slug' => 'energy_storage']) }}">Energy Storage</a>
                                                 </li>
 
                                             </ul>
@@ -177,10 +177,10 @@
                                             <a href="#">Company </a><i class="fa fa-chevron-down pq-submenu-icon"></i>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
-                                                    <a href="about_us.html">About us</a>
+                                                    <a href="{{ route('home.aboutUs') }}">About us</a>
                                                 </li>
                                                 <li class="menu-item">
-                                                    <a href="team.html">Team</a>
+                                                    <a href="{{ route('home.team') }}">Team</a>
                                                 </li>
 
                                                 <li class="menu-item">
@@ -197,7 +197,7 @@
                             <div class="pq-menu-search-block">
                                 <a href="javascript:void(0)" id="pq-seacrh-btn"><i class="fa fa-search"></i></a>
                                 <div class="pq-search-form">
-                                    <form role="search" method="get" class="search-form" action="index.html">
+                                    <form role="search" method="get" class="search-form" action="/">
                                         <label>
                                             <span class="screen-reader-text">Search for:</span>
                                             <input type="search" class="search-field" placeholder="Search …" value=""
@@ -238,7 +238,7 @@
                     <div class="row">
                         <div class="col-xl-5 col-lg-4 col-md-4">
                             <div class="pq-subscribe-location align-items-center text-center">
-                                <a href="contact-us.html">
+                                <a href="{{ route('home.contact') }}">
                                     <h4 class="pq-subscribe-title">Find Our near Branches </h4>
                                 </a>
                                 <i class="fas fa-globe-americas"></i>
@@ -258,7 +258,7 @@
                         <div class="col-xl-5 col-lg-4 col-md-4">
                             <div class="pq-subscribe-time align-items-center">
                                 <i class="far fa-clock"></i>
-                                <a href="contact-us.html">
+                                <a href="{{ route('home.contact') }}">
                                     <h4 class="pq-subscribe-title text-center">24/7 Emergency Services </h4>
                                 </a>
                             </div>
