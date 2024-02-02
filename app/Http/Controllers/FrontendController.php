@@ -41,4 +41,7 @@ class FrontendController extends Controller
     public function team(){
         return view('home.team');
     }
+    public function innovation($slug){
+        return view ('home.innovation', compact('slug'));
+    }
 }

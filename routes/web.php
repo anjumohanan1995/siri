@@ -103,6 +103,8 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/Verticals/{slug}', 'verticals')->name('home.verticals');
    Route::get('/About-us', 'aboutUs')->name('home.aboutUs');
    Route::get('/Team', 'team')->name('home.team');
+
+   Route::get('/Innovation/{slug}', 'innovation')->name('home.innovation');
   
 });
 Route::Resource('/admin-verticals', VerticalController::class);
