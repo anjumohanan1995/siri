@@ -68,7 +68,12 @@
 
         @endif
 
-
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 	</head>
 	<body class="main-body app sidebar-mini ltr" >
 	
@@ -353,7 +358,24 @@
 										</a>
 
 									</li>
-									
+									<li class="slide">
+										<a class="side-menu__item" data-bs-toggle="slide" href="">
+											<i class="side-menu__icon fe fe-list"> </i>
+											<span class="side-menu__label">Verticals</span>
+											<i class="angle fe fe-chevron-down"> </i>
+										</a>
+
+										<ul class="slide-menu">
+
+											<li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="admin-verticals">
+													<span class="sub-side-menu__label">Feet</span>
+												</a>
+											</li>
+
+										</ul>
+									</li>
                                     @endif
 								
 							

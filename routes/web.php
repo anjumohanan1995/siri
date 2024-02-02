@@ -11,6 +11,7 @@ use App\Http\Controllers\SlidercategoryController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\GalleryCategoryController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\VerticalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,3 +105,6 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/Team', 'team')->name('home.team');
   
 });
+Route::Resource('/admin-verticals', VerticalController::class);
+Route::get('getVerticals',[VerticalController::class, 'getVerticals'])->name('getVerticals');
+

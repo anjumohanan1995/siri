@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vertical;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -31,7 +32,8 @@ class FrontendController extends Controller
         return view('home.contact_us');
     }
     public function verticals($slug){
-        return view ('home.verticals', compact('slug'));
+        $vertical=Vertical::first();
+        return view ('home.verticals', compact('slug','vertical'));
     }
     public function aboutUs(){
         return view('home.aboutUs');
