@@ -376,6 +376,14 @@
 
 										</ul>
 									</li>
+									<li class="slide">
+										<a class="side-menu__item {{ ((\Request::route()->getName() == 'innovations.index') )? 'active' : '' }}"  href="{{url('innovations')}}">
+											<i class="side-menu__icon fe fe-settings"> </i>
+											<span class="side-menu__label">Innovations</span>
+
+										</a>
+
+									</li>
                                     @endif
 								
 							
