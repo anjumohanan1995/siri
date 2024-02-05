@@ -397,21 +397,26 @@
 											<span class="side-menu__label">Innovations</span>
 											<i class="angle fe fe-chevron-down"> </i>
 										</a>
-
+										@php
+										$innovation = \App\Models\MainMenu::where('slug','innovation')->first();
+										$inn_datas = \App\Models\SubMenu::where('menu_id',$innovation->id)->get();
+										@endphp
 										<ul class="slide-menu">
-
-											<li class="sub-slide {{ ((\Request::route()->getName() == 'innovations.index') )? 'active is-expanded' : '' }}">
-												<a class="slide-item {{ ((\Request::route()->getName() == 'innovations.index') )? 'active' : '' }}" data-bs-toggle="sub-slide"
-													href="{{url('innovations')}}">
-													<span class="sub-side-menu__label">SIRI Labs</span>
+											@foreach ($inn_datas as $inn)												
+											
+											<li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ @$inn->link }}">
+													<span class="sub-side-menu__label">{{ @$inn->title }}</span>
 												</a>
 											</li>
-											<li class="sub-slide {{ ((\Request::route()->getName() == 'verticals.index') )? 'active is-expanded' : '' }}">
+											@endforeach
+											{{--  <li class="sub-slide {{ ((\Request::route()->getName() == 'verticals.index') )? 'active is-expanded' : '' }}">
 												<a class="slide-item {{ ((\Request::route()->getName() == 'verticals.index') )? 'active' : '' }}" data-bs-toggle="sub-slide"
 													href="{{url('innovations')}}">
 													<span class="sub-side-menu__label">Tech Speak</span>
 												</a>
-											</li>
+											</li>  --}}
 
 										</ul>
 									</li>

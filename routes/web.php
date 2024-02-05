@@ -138,13 +138,13 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/About-us', 'aboutUs')->name('home.aboutUs');
    Route::get('/Team', 'team')->name('home.team');
 
-   Route::get('/Innovation/{slug}', 'innovation')->name('home.innovation');
+   Route::get('/innovation/{slug}', 'innovation')->name('home.innovation');
   
 });
 Route::Resource('/admin-verticals', VerticalController::class);
 Route::get('getVerticals',[VerticalController::class, 'getVerticals'])->name('getVerticals');
 
-Route::Resource('/innovations', InnovationController::class);
+Route::Resource('/admin/innovation/{slug}', InnovationController::class);
 Route::post('innovation/store',[InnovationController::class,'store'])->name('innovation.store');
 
 

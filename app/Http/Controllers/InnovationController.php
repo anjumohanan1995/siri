@@ -25,10 +25,11 @@ class InnovationController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index(Request $request)
     {
-        $data = Innovation::first();
-        return view('admin.innovation.create',compact('data'));
+        $slug = $request->slug;
+        $data = Innovation::where('slug',$request->slug)->first();
+        return view('admin.innovation.create',compact('data','slug'));
     }
 
     /**
@@ -70,20 +71,21 @@ if ($request->hasfile('image')) {
 }else{
     $data['image'] = '';
 }
-        $innovation = Innovation::first();
+        $innovation = Innovation::where('slug',$request->slug)->first();
         if($innovation == ''){
 
             $innovation=   Innovation::create([
             'title' => @$request->title? $request->title:'']);
         }
         $innovation->title = @$request->title;
+        $innovation->slug = @$request->slug;
         $innovation->sub_title = @$request->sub_title;
         $innovation->content = @$request->content;
         $innovation->image = $data['image']??'';
         $innovation->created_by = auth()->user()->id;
         $innovation->save();
      
-        return redirect()->route('innovations.index')->with('status','Created Successfully.');
+        return redirect()->back()->with('status','Created Successfully.');
     }
 
 
