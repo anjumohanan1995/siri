@@ -229,8 +229,7 @@ class MainMenuController extends Controller
                         ' . method_field('DELETE') . '
                         <button type="submit" class="btn btn-danger m-1">Delete</button>
                     </form>
-                    <a class="btn btn-secondary m-1" href="' . route('sub_menus.index', $record->id) . '">Sub Menus</a>
-
+                    <a class="btn btn-secondary m-1" href="' . route('sub_menus.indexWithId', $record->id) . '">Sub Menus</a>
                 </div>'
             ];
         }

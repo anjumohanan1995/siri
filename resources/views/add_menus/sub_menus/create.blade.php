@@ -9,12 +9,12 @@
             <!-- breadcrumb -->
             <div class="breadcrumb-header justify-content-between row me-0 ms-0">
                 <div class="col-12">
-                    <h4 class="content-title mb-2">Main Menus Management</h4>
+                    <h4 class="content-title mb-2">Sub Menus Management</h4>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
 
                             <li class="breadcrumb-item active" aria-current="page"><i class="side-menu__icon fe fe-user"> </i>
-                                - Main Menus Management</li>
+                                - Sub Menus Management</li>
                         </ol>
                     </nav>
                 </div>
@@ -28,55 +28,47 @@
                     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
                         <div class="card">
                             <div class="card-body  table-new">
-                                <form class="m-5" action="{{ route('menus.update', ['menu' => $data->id]) }}"
-                                    method="POST">
+                                <form class="m-5" action="{{ route('sub_menus.store') }}" method="POST">
                                     @csrf <!-- Add CSRF token field -->
-                                    @method('PUT')
-
+                                
                                     <div class="mb-3">
                                         <label for="title" class="form-label">Title</label>
-                                        <input type="text" class="form-control @error('title') is-invalid @enderror"
-                                            id="title" name="title" placeholder="Enter title"
-                                            value="{{ old('title', $data->title) }}">
+                                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Enter title"
+                                            value="{{ old('title') }}">
                                         @error('title')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-
+                                
                                     <div class="mb-3">
                                         <label for="link_type" class="form-label">Link Type</label>
-                                        <select class="form-select @error('link_type') is-invalid @enderror"
-                                            name="link_type" id="link_type">
+                                        <select class="form-select @error('link_type') is-invalid @enderror" name="link_type" id="link_type">
                                             <option selected disabled value="">Select link type</option>
-                                            <option value="slug"
-                                                {{ old('link_type', $data->link_type) == 'slug' ? 'selected' : '' }}>Slug
-                                            </option>
-                                            <option value="link"
-                                                {{ old('link_type', $data->link_type) == 'link' ? 'selected' : '' }}>Link
-                                            </option>
+                                            <option value="slug" {{ old('link_type') == 'slug' ? 'selected' : '' }}>Slug</option>
+                                            <option value="link" {{ old('link_type') == 'link' ? 'selected' : '' }}>Link</option>
                                         </select>
                                         @error('link_type')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-
-
+                                
                                     <div class="mb-3" id="linkInput"
                                         style="display: {{ old('link_type') == 'link' ? 'block' : 'none' }};">
                                         <label for="link" class="form-label">Link</label>
-                                        <input type="text" class="form-control @error('link') is-invalid @enderror"
-                                            id="link" name="link" placeholder="Enter link  ( eg: page/web-home )"
-                                            value="{{ old('link', $data->link) }}">
+                                        <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name="link" placeholder="Enter link  ( eg: page/web-home )"
+                                            value="{{ old('link') }}">
                                         @error('link')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
 
+                                    <input type="hidden" name="menu_id" value="{{$id}}">
+                                
                                     <!-- Submit Button -->
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
-
-
+                                
+                                
 
                             </div>
                         </div>
