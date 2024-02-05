@@ -261,7 +261,7 @@ class VerticalController extends Controller
 
             
         }
-     
+      //  dd($request->input('content'));
         $verticals->update($data);
         return redirect()->route('admin-verticals.index')->with('status','Updated Successfully.');
     }

@@ -137,15 +137,9 @@
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 
 <script>
-    // Your CKEditor initialization without jQuery
-    document.addEventListener('DOMContentLoaded', function () {
-        CKEDITOR.replace('content', {
-            enterMode: CKEDITOR.ENTER_BR,
-            shiftEnterMode: CKEDITOR.ENTER_BR,
-            autoParagraph: false,
-        });
+  document.addEventListener('DOMContentLoaded', function () {
+        CKEDITOR.replace('content');
     });
 </script>
-
 <!-- main-content-body -->
 @endsection
