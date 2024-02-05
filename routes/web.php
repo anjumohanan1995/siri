@@ -17,6 +17,8 @@ use App\Http\Controllers\ApproachController;
 use App\Http\Controllers\MainMenuController;
 use App\Http\Controllers\SubMenuController;
 use App\Http\Controllers\VerticalController;
+use App\Http\Controllers\SubSubMenuController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +48,16 @@ Route::post('/menus/{mainMenu}', [MainMenuController::class, 'destroy'])->name('
 
 //sub menu route starts here.
 Route::resource('sub_menus', SubMenuController::class);
-// Route::get('getMenus', [SubMenuController::class, 'getMenus'])->name('getMenus');
-// Route::post('/menus/{mainMenu}', [SubMenuController::class, 'destroy'])->name('menus.delete');
+Route::get('/sub_menus/index/{id}', [SubMenuController::class, 'indexWithId'])->name('sub_menus.indexWithId');
+Route::get('getSubMenus', [SubMenuController::class, 'getSubMenus'])->name('getSubMenus');
+Route::post('/sub_menus/{mainMenu}', [SubMenuController::class, 'destroy'])->name('sub_menus.delete');
 //sub menus route ends here.
+
+//sub sub menu route starts here.
+Route::resource('sub_sub_menus', SubSubMenuController::class);
+// Route::get('getSubMenus', [SubMenuController::class, 'getSubMenus'])->name('getSubMenus');
+// Route::post('/menus/{mainMenu}', [SubMenuController::class, 'destroy'])->name('menus.delete');
+//sub sub menus route ends here.
 
 
 
