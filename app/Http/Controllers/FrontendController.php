@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Approach;
 use App\Models\Vertical;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function approach(){
-        return view('home.approach');
+        $approach=Approach::first();
+        return view('home.approach',compact('approach'));
     }
 
     public function chargerServices(){

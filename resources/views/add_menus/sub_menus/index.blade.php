@@ -20,6 +20,7 @@
                 </div>
 
             </div>
+
             <!-- /breadcrumb -->
             <!-- main-content-body -->
             <div class="main-content-body">
@@ -31,7 +32,7 @@
                                 <div class="row mb-3">
                                     <div class="col-md-1 col-6 text-center">
                                         <div class="task-box primary mb-0">
-                                            <a href="{{ route('menus.create') }}">
+                                            <a href="{{ route('sub_menus.create', ['id' => $id]) }}">
                                                 <p class="mb-0 tx-12">Add </p>
                                                 <h3 class="mb-0"><i class="fa fa-plus"></i></h3>
                                             </a>
@@ -92,180 +93,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
 
-    {{-- 
-    <script type="text/javascript">
-        //fetch menus data .
-
-
-     
-        $(document).ready(function() {
-            $('#example').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: {
-                    url: "{{ route('getMenus') }}",
-                    data: function(d) {
-                        return {
-                            // name: $("#role").val(),
-                            // delete_ctm: $("#delete_ctm").val(),
-                            // Add other parameters as needed
-                        };
-                    }
-                },
-                columns: [{
-                        data: 'title'
-                    },
-                    {
-                        data: 'edit'
-                    }
-                    // Add more columns as needed
-                ],
-            });
-            table.draw();
-
-            $('#submit').click(function() {
-                table.draw();
-            });
-
-            $('#refresh').click(function() {
-                $("#delete_ctm").val('');
-                table.draw();
-            });
-
-            $('#delete').click(function() {
-                $("#delete_ctm").val(1);
-                table.draw();
-            });
-
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-        $(document).on("click", ".deleteItem", function() {
-
-            var id = $(this).attr('data-id');
-            $('#requestId').val($(this).attr('data-id'));
-            $('#confirmation-popup').modal('show');
-        });
-
-
-        function ownRequest() {
-
-            var reqId = $('#requestId').val();
-            console.log(reqId);
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
-                },
-                url: '{{ url('Roles/delete') }}' + '/' + reqId,
-                method: 'get',
-                data: 1,
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    console.log(response.success);
-
-                    $('#confirmation-popup').modal('hide');
-                    $('#success_message').fadeIn().html(response.success);
-                    setTimeout(function() {
-                        $('#success_message').fadeOut("slow");
-                    }, 2000);
-
-                    $('#example').DataTable().ajax.reload();
-
-
-
-                }
-            })
-        }
-
-
-
-        $(document).ready(function() {
-
-            var table = $('#example').DataTable({
-                processing: true,
-                serverSide: true,
-
-                buttons: [
-                    'copyHtml5',
-                    'excelHtml5',
-                    'csvHtml5',
-                    'pdfHtml5'
-                ],
-                "ajax": {
-
-                    "url": "{{ route('getRoles') }}",
-                    // "data": { mobile: $("#mobile").val()}
-                    "data": function(d) {
-                        return $.extend({}, d, {
-                            // "name": $("#role").val(),
-                            // "delete_ctm": $("#delete_ctm").val(),
-                        });
-                    }
-                },
-                columns: [{
-                        data: 'name'
-                    },
-                    {
-                        data: 'edit'
-                    }
-
-
-                ],
-
-            });
-
-            table.draw();
-
-            $('#submit').click(function() {
-
-                table.draw();
-            });
-            $('#refresh').click(function() {
-                $("#delete_ctm").val('');
-                table.draw();
-            });
-
-
-
-            $('#delete').click(function() {
-                $("#delete_ctm").val(1);
-                table.draw();
-            });
-
-
-
-
-
-            // DataTable
-
-
-        });
-    </script> --}}
-
     <script type="text/javascript">
         $(document).ready(function() {
             var table = $('#example').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: "{{ route('getMenus') }}",
+                    url: "{{ route('getSubMenus') }}",
                     data: function(d) {
                         return d; // Sending all DataTable parameters
                     }
                 },
-                columns: [
-                    {
+                columns: [{
                         data: 'no',
                         name: 'no'
                     },
@@ -291,33 +130,32 @@
                     'pdfHtml5'
                 ],
             });
-    
+
             $('#example').on('click', '.deleteItem', function() {
                 var id = $(this).data('id');
                 $('#requestId').val(id);
                 $('#confirmation-popup').modal('show');
             });
-    
+
             $('#confirmation-popup').on('hidden.bs.modal', function() {
                 $('#requestId').val('');
             });
-    
+
             $('#submit').click(function() {
                 table.draw();
             });
-    
+
             $('#refresh').click(function() {
                 $("#delete_ctm").val('');
                 table.draw();
             });
-    
+
             $('#delete').click(function() {
                 $("#delete_ctm").val(1);
                 table.draw();
             });
-    
-      
+
+
         });
     </script>
-    
 @endsection

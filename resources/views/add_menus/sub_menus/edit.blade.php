@@ -9,12 +9,12 @@
             <!-- breadcrumb -->
             <div class="breadcrumb-header justify-content-between row me-0 ms-0">
                 <div class="col-12">
-                    <h4 class="content-title mb-2">Main Menus Management</h4>
+                    <h4 class="content-title mb-2">Sub Menus Management</h4>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
 
                             <li class="breadcrumb-item active" aria-current="page"><i class="side-menu__icon fe fe-user"> </i>
-                                - Main Menus Management</li>
+                                - Sub Menus Management</li>
                         </ol>
                     </nav>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
                         <div class="card">
                             <div class="card-body  table-new">
-                                <form class="m-5" action="{{ route('menus.update', ['menu' => $data->id]) }}"
+                                <form class="m-5" action="{{ route('sub_menus.update', ['sub_menu' => $data->id]) }}"
                                     method="POST">
                                     @csrf <!-- Add CSRF token field -->
                                     @method('PUT')

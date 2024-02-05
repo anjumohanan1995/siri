@@ -86,7 +86,7 @@
 
                                         </li>
                                         <li class="menu-item">
-                                            <a href="{{route('home.approach')}}">Our Approach</a>
+                                            <a href="{{route('home.approachs')}}">Our Approach</a>
 
                                         </li>
                                         <li class="menu-item">
