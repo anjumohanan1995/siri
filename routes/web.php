@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\InnovationController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CustomAuthController;
@@ -143,3 +144,5 @@ Route::controller(FrontendController::class)->group(function(){
 Route::Resource('/admin-verticals', VerticalController::class);
 Route::get('getVerticals',[VerticalController::class, 'getVerticals'])->name('getVerticals');
 
+Route::Resource('/innovations', InnovationController::class);
+Route::post('innovation/store',[InnovationController::class,'store'])->name('innovation.store');

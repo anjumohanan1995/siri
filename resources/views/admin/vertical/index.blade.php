@@ -69,7 +69,7 @@
 
 <div >
 
-							<table id="example" class="table table-striped table-bordered" style="width:100%">
+							<table id="verticalTable" class="table table-striped table-bordered" style="width:100%">
 								<thead>
 									<tr>
 										<th> Sl No</th>
@@ -114,8 +114,8 @@
 
 
         $(document).ready(function(){
-
-     	   var table = $('#example').DataTable({
+			
+     	   var table = $('#verticalTable').DataTable({
             processing: true,
             serverSide: true,
            // info: false,
@@ -182,8 +182,7 @@ order: [[ 4, 'desc' ]]
 
 
 
-         // DataTable
-
+         
 
       });
       </script>
