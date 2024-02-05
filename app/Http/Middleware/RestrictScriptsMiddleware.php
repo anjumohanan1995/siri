@@ -17,9 +17,9 @@ class RestrictScriptsMiddleware
     public function handle(Request $request, Closure $next)
     {
         $input = $request->all();
-        $this->stripScripts($input);
+       // $this->stripScripts($input);
 
-        $request->replace($input);
+      //yyy  $request->replace($input);
 
         return $next($request);
     }
