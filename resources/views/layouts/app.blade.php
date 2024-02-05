@@ -221,6 +221,12 @@
                                     </button>
                                 </div>
                             </li>
+		
+	</head>
+	<body class="main-body app sidebar-mini ltr" >
+	
+		<div class="horizontalMenucontainer">
+			<!-- Switcher -->
 
                         </ul>
 
@@ -380,6 +386,381 @@
 
                                 </li>
                             @endif
+										</a>
+
+									</li>
+									<li class="slide">
+										<a class="side-menu__item" data-bs-toggle="slide" href="">
+											<i class="side-menu__icon fe fe-list"> </i>
+											<span class="side-menu__label">Verticals</span>
+											<i class="angle fe fe-chevron-down"> </i>
+										</a>
+
+										<ul class="slide-menu">
+
+											<li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="admin-verticals">
+													<span class="sub-side-menu__label">Feet</span>
+												</a>
+											</li>
+
+										</ul>
+									</li>
+                                    @endif
+								
+							
+								
+							</ul>
+							<div class="slide-right" id="slide-right">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+									<path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+							<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+						</div>
+						<div class="ps__rail-y" style="top: 0px; height: 652px; right: 0px;">
+							<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 515px;"></div>
+						</div>
+					</aside>
+				</div>
+
+				<!-- main-sidebar -->
+		 @yield('content')
+	
+				<!-- /main-content -->
+				<div class="sidebar sidebar-right sidebar-animate ps ps--active-y">
+					<div class="panel panel-primary card mb-0">
+						<div class="panel-body tabs-menu-body p-0 border-0">
+							<ul class="Date-time">
+								<li class="time">
+									<h1 class="animated">10:52</h1>
+									<p class="animated">Monday, August 22nd 2022</p>
+								</li>
+							</ul>
+							<div class="card-body latest-tasks">
+								<h3 class="events-title">
+									<span>Events For Week </span>
+								</h3>
+								<div class="event">
+									<div class="Day">Monday 20 Jan</div>
+									<a href="javascript:void(0);">No Events Today</a>
+								</div>
+								<div class="event">
+									<div class="Day">Tuesday 21 Jan</div>
+									<a href="javascript:void(0);">No Events Today</a>
+								</div>
+								<div class="event">
+									<div class="Day">Wednessday 22 Jan</div>
+									<div class="tasks">
+										<div class="task-line primary">
+											<a href="javascript:void(0);" class="label"> XML Import &amp; Export </a>
+											<div class="time">12:00 PM</div>
+										</div>
+										<div class="checkbox">
+											<label class="check-box">
+												<label class="ckbox">
+													<input checked="" type="checkbox" />
+													<span> </span>
+												</label>
+											</label>
+										</div>
+									</div>
+									<div class="tasks">
+										<div class="task-line danger">
+											<a href="javascript:void(0);" class="label"> Connect API to pages </a>
+											<div class="time">08:00 AM</div>
+										</div>
+										<div class="checkbox">
+											<label class="check-box">
+												<label class="ckbox">
+													<input type="checkbox" />
+													<span> </span>
+												</label>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="event">
+									<div class="Day">Thursday 23 Jan</div>
+									<div class="tasks">
+										<div class="task-line success">
+											<a href="javascript:void(0);" class="label"> Create Wireframes </a>
+											<div class="time">06:20 PM</div>
+										</div>
+										<div class="checkbox">
+											<label class="check-box">
+												<label class="ckbox">
+													<input type="checkbox" />
+													<span> </span>
+												</label>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="event">
+									<div class="Day">Friday 24 Jan</div>
+									<div class="tasks">
+										<div class="task-line warning">
+											<a href="javascript:void(0);" class="label"> Test new features in tablets </a>
+											<div class="time">02: 00 PM</div>
+										</div>
+										<div class="checkbox">
+											<label class="check-box">
+												<label class="ckbox">
+													<input type="checkbox" />
+													<span> </span>
+												</label>
+											</label>
+										</div>
+									</div>
+									<div class="tasks">
+										<div class="task-line teal">
+											<a href="javascript:void(0);" class="label"> Design Evommerce </a>
+											<div class="time">10: 00 PM</div>
+										</div>
+										<div class="checkbox">
+											<label class="check-box">
+												<label class="ckbox">
+													<input type="checkbox" />
+													<span> </span>
+												</label>
+											</label>
+										</div>
+									</div>
+									<div class="tasks mb-0">
+										<div class="task-line purple">
+											<a href="javascript:void(0);" class="label"> Fix Validation Issues </a>
+											<div class="time">12: 00 AM</div>
+										</div>
+										<div class="checkbox">
+											<label class="check-box">
+												<label class="ckbox">
+													<input type="checkbox" />
+													<span> </span>
+												</label>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="d-flex pagination wd-100p">
+									<a href="javascript:void(0);">Previous</a>
+									<a href="javascript:void(0);" class="ms-auto">Next</a>
+								</div>
+							</div>
+							<div class="card-body border-top border-bottom">
+								<div class="row">
+									<div class="col-4 text-center">
+										<a class="" href="">
+											<i class="dropdown-icon mdi mdi-message-outline fs-20 m-0 leading-tight"> </i>
+										</a>
+										<div>Inbox</div>
+									</div>
+									<div class="col-4 text-center">
+										<a class="" href="">
+											<i class="dropdown-icon mdi mdi-tune fs-20 m-0 leading-tight"> </i>
+										</a>
+										<div>Settings</div>
+									</div>
+									<div class="col-4 text-center">
+										<a class="" href="">
+											<i class="dropdown-icon mdi mdi-logout-variant fs-20 m-0 leading-tight"> </i>
+										</a>
+										<div>Sign out</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+						<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+					</div>
+					<div class="ps__rail-y" style="top: 0px; height: 652px; right: 0px;">
+						<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 438px;"></div>
+					</div>
+				</div>
+				<!--/Sidebar-right-->
+				<!-- Footer opened -->
+				
+				<div class="main-footer ht-45">
+						
+			
+					<div class="container-fluid pd-t-0-f ht-100p">
+						<span>
+							Copyright © 2024 <a href="javascript:void(0);" class="text-primary"></a>. Designed with  by <a href="javascript:void(0);"> Kawika Technologies </a> All rights reserved.
+						</span>
+					</div>
+				</div>
+				<!-- Footer closed -->
+			</div>
+			<!-- page closed -->
+			<!--- Back-to-top --->
+			<a href="#top" id="back-to-top" style="display: block;">
+				<i class="las la-angle-double-up"> </i>
+			</a>
+
+			<script src="{{ asset('js/jquery.min.js')}}"></script>
+  			<script src="{{ asset('js/datepicker.js')}}"></script>
+ 			<script src="{{ asset('js/popper.min.js')}}"></script>
+ 			<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+			<script src="{{ asset('js/ionicons.js')}}"></script>
+ 			<script src="{{ asset('js/Chart.bundle.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.sparkline.min.js')}}"></script>
+			<script src="{{ asset('js/chart.flot.sampledata.js')}}"></script>
+			<script src="{{ asset('js/eva-icons.min.js')}}"></script>
+			<script src="{{ asset('js/moment.js')}}"></script>
+			<script src="{{ asset('js/perfect-scrollbar.min.js')}}"></script>
+			<script src="{{ asset('js/p-scroll.js')}}"></script>
+			<script src="{{ asset('js/sidemenu.js')}}"></script>
+			<script src="{{ asset('js/sticky.js')}}"></script>
+			<script src="{{ asset('js/sidebar.js')}}"></script>
+			<script src="{{ asset('js/sidebar-custom.js')}}"></script>
+  			<script src="{{ asset('js/script.js')}}"></script>
+  			<script src="{{ asset('js/index.js')}}"></script>
+ 			<script src="{{ asset('js/themecolor.js')}}"></script>
+ 			<script src="{{ asset('js/swither-styles.js')}}"></script>
+ 			<script src="{{ asset('js/custom.js')}}"></script>
+ 			<script src="{{ asset('js/switcher.js')}}"></script>
+            <script src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
+
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    $( "#to_datepicker" ).datepicker();
+  } );
+	$(document).ready(function() {
+    /*$('#example').DataTable(
+$()
+
+
+    	);*/
+     $('#example1').DataTable();
+
+
+} );
+  </script>
+	
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Dilip Kumar (36) - Arogya kiranam	</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="eva eva-close-outline header-icons">
+										<g data-name="Layer 2">
+											<g data-name="close">
+												<rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+												<path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path>
+											</g>
+										</g>
+									</svg></button>
+      </div>
+      <div class="modal-body">
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+
+														<tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13">Aadhar Id</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr>
+														<tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13">Ration Card No:</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr>
+														<tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13">Scheme Id</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr>
+														<tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13">Email Id</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr>
+
+														<tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13">Appoiment Date </h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr>
+														<tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13">Aadhar Id</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr>
+														<tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13">Provisional Diagnosis	 	</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr>
+			<tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13"> 	Medicines		</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr><tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13"> 	Miscellaneous			</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr><tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13"> 	Amount for Provisional Diagnosis			</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr><tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13"> 		Amount for Medicines			</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr><tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13"> 		Amount for Miscellaneous			</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr><tr>
+															<td><div class="project-contain">
+																	<h6 class="mb-1 tx-13"> 	Miscellaneous			</h6>
+															</div></td>
+															<td>
+																<div class="image-grouped"> 986643456 </div>
+															</td>
+														</tr>
 
 
 
