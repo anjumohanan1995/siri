@@ -54,16 +54,15 @@ Route::post('/sub_menus/{mainMenu}', [SubMenuController::class, 'destroy'])->nam
 
 //sub sub menu route starts here.
 Route::resource('sub_sub_menus', SubSubMenuController::class);
-// Route::get('getSubMenus', [SubMenuController::class, 'getSubMenus'])->name('getSubMenus');
-// Route::post('/menus/{mainMenu}', [SubMenuController::class, 'destroy'])->name('menus.delete');
+Route::get('/sub_sub_menus/index/{id}', [SubSubMenuController::class, 'indexWithId'])->name('sub_sub_menus.indexWithId');
+Route::get('getSubSubMenus', [SubSubMenuController::class, 'getSubSubMenus'])->name('getSubSubMenus');
+Route::post('/sub_sub_menus/{mainMenu}', [SubSubMenuController::class, 'destroy'])->name('sub_sub_menus.delete');
 //sub sub menus route ends here.
 
 
 
 
 //admins routes ends here .
-
-
 
 Auth::routes();
 Route::post('/login', [AuthController::class, 'login'])->name('login');

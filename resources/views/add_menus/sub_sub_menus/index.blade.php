@@ -9,12 +9,12 @@
             <!-- breadcrumb -->
             <div class="breadcrumb-header justify-content-between row me-0 ms-0">
                 <div class="col-12">
-                    <h4 class="content-title mb-2">Main Menus Management</h4>
+                    <h4 class="content-title mb-2">Sub Sub Menus Management</h4>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
 
                             <li class="breadcrumb-item active" aria-current="page"><i class="side-menu__icon fe fe-user"> </i>
-                                - Main Menus Management</li>
+                                - Sub Sub Management</li>
                         </ol>
                     </nav>
                 </div>
@@ -32,7 +32,7 @@
                                 <div class="row mb-3">
                                     <div class="col-md-1 col-6 text-center">
                                         <div class="task-box primary mb-0">
-                                            <a href="{{ route('sub_menus.create', ['id' => $id]) }}">
+                                            <a href="{{ route('sub_sub_menus.create', ['id' => $id]) }}">
                                                 <p class="mb-0 tx-12">Add </p>
                                                 <h3 class="mb-0"><i class="fa fa-plus"></i></h3>
                                             </a>
@@ -99,7 +99,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: "{{ route('getSubMenus', ['id' => $id]) }}",
+                    url: "{{ route('getSubSubMenus', ['id' => $id]) }}",
                     data: function(d) {
                         return d; // Sending all DataTable parameters
                     }

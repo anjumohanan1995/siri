@@ -859,34 +859,7 @@ function userUpdate (){
     backdrop: 'static',
     keyboard: false
 })
-    //     $.ajax({
-          
-    //    url: "{{ route('userData.status') }}",
-    //    type: "POST",
-    //        data: {
-                
-    //            "_token": "{{ csrf_token() }}"
-    //        },
-    //    success: function(response) {
-    //      //alert(response.user);
-    //      if(response.user =="user"){
-            
-    //          $('#requestId').val(response.user_data._id);
-    //          //alert(response.data);
-    //          if(response.data == "not-exist"){
-    //              $('#user-modal').modal('show');
-    //          }
-    //          else{
-    //              $('#user-modal').modal('hide');
-    //          }
-    //      }
-    //      else{
-    //          $('#user-modal').modal('hide');
-    //      }
-              
-
-    //    }
-    //   })
+ 
         
     $('.aminus').on('click',function (){
         //alert("aminus");
