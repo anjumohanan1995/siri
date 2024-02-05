@@ -11,6 +11,9 @@ use App\Http\Controllers\SlidercategoryController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\GalleryCategoryController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\MainMenuController;
+use App\Http\Controllers\SubMenuController;
 use App\Http\Controllers\VerticalController;
 
 /*
@@ -25,14 +28,30 @@ Route::get('/', function () {
 });
 
 
-
+//admins routes starts here .
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
-//Route::resource('/books','BookController');
+
+//menus route starts here.
+Route::resource('menus', MainMenuController::class);
+Route::get('getMenus', [MainMenuController::class, 'getMenus'])->name('getMenus');
+Route::post('/menus/{mainMenu}', [MainMenuController::class, 'destroy'])->name('menus.delete');
+//menus route ends here.
+
+//sub menu route starts here.
+Route::resource('sub_menus', SubMenuController::class);
+// Route::get('getMenus', [SubMenuController::class, 'getMenus'])->name('getMenus');
+// Route::post('/menus/{mainMenu}', [SubMenuController::class, 'destroy'])->name('menus.delete');
+//sub menus route ends here.
+
+
+
+
+//admins routes ends here .
 
 
 
@@ -90,6 +109,11 @@ Route::resource('/gallery', App\Http\Controllers\GalleryController::class);
 Route::post('/gallery/{id}', [App\Http\Controllers\GalleryController::class, 'store'])->name('store');
 Route::post('gallery/update/{id}',[App\Http\Controllers\GalleryController::class, 'update'])->name('gallery.update');
 Route::get('/galleries/{id}', [App\Http\Controllers\GalleryController::class, 'galleryList'])->name('gallery_list');
+
+
+
+
+
 
 Route::controller(FrontendController::class)->group(function(){
    Route::get('/approach', 'approach')->name('home.approach');
