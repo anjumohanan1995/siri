@@ -13,6 +13,7 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\GalleryCategoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\ApproachController;
 use App\Http\Controllers\MainMenuController;
 use App\Http\Controllers\SubMenuController;
 use App\Http\Controllers\VerticalController;
@@ -117,7 +118,7 @@ Route::get('/galleries/{id}', [App\Http\Controllers\GalleryController::class, 'g
 
 
 Route::controller(FrontendController::class)->group(function(){
-   Route::get('/approach', 'approach')->name('home.approach');
+   Route::get('/Our-Approach', 'approach')->name('home.approachs');
    Route::get('/charger_services', 'chargerServices')->name('home.chargerServices');
    Route::get('/Products', 'products')->name('home.products');
    Route::get('/cmsServices', 'cmsServices')->name('home.cmsServices');
@@ -137,3 +138,7 @@ Route::get('getVerticals',[VerticalController::class, 'getVerticals'])->name('ge
 
 Route::Resource('/innovations', InnovationController::class);
 Route::post('innovation/store',[InnovationController::class,'store'])->name('innovation.store');
+
+
+Route::Resource('/admin-approach', ApproachController::class);
+Route::get('getApproach',[ApproachController::class, 'getApproach'])->name('getApproach');

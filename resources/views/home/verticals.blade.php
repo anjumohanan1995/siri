@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="banner inner_banner">
-    @if(@$vertical->image !=null)
-    <img src="{{ asset('vertical/'.@$vertical->image) }}" alt="" title="1">
+    @if(@$vertical->banner_image !=null)
+    <img src="{{ asset('vertical/'.@$vertical->banner_image) }}" alt="" title="1">
     @else
     <img src="{{ asset('images_home/inner_banner.png') }}" alt="" title="1">
     @endif
@@ -20,7 +20,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="pq-section-title-box">
-                    <span class="pq-section-sub-title">SIRI Electromotive</span>
+                    <span class="pq-section-sub-title">{{ @$vertical->title1 }}</span>
                     <h4 class="pq-icon-box-title">
                         <a href="">{{ @$vertical->sub_title }}
                         </a>
@@ -43,7 +43,12 @@
                
             </div>
             <div class="col-lg-6 mt-4 mt-lg-0">
-                <img src="{{ asset('images/3.jpg') }}" alt="">
+                @if(@$vertical->image !=null)
+                <img src="{{ asset('vertical/'.@$vertical->image) }}" alt="" title="1">
+                @else
+                <img src="{{ asset('images_home/3.jpg') }}" alt="" title="1">
+                @endif
+              
             </div>
         </div>
     </div>

@@ -49,7 +49,19 @@
                                         <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
-
+                                <div class="col-md-6 mb-6">
+                                    <label class="form-label">
+                                        Title 1
+                                    </label>
+                                    <input type="text" value="{{ old('title1',@$vertical->title1) }}"  class="form-control" placeholder="Title 1 " name="title1" />
+                                    @error('title1')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                               
+                            </div>
+                           
+                               <div class="pt-5 row">   
                                 <div class="col-md-6 mb-6">
                                     <label class="form-label">Sub Title </label>
                                     <textarea type="text" value="{{ old('sub_title',@$vertical->sub_title) }}"  class="form-control" placeholder="Sub Title" name="sub_title" >{{ old('sub_title',@$vertical->sub_title) }}</textarea>
@@ -57,20 +69,24 @@
                                         <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
-                            </div>
-                           
-                               <div class="pt-5 row">   
                                 <div class="col-md-6 mb-6">
                                     <label class="form-label">Content
                                     </label>
                                     <textarea type="text" value="{{ old('content') }}"  class="form-control" placeholder="Content" name="content" id="content">{{ old('content',@$vertical->content) }}</textarea>
                                   
                                    
-                                    @error('class_start_date')
+                                    @error('content')
                                         <span class="text-danger">{{$message}}</span>
                                     @enderror
                                       </div>
-                                      <div class="col-md-6 mb-6">
+                                     
+                                    
+                                   
+                                   
+                                  
+                                </div>
+                                <div class="pt-5 row">  
+                                    <div class="col-md-6 mb-6">
                                         <label class="form-label">Image
                                         </label>
                                         <input type="file" value="{{ old('image') }}"  class="form-control" name="image" id="image" accept="image/*">                                     
@@ -82,12 +98,6 @@
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                           </div>
-                                    
-                                   
-                                   
-                                  
-                                </div>
-                                <div class="pt-5 row">  
                                     <div class="col-md-6 mb-6">
                                         <label class="form-label">Banner Image
                                         </label>
