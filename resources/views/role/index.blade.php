@@ -196,22 +196,15 @@ $(document).on("click",".deleteItem",function() {
 			],
 
          });
-
-
-
       	 table.draw();
 
       	$('#submit').click(function(){
-
         	table.draw();
     	});
     	$('#refresh').click(function(){
       		$("#delete_ctm").val('');
         	table.draw();
     	});
-
-
-
 
     	$('#delete').click(function(){
     		$("#delete_ctm").val(1);
