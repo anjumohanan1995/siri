@@ -406,7 +406,7 @@
 											
 											<li class="sub-slide">
 												<a class="slide-item" data-bs-toggle="sub-slide"
-													href="{{ @$inn->link }}">
+													href="/admin/{{ @$inn->link }}">
 													<span class="sub-side-menu__label">{{ @$inn->title }}</span>
 												</a>
 											</li>
