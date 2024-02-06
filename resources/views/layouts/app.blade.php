@@ -399,9 +399,10 @@
 
 										</ul>
 									</li>
-									<li class="slide {{ ((\Request::route()->getName() == 'innovations.index') )? ' is-expanded' : '' }}">
-										<a class="side-menu__item"  data-bs-toggle="slide" href="">
-											<i class="side-menu__icon fe fe-list"> </i>
+									@endif
+									<li class="slide">
+										<a class="side-menu__item {{ ((\Request::route()->getName() == 'innovations.index') )? 'active' : '' }}"  href="{{url('innovations')}}">
+											<i class="side-menu__icon fe fe-settings"> </i>
 											<span class="side-menu__label">Innovations</span>
 											<i class="angle fe fe-chevron-down"> </i>
 										</a>
