@@ -41,6 +41,7 @@
 								<form name="createForm"  method="post" action="{{route('innovation.store')}}" enctype="multipart/form-data">
                            @csrf
 									<input type="hidden" name="user_id" value="{{ \Auth::user()->id}}">
+                                    <input type="hidden" name="slug" value="{{ @$slug }}">
 
 									<div class="form-group">
 
@@ -78,7 +79,7 @@
                                                     
                                                     <span>Upload Maximum File Size is 2Mb</span>
                                                     <input type="file" id="img_file" name="image" class="form-control" accept=".png, .jpg, .jpeg"  onChange="img_pathUrl(this);"><br>
-                                                   @if($data->image != '')
+                                                   @if(@$data->image != '')
                                                    <img src="{{ asset('innovation/' . $data->image) }}" width="200px" height="160px" />
                                                     @endif
                                                     @error('image')

@@ -55,16 +55,15 @@ Route::post('/sub_menus/{mainMenu}', [SubMenuController::class, 'destroy'])->nam
 
 //sub sub menu route starts here.
 Route::resource('sub_sub_menus', SubSubMenuController::class);
-// Route::get('getSubMenus', [SubMenuController::class, 'getSubMenus'])->name('getSubMenus');
-// Route::post('/menus/{mainMenu}', [SubMenuController::class, 'destroy'])->name('menus.delete');
+Route::get('/sub_sub_menus/index/{id}', [SubSubMenuController::class, 'indexWithId'])->name('sub_sub_menus.indexWithId');
+Route::get('getSubSubMenus', [SubSubMenuController::class, 'getSubSubMenus'])->name('getSubSubMenus');
+Route::post('/sub_sub_menus/{mainMenu}', [SubSubMenuController::class, 'destroy'])->name('sub_sub_menus.delete');
 //sub sub menus route ends here.
 
 
 
 
 //admins routes ends here .
-
-
 
 Auth::routes();
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -139,7 +138,7 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/About-us', 'aboutUs')->name('home.aboutUs');
    Route::get('/Team', 'team')->name('home.team');
 
-   Route::get('/Innovation/{slug}', 'innovation')->name('home.innovation');
+   Route::get('/innovation/{slug}', 'innovation')->name('home.innovation');
   
 });
 Route::get('/verticalList/{slug}', [VerticalController::class, 'index'])->name('verticalList.index');
@@ -147,7 +146,7 @@ Route::get('/vertical/create/{slug}', [VerticalController::class, 'create'])->na
 Route::Resource('/admin-verticals', VerticalController::class)->except(['index','create']);
 Route::get('getVerticals',[VerticalController::class, 'getVerticals'])->name('getVerticals');
 
-Route::Resource('/innovations', InnovationController::class);
+Route::Resource('/admin/innovation/{slug}', InnovationController::class);
 Route::post('innovation/store',[InnovationController::class,'store'])->name('innovation.store');
 
 

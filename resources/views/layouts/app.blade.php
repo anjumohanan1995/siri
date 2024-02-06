@@ -379,7 +379,7 @@
 									@endphp
 									@if($sub_menu->isNotEmpty())
 									<li class="slide">
-										<a class="side-menu__item" data-bs-toggle="slide" href="">
+										<a class="side-menu__item " data-bs-toggle="slide" href="">
 											<i class="side-menu__icon fe fe-list"> </i>
 											<span class="side-menu__label">{{ @$menu->title }}</span>
 											<i class="angle fe fe-chevron-down"> </i>
@@ -399,15 +399,36 @@
 
 										</ul>
 									</li>
-									@endif
-									<li class="slide">
-										<a class="side-menu__item {{ ((\Request::route()->getName() == 'innovations.index') )? 'active' : '' }}"  href="{{url('innovations')}}">
-											<i class="side-menu__icon fe fe-settings"> </i>
+									<li class="slide {{ ((\Request::route()->getName() == 'innovations.index') )? ' is-expanded' : '' }}">
+										<a class="side-menu__item"  data-bs-toggle="slide" href="">
+											<i class="side-menu__icon fe fe-list"> </i>
 											<span class="side-menu__label">Innovations</span>
-
+											<i class="angle fe fe-chevron-down"> </i>
 										</a>
+										@php
+										$innovation = \App\Models\MainMenu::where('slug','innovation')->first();
+										$inn_datas = \App\Models\SubMenu::where('menu_id',$innovation->id)->get();
+										@endphp
+										<ul class="slide-menu">
+											@foreach ($inn_datas as $inn)												
+											
+											<li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ @$inn->link }}">
+													<span class="sub-side-menu__label">{{ @$inn->title }}</span>
+												</a>
+											</li>
+											@endforeach
+											{{--  <li class="sub-slide {{ ((\Request::route()->getName() == 'verticals.index') )? 'active is-expanded' : '' }}">
+												<a class="slide-item {{ ((\Request::route()->getName() == 'verticals.index') )? 'active' : '' }}" data-bs-toggle="sub-slide"
+													href="{{url('innovations')}}">
+													<span class="sub-side-menu__label">Tech Speak</span>
+												</a>
+											</li>  --}}
 
+										</ul>
 									</li>
+									
                                     @endif
 								
 							

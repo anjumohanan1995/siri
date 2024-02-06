@@ -170,6 +170,12 @@ class SubMenuController extends Controller
 
     public function getSubMenus(Request $request)
     {
+
+
+        // get id.
+        $id = $request->id;
+
+        
         // Get DataTables parameters
         $draw = $request->get('draw');
         $start = $request->get("start");
@@ -210,6 +216,11 @@ class SubMenuController extends Controller
         // Initialize the query
         $query = SubMenu::query();
 
+        $query = $query->where('menu_id',$id);
+
+
+        // dd($query);
+
         // Apply search filter if provided
         if (!empty($searchValue)) {
             $query->where('title', 'like', '%' . $searchValue . '%');
@@ -242,7 +253,7 @@ class SubMenuController extends Controller
                         ' . method_field('DELETE') . '
                         <button type="submit" class="btn btn-danger m-1">Delete</button>
                     </form>
-                    <a class="btn btn-secondary m-1" href="' . route('sub_menus.index', $record->id) . '">Sub Sub Menus</a>
+                    <a class="btn btn-secondary m-1" href="' . route('sub_sub_menus.indexWithId', $record->id) . '">Sub Sub Menus</a>
 
                 </div>'
             ];
