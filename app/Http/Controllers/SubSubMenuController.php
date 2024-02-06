@@ -64,7 +64,7 @@ class SubSubMenuController extends Controller
 
 
         // return redirect()->route('sub_menus.index')->with('success', 'Menu item created successfully');
-        return redirect()->back()->with('success', 'Menu item created successfully');
+        return redirect()->back()->with('success', 'Sub sub menu item created successfully');
     }
 
     /**
@@ -122,9 +122,12 @@ class SubSubMenuController extends Controller
 
         // Generate a slug from the title
         if ($request->link_type == 'slug') {
-            $slug = Str::slug($validatedData['title'], '_');
-
-            $validatedData['slug'] = $slug;
+            
+            if(!$subMenu->slug){
+                $slug = Str::slug($validatedData['title'], '_');
+                $validatedData['slug'] = $slug;
+            }
+     
             $validatedData['link'] = "";
         } else {
             $validatedData['slug'] = "";
@@ -135,7 +138,7 @@ class SubSubMenuController extends Controller
 
         // Redirect to a specific route or show a success message
         // return redirect()->route('sub_menus.index')->with('success', 'Menu item updated successfully');
-        return redirect()->back()->with('success', 'Menu item updated successfully');
+        return redirect()->back()->with('success', 'Sub sub menu item updated successfully');
     }
 
     /**
@@ -144,9 +147,16 @@ class SubSubMenuController extends Controller
      * @param  \App\Models\SubSubMenu  $subSubMenu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubSubMenu $subSubMenu)
+    public function destroy($id)
     {
-        //
+        $subMenu = SubSubMenu::find($id);
+
+
+        // Perform the hard delete
+        $subMenu->forceDelete();
+
+        // Optionally, you can return a response or redirect back
+        return redirect()->back()->with('success', 'Sub sub menu item deleted successfully.');
     }
     public function getSubSubMenus(Request $request)
     {

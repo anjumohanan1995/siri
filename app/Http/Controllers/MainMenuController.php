@@ -118,11 +118,14 @@ class MainMenuController extends Controller
 
          // Generate a slug from the title
          if ($request->link_type == 'slug') {
-            $slug = Str::slug($validatedData['title'], '_');
-
-            $validatedData['slug'] = $slug;
+            
+            if(!$mainMenu->slug){
+                $slug = Str::slug($validatedData['title'], '_');
+                $validatedData['slug'] = $slug;
+            }
+     
             $validatedData['link'] = "";
-        }else{
+        } else {
             $validatedData['slug'] = "";
         }
 

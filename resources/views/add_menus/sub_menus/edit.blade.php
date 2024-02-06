@@ -28,6 +28,16 @@
                     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
                         <div class="card">
                             <div class="card-body  table-new">
+                                <div class="row">
+                                    @if (session('success'))
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            {{ session('success') }}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    @endif
+                                </div>
                                 <form class="m-5" action="{{ route('sub_menus.update', ['sub_menu' => $data->id]) }}"
                                     method="POST">
                                     @csrf <!-- Add CSRF token field -->

@@ -18,7 +18,6 @@
                         </ol>
                     </nav>
                 </div>
-
             </div>
             <!-- /breadcrumb -->
             <!-- main-content-body -->
@@ -28,45 +27,51 @@
                     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
                         <div class="card">
                             <div class="card-body  table-new">
+                              
                                 <form class="m-5" action="{{ route('menus.store') }}" method="POST">
                                     @csrf <!-- Add CSRF token field -->
-                                
+
                                     <div class="mb-3">
                                         <label for="title" class="form-label">Title</label>
-                                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Enter title"
+                                        <input type="text" class="form-control @error('title') is-invalid @enderror"
+                                            id="title" name="title" placeholder="Enter title"
                                             value="{{ old('title') }}">
                                         @error('title')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                
+
                                     <div class="mb-3">
                                         <label for="link_type" class="form-label">Link Type</label>
-                                        <select class="form-select @error('link_type') is-invalid @enderror" name="link_type" id="link_type">
+                                        <select class="form-select @error('link_type') is-invalid @enderror"
+                                            name="link_type" id="link_type">
                                             <option selected disabled value="">Select link type</option>
-                                            <option value="slug" {{ old('link_type') == 'slug' ? 'selected' : '' }}>Slug</option>
-                                            <option value="link" {{ old('link_type') == 'link' ? 'selected' : '' }}>Link</option>
+                                            <option value="slug" {{ old('link_type') == 'slug' ? 'selected' : '' }}>Slug
+                                            </option>
+                                            <option value="link" {{ old('link_type') == 'link' ? 'selected' : '' }}>Link
+                                            </option>
                                         </select>
                                         @error('link_type')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                
+
                                     <div class="mb-3" id="linkInput"
                                         style="display: {{ old('link_type') == 'link' ? 'block' : 'none' }};">
                                         <label for="link" class="form-label">Link</label>
-                                        <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name="link" placeholder="Enter link  ( eg: page/web-home )"
+                                        <input type="text" class="form-control @error('link') is-invalid @enderror"
+                                            id="link" name="link" placeholder="Enter link  ( eg: page/web-home )"
                                             value="{{ old('link') }}">
                                         @error('link')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                
+
                                     <!-- Submit Button -->
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
-                                
-                                
+
+
 
                             </div>
                         </div>

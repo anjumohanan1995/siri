@@ -18,7 +18,7 @@ use App\Http\Controllers\MainMenuController;
 use App\Http\Controllers\SubMenuController;
 use App\Http\Controllers\VerticalController;
 use App\Http\Controllers\SubSubMenuController;
-
+use App\Http\Controllers\WebHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,10 +26,10 @@ use App\Http\Controllers\SubSubMenuController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
 
-   return view('welcome');
-});
+
+
+Route::get('/', [WebHomeController::class, 'index']);
 
 
 //admins routes starts here .
