@@ -4,7 +4,7 @@
 
 <div class="banner inner_banner">
     <img src="{{ asset('images_home/inner_banner.png') }}" alt="" title="1">
-    <h1>{{ $slug }}
+    <h1>{{ @$innovation->title }}
     </h1>
 
 </div>
@@ -24,14 +24,14 @@
                     <div class="pq-icon-box pq-style-4 mt-4 mt-md-0">
                       
                         <div class="pq-icon-box-content">
-                           
+                            {!! $innovation->content !!}
                               </div>
                     </div>
                    
                     
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
-                    <img src="/images_home/3.jpg" alt="">
+                    <img src="{{ asset('innovation/' . $innovation->image) }}" alt="">
                 </div>
             </div>
         </div>

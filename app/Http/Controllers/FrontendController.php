@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Approach;
+use App\Models\Innovation;
 use App\Models\Vertical;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,8 @@ class FrontendController extends Controller
         return view('home.team');
     }
     public function innovation($slug){
-        return view ('home.innovation', compact('slug'));
+        $innovation=Innovation::where('slug',$slug)->first();
+       
+        return view ('home.innovation', compact('innovation','slug'));
     }
 }

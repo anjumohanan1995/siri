@@ -162,14 +162,14 @@
                                             <a href="#">Innovation</a><i class="fa fa-chevron-down pq-submenu-icon"></i>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
-                                                <a href="{{ route('home.innovation', ['slug' => 'siri_labs']) }}">SIRI Labs</a>
+                                                <a href="{{ route('home.innovation', ['slug' => 'siri-labs']) }}">SIRI Labs</a>
                                                 </li>
                                                 <li class="menu-item">
-                                                    <a href="{{ route('home.innovation', ['slug' => 'tech_speak']) }}">Tech Speak</a>
+                                                    <a href="{{ route('home.innovation', ['slug' => 'tech-speak']) }}">Tech Speak</a>
                                                 </li>
 
                                                 <li class="menu-item">
-                                                    <a href="{{ route('home.innovation', ['slug' => 'next_releases']) }}">Next Releases</a>
+                                                    <a href="{{ route('home.innovation', ['slug' => 'next-releases']) }}">Next Releases</a>
                                                 </li>
 
                                             </ul>

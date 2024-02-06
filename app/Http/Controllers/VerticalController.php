@@ -14,10 +14,11 @@ class VerticalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug)
     {
-        $vertical =Vertical :: where('deleted_at',null)->first();
-       return view ('admin.vertical.index',compact('vertical'));
+       
+        $vertical =Vertical :: where('deleted_at',null)->where('slug',$slug)->first();
+       return view ('admin.vertical.index',compact('vertical','slug'));
     }
 
     /**
@@ -52,45 +53,37 @@ class VerticalController extends Controller
         //   $school_details = SchoolMaster::where('deleted_at',null)->get();
 
 
-        $totalRecord = Vertical::where('deleted_at', null);
+        $totalRecord = Vertical::where('deleted_at', null)->where('slug',$slug);
 
         if ($name != "") {
             $totalRecord->where('name', 'like', "%" . $name . "%");
         }
-        if ($slug != "") {
-            $totalRecord->where('school_or_college', $slug);
-        }
-
+        
         
         $totalRecords = $totalRecord->select('count(*) as allcount')->count();
 
 
 
-        $totalRecordswithFilte = Vertical::where('deleted_at', null);
+        $totalRecordswithFilte = Vertical::where('deleted_at', null)->where('slug',$slug);
 
 
         if ($name != "") {
             $totalRecordswithFilte->where('name', 'like', "%" . $name . "%");
 
         }
-        if ($slug != "") {
-            $totalRecordswithFilte->where('school_or_college', $slug);
-        }
+        
         
         $totalRecordswithFilter = $totalRecordswithFilte->select('count(*) as allcount')->count();
         //dd($totalRecordswithFilter);
 
 
         // Fetch records
-        $items = Vertical::where('deleted_at', null)->orderBy($columnName, $columnSortOrder);
+        $items = Vertical::where('deleted_at', null)->where('slug',$slug)->orderBy($columnName, $columnSortOrder);
         if ($name != "") {
             $items->where('name', 'like', "%" . $name . "%");
 
         }
-        if ($slug != "") {
-            $items->where('school_or_college', $slug);
-        }
-       
+     
         $records = $items->orderby('created_at', 'desc')->skip($start)->take($rowperpage)->get();
 
 
@@ -136,10 +129,10 @@ class VerticalController extends Controller
         return response()->json($response);
 
     }
-     public function create()
+     public function create($slug)
     {
         $vertical = new Vertical();
-        return view ('admin.vertical.create',compact('vertical'));
+        return view ('admin.vertical.create',compact('vertical','slug'));
     }
 
     /**
@@ -188,7 +181,7 @@ class VerticalController extends Controller
             $data['banner_image'] = '';
         }
         Vertical::create($data);
-        return redirect()->route('admin-verticals.index')->with('status','Created Successfully.');
+        return redirect()->route('verticalList.index',$request->slug)->with('status','Created Successfully.');
     }
 
     /**
@@ -263,7 +256,7 @@ class VerticalController extends Controller
         }
       //  dd($request->input('content'));
         $verticals->update($data);
-        return redirect()->route('admin-verticals.index')->with('status','Updated Successfully.');
+        return redirect()->route('verticalList.index',$request->slug)->with('status','Updated Successfully.');
     }
 
     /**
