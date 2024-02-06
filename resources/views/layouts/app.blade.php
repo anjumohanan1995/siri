@@ -452,6 +452,22 @@
 
 										</ul>
 									</li>
+									<li class="slide">
+										<a class="side-menu__item " data-bs-toggle="slide" href="">
+											<i class="side-menu__icon fe fe-list"> </i>
+											<span class="side-menu__label">Company</span>
+											<i class="angle fe fe-chevron-down"> </i>
+										</a>
+
+										<ul class="slide-menu">										
+											<li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="/admin/contact-us">
+													<span class="sub-side-menu__label">Contact Us</span>
+												</a>
+											</li>
+										</ul>
+									</li>
 
                             @endif
 
