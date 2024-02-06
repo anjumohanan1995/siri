@@ -131,31 +131,35 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <div id="pq-menu-contain" class="pq-menu-contain">
                                     <ul id="pq-main-menu" class="navbar-nav ml-auto">
-
+                                        @if (!empty($menuData))
                                         @foreach ($menuData as $menu)
                                             <li class="menu-item">
                                                 <a href="{{ $menu['url'] }}">{{ $menu['title'] }}</a><i
                                                     class="{{ isset($menu['submenu']) && !empty($menu['submenu']) ? 'fa fa-chevron-down' : '' }} pq-submenu-icon"></i>
                                                 <ul class="sub-menu">
-                                                    @foreach ($menu['submenu'] as $submenu)
-                                                        <li class="menu-item">
-                                                            <a
-                                                                href="{{ $submenu['url'] }}">{{ $submenu['title'] }}</a>
-                                                            @if (!empty($submenu['subsubmenu']))
-                                                                <ul class="sub-menu">
-                                                                    @foreach ($submenu['subsubmenu'] as $subsubmenu)
-                                                                        <li class="menu-item">
-                                                                            <a
-                                                                                href="{{ $subsubmenu['url'] }}">{{ $subsubmenu['title'] }}</a>
-                                                                        </li>
-                                                                    @endforeach
-                                                                </ul>
-                                                            @endif
-                                                        </li>
-                                                    @endforeach
+                                                    @if (!empty($menu['submenu']))
+                                                        @foreach ($menu['submenu'] as $submenu)
+                                                            <li class="menu-item">
+                                                                <a href="{{ $submenu['url'] }}">{{ $submenu['title'] }}</a>
+                                                                @if (!empty($submenu['subsubmenu']))
+                                                                    <ul class="sub-menu">
+                                                                        @foreach ($submenu['subsubmenu'] as $subsubmenu)
+                                                                            <li class="menu-item">
+                                                                                <a href="{{ $subsubmenu['url'] }}">{{ $subsubmenu['title'] }}</a>
+                                                                            </li>
+                                                                        @endforeach
+                                                                    </ul>
+                                                                @endif
+                                                            </li>
+                                                        @endforeach
+                                                    @endif
                                                 </ul>
                                             </li>
                                         @endforeach
+                                    @else
+                                        <p>No menu data available.</p>
+                                    @endempty
+                                    
 
                                     </ul>
 

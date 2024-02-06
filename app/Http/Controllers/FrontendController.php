@@ -35,7 +35,7 @@ class FrontendController extends Controller
         return view('home.contact_us');
     }
     public function verticals($slug){
-        $vertical=Vertical::first();
+        $vertical=Vertical::where('slug',$slug)->first();
         return view ('home.verticals', compact('slug','vertical'));
     }
     public function aboutUs(){
