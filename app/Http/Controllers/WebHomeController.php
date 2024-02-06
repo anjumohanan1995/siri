@@ -11,8 +11,11 @@ class WebHomeController extends Controller
 {
     public function index()
     {
+        // dd('ho');
         // Get the main menu items.
         $mainMenus = MainMenu::whereNull('deleted_at')->get();
+
+        // dd($mainMenus);
 
         // Initialize an empty array to store the structured data.
         $menuData = [];

@@ -31,7 +31,6 @@ use App\Http\Controllers\WebHomeController;
 
 Route::get('/', [WebHomeController::class, 'index']);
 
-
 //admins routes starts here .
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
@@ -134,14 +133,14 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/Solutions', 'Solutions')->name('home.solutions');
    Route::get('/Contact-Us', 'contact')->name('home.contact');
 
-   Route::get('/Verticals/{slug}', 'verticals')->name('home.verticals');
+   Route::get('/verticals/{slug}', 'verticals')->name('home.verticals');
    Route::get('/About-us', 'aboutUs')->name('home.aboutUs');
    Route::get('/Team', 'team')->name('home.team');
 
    Route::get('/innovation/{slug}', 'innovation')->name('home.innovation');
   
 });
-Route::get('/verticalList/{slug}', [VerticalController::class, 'index'])->name('verticalList.index');
+Route::get('/admin/verticals/{slug}', [VerticalController::class, 'index'])->name('verticalList.index');
 Route::get('/vertical/create/{slug}', [VerticalController::class, 'create'])->name('verticalList.create');
 Route::Resource('/admin-verticals', VerticalController::class)->except(['index','create']);
 Route::get('getVerticals',[VerticalController::class, 'getVerticals'])->name('getVerticals');

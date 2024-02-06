@@ -430,7 +430,7 @@
 											@foreach ($sub_menu as $sub_menus )
 											<li class="sub-slide">
 												<a class="slide-item" data-bs-toggle="sub-slide"
-													href="{{ route('verticalList.index',@$sub_menus->slug) }}">
+													href="/admin/{{ @$sub_menus->link }}">
 													<span class="sub-side-menu__label">{{ @$sub_menus->title }}</span>
 												</a>
 											</li>
@@ -448,7 +448,7 @@
 										</a>
 										@php
 										$innovation = \App\Models\MainMenu::where('slug','innovation')->first();
-										$inn_datas = \App\Models\SubMenu::where('menu_id',$innovation->id)->get();
+										$inn_datas = \App\Models\SubMenu::where('menu_id',@$innovation->id)->get();
 										@endphp
 										<ul class="slide-menu">
 											@foreach ($inn_datas as $inn)												
