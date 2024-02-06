@@ -125,7 +125,7 @@ Route::get('/galleries/{id}', [App\Http\Controllers\GalleryController::class, 'g
 
 
 Route::controller(FrontendController::class)->group(function(){
-   Route::get('/Our-Approach', 'approach')->name('home.approachs');
+   Route::get('/our_approach', 'approach')->name('home.approachs');
    Route::get('/charger_services', 'chargerServices')->name('home.chargerServices');
    Route::get('/Products', 'products')->name('home.products');
    Route::get('/cmsServices', 'cmsServices')->name('home.cmsServices');
@@ -140,6 +140,10 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/innovation/{slug}', 'innovation')->name('home.innovation');
   
 });
+Route::Resource('/admin-approach', ApproachController::class);
+Route::get('getApproach',[ApproachController::class, 'getApproach'])->name('getApproach');
+
+
 Route::get('/admin/verticals/{slug}', [VerticalController::class, 'index'])->name('verticalList.index');
 Route::get('/vertical/create/{slug}', [VerticalController::class, 'create'])->name('verticalList.create');
 Route::Resource('/admin-verticals', VerticalController::class)->except(['index','create']);
@@ -149,5 +153,4 @@ Route::Resource('/admin/innovation/{slug}', InnovationController::class);
 Route::post('innovation/store',[InnovationController::class,'store'])->name('innovation.store');
 
 
-Route::Resource('/admin-approach', ApproachController::class);
-Route::get('getApproach',[ApproachController::class, 'getApproach'])->name('getApproach');
+

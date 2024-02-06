@@ -378,24 +378,7 @@
                                         <span class="side-menu__label">Menus</span>
                                     </a>
                                 </li>
-                                <li class="slide">
-                                    <a class="side-menu__item {{ \Request::route()->getName() == 'gallery.index' ? 'active' : '' }}"
-                                        href="{{ url('gallery_category') }}">
-                                        <i class="side-menu__icon fe fe-package"> </i>
-                                        <span class="side-menu__label">Gallery</span>
-
-                                    </a>
-
-                                </li>
-                                <li class="slide">
-                                    <a class="side-menu__item {{ \Request::route()->getName() == 'admin-approach.index' ? 'active' : '' }}"
-                                        href="{{ route('admin-approach.index') }}">
-                                        <i class="side-menu__icon fe fe-package"> </i>
-                                        <span class="side-menu__label">Our Approach</span>
-
-                                    </a>
-
-                                </li>
+                             
 								
 									<li class="slide">
 										<a class="side-menu__item {{ ((\Request::route()->getName() == 'gallery.index') )? 'active' : '' }}"  href="{{url('gallery_category')}}">
