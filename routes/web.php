@@ -142,7 +142,9 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/Innovation/{slug}', 'innovation')->name('home.innovation');
   
 });
-Route::Resource('/admin-verticals', VerticalController::class);
+Route::get('/verticalList/{slug}', [VerticalController::class, 'index'])->name('verticalList.index');
+Route::get('/vertical/create/{slug}', [VerticalController::class, 'create'])->name('verticalList.create');
+Route::Resource('/admin-verticals', VerticalController::class)->except(['index','create']);
 Route::get('getVerticals',[VerticalController::class, 'getVerticals'])->name('getVerticals');
 
 Route::Resource('/innovations', InnovationController::class);

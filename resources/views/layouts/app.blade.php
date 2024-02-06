@@ -373,24 +373,33 @@
 										</a>
 
 									</li>
+									@php
+										$menu=App\Models\MainMenu::where('slug','verticals')->first();
+										$sub_menu=App\Models\SubMenu::where('menu_id',$menu->id)->get();
+									@endphp
+									@if($sub_menu->isNotEmpty())
 									<li class="slide">
 										<a class="side-menu__item" data-bs-toggle="slide" href="">
 											<i class="side-menu__icon fe fe-list"> </i>
-											<span class="side-menu__label">Verticals</span>
+											<span class="side-menu__label">{{ @$menu->title }}</span>
 											<i class="angle fe fe-chevron-down"> </i>
 										</a>
 
 										<ul class="slide-menu">
-
+										
+											@foreach ($sub_menu as $sub_menus )
 											<li class="sub-slide">
 												<a class="slide-item" data-bs-toggle="sub-slide"
-													href="{{ route('admin-verticals.index') }}">
-													<span class="sub-side-menu__label">Feet</span>
+													href="{{ route('verticalList.index',$sub_menus->slug) }}">
+													<span class="sub-side-menu__label">{{ @$sub_menus->title }}</span>
 												</a>
 											</li>
+											@endforeach
+											
 
 										</ul>
 									</li>
+									@endif
 									<li class="slide">
 										<a class="side-menu__item {{ ((\Request::route()->getName() == 'innovations.index') )? 'active' : '' }}"  href="{{url('innovations')}}">
 											<i class="side-menu__icon fe fe-settings"> </i>

@@ -8,7 +8,7 @@
 		<!-- breadcrumb -->
 		<div class="breadcrumb-header justify-content-between row me-0 ms-0" >
 			
-				<h4 class="content-title mb-2">create
+				<h4 class="content-title mb-2">{{ $vertical->id ? 'Update' : 'Create' }} {{ $vertical->id ? @$vertical->slug : @$slug }}
 
 </h4>
 				
@@ -30,15 +30,18 @@
                            
                             @if(@$vertical->id)
                             <form name="patientForm" id="patientForm" method="post" action="{{ route('admin-verticals.update',$vertical->id ) }}" enctype="multipart/form-data">
-                            @csrf
+                            
+                                @csrf
                                @method('PATCH')
                                @else
                                <form name="patientForm" id="patientForm" method="post" action="{{ route('admin-verticals.store') }}" enctype="multipart/form-data">
-                                @csrf
+                               
                             @endif
                         <div class="card">
                             <div class="card-body">
                         <div class="form-group">
+                            <input type="hidden" value="{{ $vertical->id ? @$vertical->slug : @$slug }}" name="slug">
+                            @csrf
                             <div class="row">   
                                 <div class="col-md-6 mb-6">
                                     <label class="form-label">
