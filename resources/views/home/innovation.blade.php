@@ -24,14 +24,14 @@
                     <div class="pq-icon-box pq-style-4 mt-4 mt-md-0">
                       
                         <div class="pq-icon-box-content">
-                            {!! $innovation->content !!}
+                            {!! @$innovation->content !!}
                               </div>
                     </div>
                    
                     
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
-                    <img src="{{ asset('innovation/' . $innovation->image) }}" alt="">
+                    <img src="{{ asset('innovation/' . @$innovation->image) }}" alt="">
                 </div>
             </div>
         </div>
