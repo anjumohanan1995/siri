@@ -69,6 +69,56 @@
                 </div>
             </div>
         </div>
+
+        @php
+            // Get the main menu items.
+            $mainMenus = App\Models\MainMenu::whereNull('deleted_at')->get();
+
+            // Initialize an empty array to store the structured data.
+            $menuData = [];
+
+            // Loop through each main menu item.
+            foreach ($mainMenus as $mainMenu) {
+                $menu = [
+                    'title' => $mainMenu->title,
+                    'url' => $mainMenu->link_type == 'link' ? $mainMenu->link : $mainMenu->slug,
+                    'submenu' => [],
+                ];
+
+                // Get the submenus for the current main menu.
+                $subMenus = App\Models\SubMenu::where('menu_id', $mainMenu->id)
+                    ->whereNull('deleted_at')
+                    ->get();
+
+                // Loop through each submenu.
+                foreach ($subMenus as $subMenu) {
+                    $submenu = [
+                        'title' => $subMenu->title,
+                        'url' => $subMenu->link_type == 'link' ? $subMenu->link : $subMenu->slug,
+                        'subsubmenu' => [],
+                    ];
+
+                    // Get the subsubmenus for the current submenu.
+                    $subSubMenus = App\Models\SubSubMenu::where('sub_menu_id', $subMenu->id)
+                        ->whereNull('deleted_at')
+                        ->get();
+
+                    // Loop through each subsubmenu.
+                    foreach ($subSubMenus as $subSubMenu) {
+                        $submenu['subsubmenu'][] = [
+                            'title' => $subSubMenu->title,
+                            'url' => $subSubMenu->link_type == 'link' ? $subSubMenu->link : $subSubMenu->slug,
+                        ];
+                    }
+
+                    // Add the submenu to the main menu
+                    $menu['submenu'][] = $submenu;
+                }
+
+                // Add the main menu to the overall structure
+                $menuData[] = $menu;
+            }
+        @endphp
         <div class="pq-bottom-header pq-has-sticky">
             <div class="container">
                 <div class="row">
@@ -85,7 +135,7 @@
                                         @foreach ($menuData as $menu)
                                             <li class="menu-item">
                                                 <a href="{{ $menu['url'] }}">{{ $menu['title'] }}</a><i
-                                                class="{{ isset($menu['submenu']) && !empty($menu['submenu']) ? 'fa fa-chevron-down' : '' }} pq-submenu-icon"></i>
+                                                    class="{{ isset($menu['submenu']) && !empty($menu['submenu']) ? 'fa fa-chevron-down' : '' }} pq-submenu-icon"></i>
                                                 <ul class="sub-menu">
                                                     @if (!empty($menu['submenu']))
                                                         @foreach ($menu['submenu'] as $submenu)
