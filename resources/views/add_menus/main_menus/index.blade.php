@@ -27,7 +27,18 @@
                 <div class="row row-sm">
                     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
                         <div class="card">
+
                             <div class="card-body  table-new">
+                                <div class="row">
+                                    @if (session('success'))
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            {{ session('success') }}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    @endif
+                                </div>
                                 <div class="row mb-3">
                                     <div class="col-md-1 col-6 text-center">
                                         <div class="task-box primary mb-0">
@@ -264,8 +275,7 @@
                         return d; // Sending all DataTable parameters
                     }
                 },
-                columns: [
-                    {
+                columns: [{
                         data: 'no',
                         name: 'no'
                     },
@@ -291,33 +301,32 @@
                     'pdfHtml5'
                 ],
             });
-    
+
             $('#example').on('click', '.deleteItem', function() {
                 var id = $(this).data('id');
                 $('#requestId').val(id);
                 $('#confirmation-popup').modal('show');
             });
-    
+
             $('#confirmation-popup').on('hidden.bs.modal', function() {
                 $('#requestId').val('');
             });
-    
+
             $('#submit').click(function() {
                 table.draw();
             });
-    
+
             $('#refresh').click(function() {
                 $("#delete_ctm").val('');
                 table.draw();
             });
-    
+
             $('#delete').click(function() {
                 $("#delete_ctm").val(1);
                 table.draw();
             });
-    
-      
+
+
         });
     </script>
-    
 @endsection
