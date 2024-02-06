@@ -144,9 +144,16 @@ class SubSubMenuController extends Controller
      * @param  \App\Models\SubSubMenu  $subSubMenu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubSubMenu $subSubMenu)
+    public function destroy($id)
     {
-        //
+        $subMenu = SubSubMenu::find($id);
+
+
+        // Perform the hard delete
+        $subMenu->forceDelete();
+
+        // Optionally, you can return a response or redirect back
+        return redirect()->back()->with('success', 'Sub sub menu item deleted successfully.');
     }
     public function getSubSubMenus(Request $request)
     {
