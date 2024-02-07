@@ -149,8 +149,8 @@ Route::get('/vertical/create/{slug}', [VerticalController::class, 'create'])->na
 Route::Resource('/admin-verticals', VerticalController::class)->except(['index','create']);
 Route::get('getVerticals',[VerticalController::class, 'getVerticals'])->name('getVerticals');
 
-Route::Resource('/admin/innovation/{slug}', InnovationController::class);
-Route::post('innovation/store',[InnovationController::class,'store'])->name('innovation.store');
+Route::get('/admin/innovation/{slug}', [InnovationController::class, 'index'])->name('innovation.index');
+Route::post('admin/innovation/store',[InnovationController::class,'store'])->name('innovation.store');
 
-
-
+Route::resource('/admin/contact-us', App\Http\Controllers\ContactUsController::class);
+Route::get('getContact',[VerticalController::class, 'getContact'])->name('getContact');
