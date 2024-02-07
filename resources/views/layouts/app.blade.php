@@ -413,7 +413,7 @@
 											@foreach ($sub_menu as $sub_menus )
 											<li class="sub-slide">
 												<a class="slide-item" data-bs-toggle="sub-slide"
-													href="/admin/{{ @$sub_menus->link }}">
+													href="/admin{{ @$sub_menus->link }}">
 													<span class="sub-side-menu__label">{{ @$sub_menus->title }}</span>
 												</a>
 											</li>
@@ -438,7 +438,7 @@
 											
 											<li class="sub-slide">
 												<a class="slide-item" data-bs-toggle="sub-slide"
-													href="/admin/{{ @$inn->link }}">
+													href="/admin{{ @$inn->link }}">
 													<span class="sub-side-menu__label">{{ @$inn->title }}</span>
 												</a>
 											</li>

@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\InnovationController;
 use Illuminate\Support\Facades\Route;
 
@@ -153,4 +154,5 @@ Route::get('/admin/innovation/{slug}', [InnovationController::class, 'index'])->
 Route::post('admin/innovation/store',[InnovationController::class,'store'])->name('innovation.store');
 
 Route::resource('/admin/contact-us', App\Http\Controllers\ContactUsController::class);
-Route::get('getContact',[VerticalController::class, 'getContact'])->name('getContact');
+Route::get('getContactus',[ContactUsController::class, 'getContactUs'])->name('getContactUs');
+Route::post('/contact-us/delete/{id}', [ContactUsController::class, 'destroy'])->name('delete-contact');

@@ -2,10 +2,18 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\ContactUs;
-use App\Models\GalleryCategory;
-use App\Models\Gallery;
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
+use Carbon\Carbon;
+use Excel;
+use Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Role;
+
 
 class ContactUsController extends Controller
 {
@@ -16,9 +24,9 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        $contact = ContactUs::all();
-        return view('admin.contactus.index', compact('contact'));
-
+        
+            return view('admin.contactus.index');
+       
     }
 
     /**
@@ -26,9 +34,74 @@ class ContactUsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getContactUs(Request $request){
+       
+
+         ## Read value
+         $draw = $request->get('draw');
+         $start = $request->get("start");
+         $rowperpage = $request->get("length"); // Rows display per page
+
+         $columnIndex_arr = $request->get('order');
+         $columnName_arr = $request->get('columns');
+         $order_arr = $request->get('order');
+         $search_arr = $request->get('search');
+
+         $columnIndex = $columnIndex_arr[0]['column']; // Column index
+         $columnName = $columnName_arr[$columnIndex]['data']; // Column name
+         $columnSortOrder = $order_arr[0]['dir']; // asc or desc
+         $searchValue = $search_arr['value']; // Search value
+
+
+
+             // Total records
+             $totalRecord = ContactUs::where('deleted_at',null);
+                $totalRecords = $totalRecord->select('count(*) as allcount')->count();
+
+
+             $totalRecordswithFilte = ContactUs::where('deleted_at',null);
+             $totalRecordswithFilter = $totalRecordswithFilte->select('count(*) as allcount')->count();
+
+             // Fetch records
+             $items = ContactUs::where('deleted_at',null)->orderBy($columnName,$columnSortOrder);          
+             $records = $items->skip($start)->take($rowperpage)->get();
+       
+
+         $data_arr = array();
+
+         foreach($records as $record){
+             $id = $record->id;
+             $title = $record->title;
+             $content = $record->content;
+             $img = $record->icon;
+              $created_at =  $record->created_at;
+              if($img)
+              $icon = '<img src="' . asset('contact-us/' . $img) . '" width="200px" height="160px" />'; 
+            else $icon ='';
+                       $data_arr[] = array(
+                "id" => $id,
+                "title" => $title,
+                "content" => $content,
+                "icon" => $icon,
+                "created_at" => $created_at,
+                "edit" => '<div class="settings-main-icon"><a  href="' . url('admin/contact-us/'.$id.'/edit') . '"><i class="fe fe-edit-2 bg-info me-1"></i></a>&nbsp;&nbsp;<a class="deleteItem" data-id="'.$id.'"><i class="si si-trash bg-danger "></i></a></div>'
+
+            );
+         }
+
+         $response = array(
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordswithFilter,
+            "aaData" => $data_arr
+         );
+
+         return response()->json($response);
+ }
     public function create()
     {
-        return view('gallery.create');
+            return view('admin.contactus.create');
+        
     }
 
     /**
@@ -39,16 +112,44 @@ class ContactUsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'gallery_name' => 'required',
-            'gallery_status' => 'required',
-        ]);
-        $gal = new GalleryCategory();
-        $gal->name = $request->gallery_name;
-        $gal->status = $request->gallery_status;
-        if ($gal->save()) {
-            return redirect()->route('gallery_category.index')->with('success', 'Gallery saved successfully');
-        }
+
+           $validate = Validator::make($request->all(),
+            [
+                'title' => 'required',
+                'content' => 'required',
+            ]);
+            if($validate->fails())
+            {
+                $messages = $validate->getMessageBag();
+                return redirect()->back()->withErrors($validate);
+            }
+
+            $data = $request->all();
+
+            if ($request->hasfile('icon')) {
+
+                $images = $request->icon;
+                $img = time() . rand(100, 999) . '.' . $images->extension();
+            
+                $images->move(public_path('/contact-us'), $img);
+            
+                $data['icon'] = $img;
+            
+            }else{
+                $data['icon'] = '';
+            }
+
+            ContactUs::create([
+                'title' => $data['title'],
+                'content' => $data['content'],
+                'icon' => $data['icon'],
+            ]);
+
+
+           return redirect()->route('contact-us.index')
+
+           ->with('status','Contact Created Successfully');
+
     }
 
     /**
@@ -70,10 +171,10 @@ class ContactUsController extends Controller
      */
     public function edit($id)
     {
-        $gallery_category = GalleryCategory::find($id);
-        //$gallery=getCategoryGallery($id);
-        $gallery = Gallery::where('gallery_category_id', $id)->get();
-        return view('gallery.edit', compact('gallery_category', 'gallery'));
+       
+            $data=ContactUs::find($id);
+            return view('admin.contactus.edit', compact('data'));
+        
     }
 
     /**
@@ -85,11 +186,48 @@ class ContactUsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $gal = GalleryCategory::find($id);
-        $gal->name = $request->gallery_name;
-        $gal->status = $request->gallery_status;
-        $gal->update();
-        return redirect()->route('gallery_category.edit', $id)->with('success', 'gallery saved successfully');
+        $validate = Validator::make($request->all(),
+            [
+                'title' => 'required',
+                'content' => 'required',
+            ]);
+            if($validate->fails())
+            {
+                $messages = $validate->getMessageBag();
+                return redirect()->back()->withErrors($validate);
+            }
+
+
+        $book=ContactUs::findOrFail($id);
+        $data = $request->all();
+
+        if ($request->hasfile('icon')) {
+
+            $images = $request->icon;
+            $img = time() . rand(100, 999) . '.' . $images->extension();
+        
+            $images->move(public_path('/contact-us'), $img);
+        
+            $data['icon'] = $img;
+        
+        }else{
+            $data['icon'] = $book->icon;
+        }
+
+    
+        $book->update([
+          'title' => $data['title'],
+            'content' => $data['content'],
+            'icon' => $data['icon'],
+        ]);
+
+        //$book->update($request->all());
+
+       return redirect()->route('contact-us.index')
+                       ->with('status','Contact updated successfully');
+        //  return response()->json([
+        //                 'success' => 'User updated successfully.'
+        //             ]);
     }
 
     /**
@@ -100,13 +238,11 @@ class ContactUsController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $data= ContactUs::find($id)->delete();
 
-    public function galleryCategoryList(Request $request)
-    {
-        $gallery_cat_list = GalleryCategory::orderBy('id', 'DESC')->get();
-        return view('gallery_category', compact('gallery_cat_list'));
-    }
+        return response()->json([
+                        'success' => 'Contact Deleted successfully.'
+                    ]);
 
+    }
 }
