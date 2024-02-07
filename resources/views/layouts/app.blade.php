@@ -378,80 +378,78 @@
                                         <span class="side-menu__label">Menus</span>
                                     </a>
                                 </li>
-                             
-								
-									<li class="slide">
-										<a class="side-menu__item {{ ((\Request::route()->getName() == 'gallery.index') )? 'active' : '' }}"  href="{{url('gallery_category')}}">
-											<i class="side-menu__icon fe fe-package"> </i>
-											<span class="side-menu__label">Gallery</span>
 
-										</a>
 
-									</li>
+                                <li class="slide">
+                                    <a class="side-menu__item {{ \Request::route()->getName() == 'gallery.index' ? 'active' : '' }}"
+                                        href="{{ url('gallery_category') }}">
+                                        <i class="side-menu__icon fe fe-package"> </i>
+                                        <span class="side-menu__label">Gallery</span>
+
+                                    </a>
+
+                                </li>
+                                <li class="slide">
+                                    <a class="side-menu__item {{ \Request::route()->getName() == 'admin-approach.index' ? 'active' : '' }}"
+                                        href="{{ route('admin-approach.index') }}">
+                                        <i class="side-menu__icon fe fe-package"> </i>
+                                        <span class="side-menu__label">Our Approach</span>
+
+                                    </a>
+
+                                </li>
+                                @php
+                                    $menu = App\Models\MainMenu::where('slug', 'verticals')->first();
+                                    $sub_menu = App\Models\SubMenu::where('menu_id', @$menu->id)->get();
+                                @endphp
+                                @if (!empty($sub_menu))
                                     <li class="slide">
-										<a class="side-menu__item {{ ((\Request::route()->getName() == 'admin-approach.index') )? 'active' : '' }}"  href="{{route('admin-approach.index')}}">
-											<i class="side-menu__icon fe fe-package"> </i>
-											<span class="side-menu__label">Our Approach</span>
+                                        <a class="side-menu__item " data-bs-toggle="slide" href="">
+                                            <i class="side-menu__icon fe fe-list"> </i>
+                                            <span class="side-menu__label">{{ @$menu->title }}</span>
+                                            <i class="angle fe fe-chevron-down"> </i>
+                                        </a>
 
-										</a>
+                                        <ul class="slide-menu">
 
-									</li>
-									@php
-										$menu=App\Models\MainMenu::where('slug','verticals')->first();
-										$sub_menu=App\Models\SubMenu::where('menu_id',$menu->id)->get();
-									@endphp
-									@if(!empty($sub_menu))
-									<li class="slide">
-										<a class="side-menu__item " data-bs-toggle="slide" href="">
-											<i class="side-menu__icon fe fe-list"> </i>
-											<span class="side-menu__label">{{ @$menu->title }}</span>
-											<i class="angle fe fe-chevron-down"> </i>
-										</a>
+                                            @foreach ($sub_menu as $sub_menus)
+                                                <li class="sub-slide">
+                                                    <a class="slide-item" data-bs-toggle="sub-slide"
+                                                        href="/admin/{{ @$sub_menus->link }}">
+                                                        <span
+                                                            class="sub-side-menu__label">{{ @$sub_menus->title }}</span>
+                                                    </a>
+                                                </li>
+                                            @endforeach
 
-										<ul class="slide-menu">
-										
-											@foreach ($sub_menu as $sub_menus )
-											<li class="sub-slide">
-												<a class="slide-item" data-bs-toggle="sub-slide"
-													href="/admin/{{ @$sub_menus->link }}">
-													<span class="sub-side-menu__label">{{ @$sub_menus->title }}</span>
-												</a>
-											</li>
-											@endforeach
-											
 
-										</ul>
-									</li>
-									@endif
-									<li class="slide {{ ((\Request::route()->getName() == 'innovations.index') )? ' is-expanded' : '' }}">
-										<a class="side-menu__item"  data-bs-toggle="slide" href="">
-											<i class="side-menu__icon fe fe-list"> </i>
-											<span class="side-menu__label">Innovations</span>
-											<i class="angle fe fe-chevron-down"> </i>
-										</a>
-										@php
-										$innovation = \App\Models\MainMenu::where('slug','innovation')->first();
-										$inn_datas = \App\Models\SubMenu::where('menu_id',@$innovation->id)->get();
-										@endphp
-										<ul class="slide-menu">
-											@foreach ($inn_datas as $inn)												
-											
-											<li class="sub-slide">
-												<a class="slide-item" data-bs-toggle="sub-slide"
-													href="/admin/{{ @$inn->link }}">
-													<span class="sub-side-menu__label">{{ @$inn->title }}</span>
-												</a>
-											</li>
-											@endforeach
-											{{--  <li class="sub-slide {{ ((\Request::route()->getName() == 'verticals.index') )? 'active is-expanded' : '' }}">
-												<a class="slide-item {{ ((\Request::route()->getName() == 'verticals.index') )? 'active' : '' }}" data-bs-toggle="sub-slide"
-													href="{{url('innovations')}}">
-													<span class="sub-side-menu__label">Tech Speak</span>
-												</a>
-											</li>  --}}
+                                        </ul>
+                                    </li>
+                                @endif
+                                <li
+                                    class="slide {{ \Request::route()->getName() == 'innovations.index' ? ' is-expanded' : '' }}">
+                                    <a class="side-menu__item" data-bs-toggle="slide" href="">
+                                        <i class="side-menu__icon fe fe-list"> </i>
+                                        <span class="side-menu__label">Innovations</span>
+                                        <i class="angle fe fe-chevron-down"> </i>
+                                    </a>
+                                    @php
+                                        $innovation = \App\Models\MainMenu::where('slug', 'innovation')->first();
+                                        $inn_datas = \App\Models\SubMenu::where('menu_id', @$innovation->id)->get();
+                                    @endphp
+                                    <ul class="slide-menu">
+                                        @foreach ($inn_datas as $inn)
+                                            <li class="sub-slide">
+                                                <a class="slide-item" data-bs-toggle="sub-slide"
+                                                    href="/admin/{{ @$inn->link }}">
+                                                    <span class="sub-side-menu__label">{{ @$inn->title }}</span>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                        
 
-										</ul>
-									</li>
+                                    </ul>
+                                </li>
 
                             @endif
 
@@ -682,10 +680,10 @@
             });
             $(document).ready(function() {
                 /*$('#example').DataTable(
-        $()
+                $()
 
 
-            	);*/
+                    	);*/
                 $('#example1').DataTable();
 
 
