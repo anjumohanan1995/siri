@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Approach;
+use App\Models\ContactUs;
+use App\Models\DynamicPage;
 use App\Models\Innovation;
 use App\Models\Vertical;
 use Illuminate\Http\Request;
@@ -32,7 +34,9 @@ class FrontendController extends Controller
         return view('home.solutions');
     }
     public function contact(){
-        return view('home.contact_us');
+        $contact=DynamicPage::where('slug','contact-us')->first();
+        //dd($contact);
+        return view('home.contact_us',compact('contact'));
     }
     public function verticals($slug){
         $vertical=Vertical::where('slug',$slug)->first();
@@ -48,5 +52,9 @@ class FrontendController extends Controller
         $innovation=Innovation::where('slug',$slug)->first();
        
         return view ('home.innovation', compact('innovation','slug'));
+    }
+    public function dynamicPage($slug){
+        $content=DynamicPage::where('slug',$slug)->first();
+        return view('home.dynamic_page',compact('content'));
     }
 }

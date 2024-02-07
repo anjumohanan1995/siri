@@ -180,7 +180,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <a href="{{ route('home.contact') }}" class="pq-button">
+                            <a href="\" class="pq-button">
                                 <div class="pq-button-block">
                                     <span class="pq-button-line-left"></span>
                                     <span class="pq-button-text">Get a Quote</span>

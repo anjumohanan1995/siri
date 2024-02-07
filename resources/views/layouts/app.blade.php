@@ -450,7 +450,16 @@
 
 										</ul>
 									</li>
-									<li class="slide">
+                                    <li class="slide">
+                                        <a class="side-menu__item {{ \Request::route()->getName() == 'admin-approach.index' ? 'active' : '' }}"
+                                            href="{{ route('dynamic-pages.index') }}">
+                                            <i class="side-menu__icon fe fe-package"> </i>
+                                            <span class="side-menu__label">Pages</span>
+    
+                                        </a>
+    
+                                    </li>
+									{{--  <li class="slide">
 										<a class="side-menu__item " data-bs-toggle="slide" href="">
 											<i class="side-menu__icon fe fe-list"> </i>
 											<span class="side-menu__label">Company</span>
@@ -465,7 +474,7 @@
 												</a>
 											</li>
 										</ul>
-									</li>
+									</li>  --}}
 
                             @endif
 

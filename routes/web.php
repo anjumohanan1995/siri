@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\DynamicPageController;
 use App\Http\Controllers\InnovationController;
 use Illuminate\Support\Facades\Route;
 
@@ -132,7 +133,10 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/cmsServices', 'cmsServices')->name('home.cmsServices');
    Route::get('/consultingSiri', 'consultingSiri')->name('home.consultingSiri');
    Route::get('/Solutions', 'Solutions')->name('home.solutions');
-   Route::get('/Contact-Us', 'contact')->name('home.contact');
+
+   Route::get('/page/contact-us', 'contact')->name('home.contact');
+
+   Route::get('/page/{slug}', 'dynamicPage')->name('dynamicPage');
 
    Route::get('/verticals/{slug}', 'verticals')->name('home.verticals');
    Route::get('/About-us', 'aboutUs')->name('home.aboutUs');
@@ -156,3 +160,8 @@ Route::post('admin/innovation/store',[InnovationController::class,'store'])->nam
 Route::resource('/admin/contact-us', App\Http\Controllers\ContactUsController::class);
 Route::get('getContactus',[ContactUsController::class, 'getContactUs'])->name('getContactUs');
 Route::post('/contact-us/delete/{id}', [ContactUsController::class, 'destroy'])->name('delete-contact');
+
+Route::get('/dynamic_pages', [DynamicPageController::class, 'index'])->name('dynamic-pages.index');
+Route::get('getDynamicMenus', [DynamicPageController::class, 'getDynamicMenus'])->name('getDynamicMenus');
+Route::get('dynamic-pages/create/{id}',[DynamicPageController::class,'create'])->name('dynamic-pages.create');
+Route::post('dynamic-pages/store',[DynamicPageController::class,'store'])->name('dynamic-pages.store');
