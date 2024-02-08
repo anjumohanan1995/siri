@@ -8,12 +8,12 @@
 						<!-- breadcrumb -->
 						<div class="breadcrumb-header justify-content-between row me-0 ms-0" >
 							<div class="col-xl-3">
-								<h4 class="content-title mb-2">Contact Us
+								<h4 class="content-title mb-2">Brands
 </h4>
 								<nav aria-label="breadcrumb">
 									<ol class="breadcrumb">
 
-										<li class="breadcrumb-item active" aria-current="page"><i class="side-menu__icon fe fe-box"> </i> - User
+										<li class="breadcrumb-item active" aria-current="page"><i class="side-menu__icon fe fe-box"> </i> - Brand
 </li>
 									</ol>
 								</nav>
@@ -27,13 +27,7 @@
 						<!-- /breadcrumb -->
 						<!-- main-content-body -->
 						<div class="main-content-body">
-                            @if ($message = Session::get('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fa fa-window-close"></i></button>
-                                {{ $message }}
-                            </div>
-
-                        @endif
+                          
 							<!-- row -->
 
 							<!-- /row -->
@@ -45,7 +39,7 @@
 										 <div class="row mb-3">
 											<div class="col-md-1 col-6 text-center">
 											 	<div class="task-box primary mb-0">
-											 		<a href="{{route('contact-us.create')}}">
+											 		<a href="{{route('brands.create')}}">
 											 			<p class="mb-0 tx-12">Add </p>
 											 			<h3 class="mb-0"><i class="fa fa-plus"></i></h3>
 											 		</a>
@@ -118,7 +112,7 @@
                 </div>
                 <div class="modal-body p-5">
                     <div class="text-center">
-                        <h4>Are you sure to delete this Contact?</h4>
+                        <h4>Are you sure to delete this Brand?</h4>
                     </div>
                     <form id="ownForm">
                         @csrf
@@ -159,7 +153,7 @@ $(document).on("click",".deleteItem",function() {
             console.log(reqId);
             $.ajax({
             	headers: {'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')},
-                url: '{{ url("contact-us/delete") }}'+'/'+reqId,
+                url: '{{ url("brands/delete") }}'+'/'+reqId,
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -200,7 +194,7 @@ $(document).on("click",".deleteItem",function() {
 	        ],
              "ajax": {
 
-			       	"url": "{{route('getContactUs')}}",
+			       	"url": "{{route('getBrands')}}",
 			       	// "data": { mobile: $("#mobile").val()}
 			       	"data": function ( d ) {
 			        	return $.extend( {}, d, {

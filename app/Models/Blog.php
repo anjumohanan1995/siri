@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class ContactUs extends Eloquent
+class Blog extends Eloquent
 {
     use SoftDeletes;
 
     protected $connection = 'mongodb';
-    protected $collection = 'contactus';
+    protected $collection = 'blogs';
 
     protected $fillable = [
-        'title','content','icon'
+        'title','content','image'
     ];
 }

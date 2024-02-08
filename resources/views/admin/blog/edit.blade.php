@@ -8,11 +8,11 @@
 		<!-- breadcrumb -->
 		<div class="breadcrumb-header justify-content-between row me-0 ms-0 mb-3" >
 			<div class="col-xl-3">
-				<h4 class="content-title mb-2"> Edit Contact  </h4>
+				<h4 class="content-title mb-2"> Edit Blog  </h4>
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
 
-						<li class="breadcrumb-item active" aria-current="page"><i class="side-menu__icon fe fe-box"> </i> - Edit Home Page Content </li>
+						<li class="breadcrumb-item active" aria-current="page"><i class="side-menu__icon fe fe-box"> </i> - Edit Blog </li>
 					</ol>
 				</nav>
 			</div>
@@ -36,8 +36,7 @@
 
 							<div class="card-body">
 
-								<div class="mb-4 main-content-label">Home Page Content  - Information</div>
-								<form name="createForm"  method="post" action="{{ route('contact-us.update',$data->id) }}" enctype="multipart/form-data">
+								<form name="createForm"  method="post" action="{{ route('blogs.update',$data->id) }}" enctype="multipart/form-data">
                                     	@csrf
                                         @method('PUT')
 									<input type="hidden" name="user_id" value="{{ \Auth::user()->id}}">

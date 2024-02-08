@@ -459,22 +459,28 @@
                                         </a>
     
                                     </li>
-									{{--  <li class="slide">
+								  <li class="slide">
 										<a class="side-menu__item " data-bs-toggle="slide" href="">
 											<i class="side-menu__icon fe fe-list"> </i>
-											<span class="side-menu__label">Company</span>
+											<span class="side-menu__label">Homepage Contents</span>
 											<i class="angle fe fe-chevron-down"> </i>
 										</a>
 
 										<ul class="slide-menu">										
 											<li class="sub-slide">
 												<a class="slide-item" data-bs-toggle="sub-slide"
-													href="/admin/contact-us">
-													<span class="sub-side-menu__label">Contact Us</span>
+													href="{{ route('blogs.index') }}">
+													<span class="sub-side-menu__label">Blogs</span>
+												</a>
+											</li>
+                                            <li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ route('brands.index') }}">
+													<span class="sub-side-menu__label">Brands</span>
 												</a>
 											</li>
 										</ul>
-									</li>  --}}
+									</li> 
 
                             @endif
 
