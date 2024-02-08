@@ -12,7 +12,7 @@ class Vertical extends Eloquent
       
     protected $collection = 'verticals';  
     protected $fillable = [
-        'title','slug', 'sub_title', 'content','status','image','banner_image'
+        'title','title1','slug', 'sub_title', 'content','status','image','banner_image'
     ];
   
 }

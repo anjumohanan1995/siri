@@ -25,7 +25,7 @@ class Kernel extends HttpKernel
         // Here we add newly created middleware
         \App\Http\Middleware\SecureHeaders::class,
         \App\Http\Middleware\Cors::class,
-        \App\Http\Middleware\RestrictScriptsMiddleware::class,
+      
     ];
 
     /**
