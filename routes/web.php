@@ -161,12 +161,15 @@ Route::post('admin/innovation/store',[InnovationController::class,'store'])->nam
 Route::resource('/admin/blogs', App\Http\Controllers\BlogController::class);
 Route::get('getBlogs',[BlogController::class, 'getBlogs'])->name('getBlogs');
 Route::post('/blogs/delete/{id}', [BlogController::class, 'destroy'])->name('delete-blog');
+Route::post('blogContent/store',[BlogController::class,'blogContentStore'])->name('blogContent.store');
 
 Route::resource('/admin/brands', App\Http\Controllers\BrandController::class);
 Route::get('getBrands',[BrandController::class, 'getBrands'])->name('getBrands');
 Route::post('/brands/delete/{id}', [BrandController::class, 'destroy'])->name('delete-brands');
+Route::post('brandContent/store',[BrandController::class,'brandContentStore'])->name('brandContent.store');
 
 Route::get('/dynamic_pages', [DynamicPageController::class, 'index'])->name('dynamic-pages.index');
 Route::get('getDynamicMenus', [DynamicPageController::class, 'getDynamicMenus'])->name('getDynamicMenus');
 Route::get('dynamic-pages/create/{id}',[DynamicPageController::class,'create'])->name('dynamic-pages.create');
 Route::post('dynamic-pages/store',[DynamicPageController::class,'store'])->name('dynamic-pages.store');
+

@@ -41,6 +41,54 @@
 							<div class="row row-sm">
 								<div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
 									<div class="card"><div class="card-body  table-new">
+										<form name="createForm" method="post" action="{{route('blogContent.store')}}" enctype="multipart/form-data">
+											@csrf
+													 <input type="hidden" name="user_id" value="{{ \Auth::user()->id}}">
+				 
+													 <div class="form-group">
+				 
+															 <div class="row">
+																 <div class="col-md-6"><label class="form-label">Title</label>
+																	<input type="text" class="form-control" placeholder="Title" name="title" id="title" value="{{ @$data->blog_title }}" />
+																 </div>
+																 <div class="col-md-6"><label class="form-label">Sub Title</label>
+																	<input type="text" class="form-control" placeholder="Sub Title" name="sub_title" id="sub_title" value="{{ @$data->blog_sub_title }}" />
+																	 @error('title')
+																		 <span class="text-danger">{{$message}}</span>
+																	 @enderror
+																 </div>
+															 </div><br>
+														  
+															 <div class="row">
+																<div class="col-md-10"><label class="form-label">Content</label>
+																	<textarea class="form-control" placeholder=" Content" name="content" >{{ @$data->blog_content }}</textarea>
+																	@error('content')
+																		<span class="text-danger">{{$message}}</span>
+																	@enderror																 </div>
+																 <div class="col-md-2"><br><br>
+																	<button type="submit" id="submit" class="btn btn-primary waves-effect waves-light">Save</button>
+																</div>
+																
+															  <br>                                       
+															 
+															
+				 
+													 </div>
+				 
+													
+												 </form>
+
+
+										</div>
+									</div>
+								</div>
+
+
+
+							</div>
+							<div class="row row-sm">
+								<div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
+									<div class="card"><div class="card-body  table-new">
 										 <div id="success_message" class="ajax_response" style="display: none;"></div>
 										 <div class="row mb-3">
 											<div class="col-md-1 col-6 text-center">
@@ -133,6 +181,7 @@
         </div>
     </div>
     <meta name="csrf_token" content="{{ csrf_token() }}" />
+	<script src="{{ asset('js/ckeditor/ckeditor.js')}}"></script>
 	<link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
 
 	<script src="{{ asset('js/toastr.js') }}"></script>

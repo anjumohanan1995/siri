@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Brand;
+use App\Models\HomeContent;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Validator;
@@ -24,8 +25,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        
-            return view('admin.brand.index');
+        $data = HomeContent::latest()->first();
+            return view('admin.brand.index',compact('data'));
        
     }
 
@@ -116,7 +117,6 @@ class BrandController extends Controller
            $validate = Validator::make($request->all(),
             [
                 'title' => 'required',
-                'content' => 'required',
             ]);
             if($validate->fails())
             {
@@ -189,7 +189,6 @@ class BrandController extends Controller
         $validate = Validator::make($request->all(),
             [
                 'title' => 'required',
-                'content' => 'required',
             ]);
             if($validate->fails())
             {
@@ -223,7 +222,7 @@ class BrandController extends Controller
 
         //$book->update($request->all());
 
-       return redirect()->route('brand.index')
+       return redirect()->route('brands.index')
                        ->with('status','Brand updated successfully');
         //  return response()->json([
         //                 'success' => 'User updated successfully.'
@@ -243,6 +242,34 @@ class BrandController extends Controller
         return response()->json([
                         'success' => 'Brand Deleted successfully.'
                     ]);
+
+    }
+    public function brandContentStore(Request $request)
+    {
+           $validate = Validator::make($request->all(),
+            [
+                'title' => 'required',
+            ]);
+            if($validate->fails())
+            {
+                $messages = $validate->getMessageBag();
+                return redirect()->back()->withErrors($validate);
+            }
+
+            $home = HomeContent::latest()->first();
+            if($home == ''){
+   
+                $home=   HomeContent::create([
+                 'blog_title' => @$request->title? $request->title:'']);
+             }
+           $home->brand_title = @$request->title;
+           $home->brand_sub_title = @$request->sub_title;
+           $home->brand_content = @$request->content;         
+           $home->save();
+
+           return redirect()->route('brands.index')
+
+           ->with('status','Created Successfully');
 
     }
 }

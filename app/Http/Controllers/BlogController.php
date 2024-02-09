@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Blog;
+use App\Models\HomeContent;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Validator;
@@ -24,8 +25,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        
-            return view('admin.blog.index');
+        $data = HomeContent::latest()->first();
+            return view('admin.blog.index',compact('data'));
        
     }
 
@@ -243,6 +244,34 @@ class BlogController extends Controller
         return response()->json([
                         'success' => 'Contact Deleted successfully.'
                     ]);
+
+    }
+    public function blogContentStore(Request $request)
+    {
+           $validate = Validator::make($request->all(),
+            [
+                'title' => 'required',
+            ]);
+            if($validate->fails())
+            {
+                $messages = $validate->getMessageBag();
+                return redirect()->back()->withErrors($validate);
+            }
+
+            $home = HomeContent::latest()->first();
+            if($home == ''){
+   
+                $home=   HomeContent::create([
+                 'blog_title' => @$request->title? $request->title:'']);
+             }
+           $home->blog_title = @$request->title;
+           $home->blog_sub_title = @$request->sub_title;
+           $home->blog_content = @$request->content;         
+           $home->save();
+
+           return redirect()->route('blogs.index')
+
+           ->with('status','Created Successfully');
 
     }
 }
