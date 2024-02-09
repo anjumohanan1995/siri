@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Approach;
+use App\Models\ContactUs;
+use App\Models\DynamicPage;
+use App\Models\Innovation;
 use App\Models\Vertical;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function approach(){
-        return view('home.approach');
+        $approach=Approach::first();
+        return view('home.approach',compact('approach'));
     }
 
     public function chargerServices(){
@@ -29,10 +34,12 @@ class FrontendController extends Controller
         return view('home.solutions');
     }
     public function contact(){
-        return view('home.contact_us');
+        $contact=DynamicPage::where('slug','contact-us')->first();
+        //dd($contact);
+        return view('home.contact_us',compact('contact'));
     }
     public function verticals($slug){
-        $vertical=Vertical::first();
+        $vertical=Vertical::where('slug',$slug)->first();
         return view ('home.verticals', compact('slug','vertical'));
     }
     public function aboutUs(){
@@ -42,6 +49,12 @@ class FrontendController extends Controller
         return view('home.team');
     }
     public function innovation($slug){
-        return view ('home.innovation', compact('slug'));
+        $innovation=Innovation::where('slug',$slug)->first();
+       
+        return view ('home.innovation', compact('innovation','slug'));
+    }
+    public function dynamicPage($slug){
+        $content=DynamicPage::where('slug',$slug)->first();
+        return view('home.dynamic_page',compact('content'));
     }
 }

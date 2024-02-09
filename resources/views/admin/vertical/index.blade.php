@@ -8,7 +8,7 @@
 		<!-- breadcrumb -->
 		<div class="breadcrumb-header justify-content-between row me-0 ms-0" >
 			<div class="col-xl-3">
-				<h4 class="content-title mb-2">Create</h4>
+				<h4 class="content-title mb-2">{{ ucfirst(@$slug) }} List</h4>
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
 
@@ -54,7 +54,7 @@
 						<div class="card-body  table-new">
                             <div class="row mb-3">
 								@if(@$vertical->id ==null)
-                                <a href="{{ route('admin-verticals.create') }}">
+                                <a href="{{ route('verticalList.create',$slug) }}">
                                 <div class="col-md-1 col-6 text-center" id="refresh">
                                     <div class="task-box bg-primary-gradient  mb-0">
                                         <p class="mb-0 tx-12">Create </p>
@@ -69,7 +69,7 @@
 
 <div >
 
-							<table id="example" class="table table-striped table-bordered" style="width:100%">
+							<table id="verticalTable" class="table table-striped table-bordered" style="width:100%">
 								<thead>
 									<tr>
 										<th> Sl No</th>
@@ -111,11 +111,11 @@
 @endif
 
 <script type="text/javascript">
-
+ var slug = '<?php echo addslashes($slug); ?>';
 
         $(document).ready(function(){
-
-     	   var table = $('#example').DataTable({
+			
+     	   var table = $('#verticalTable').DataTable({
             processing: true,
             serverSide: true,
            // info: false,
@@ -135,7 +135,7 @@
 				            "name": $("#name").val(),
 							 "application": $("#application").val(),
 				            "delete_ctm": $("#delete_ctm").val(),
-
+							"slug" :slug
 
 			          	});
        				}
@@ -182,8 +182,7 @@ order: [[ 4, 'desc' ]]
 
 
 
-         // DataTable
-
+         
 
       });
       </script>
