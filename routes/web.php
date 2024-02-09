@@ -1,5 +1,6 @@
 <?php
-use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DynamicPageController;
 use App\Http\Controllers\InnovationController;
 use Illuminate\Support\Facades\Route;
@@ -157,9 +158,13 @@ Route::get('getVerticals',[VerticalController::class, 'getVerticals'])->name('ge
 Route::get('/admin/innovation/{slug}', [InnovationController::class, 'index'])->name('innovation.index');
 Route::post('admin/innovation/store',[InnovationController::class,'store'])->name('innovation.store');
 
-Route::resource('/admin/contact-us', App\Http\Controllers\ContactUsController::class);
-Route::get('getContactus',[ContactUsController::class, 'getContactUs'])->name('getContactUs');
-Route::post('/contact-us/delete/{id}', [ContactUsController::class, 'destroy'])->name('delete-contact');
+Route::resource('/admin/blogs', App\Http\Controllers\BlogController::class);
+Route::get('getBlogs',[BlogController::class, 'getBlogs'])->name('getBlogs');
+Route::post('/blogs/delete/{id}', [BlogController::class, 'destroy'])->name('delete-blog');
+
+Route::resource('/admin/brands', App\Http\Controllers\BrandController::class);
+Route::get('getBrands',[BrandController::class, 'getBrands'])->name('getBrands');
+Route::post('/brands/delete/{id}', [BrandController::class, 'destroy'])->name('delete-brands');
 
 Route::get('/dynamic_pages', [DynamicPageController::class, 'index'])->name('dynamic-pages.index');
 Route::get('getDynamicMenus', [DynamicPageController::class, 'getDynamicMenus'])->name('getDynamicMenus');
