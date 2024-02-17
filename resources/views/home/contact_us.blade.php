@@ -11,7 +11,7 @@
             <div class="col-sm-12">
                 <nav aria-label="breadcrumb">
                     <div class="pq-breadcrumb-title">
-                        <h2>Contact Us</h2>
+                        <h2>{{ @$contact->heading }}</h2>
                     </div>
                     <div class="pq-breadcrumb-container">
                         <ol class="breadcrumb">
@@ -34,47 +34,51 @@
 <section class="contact">
     <div class="container">
         <div class="row justify-content-center">
+           
             <div class="col-lg-4 col-md-6">
                 <div class="pq-icon-box pq-style-7">
                     <div class="pq-icon">
-                        <a href="contact_us.html" class="animation-grow"><i class="ion ion-ios-location"></i></a>
+                        <img src="{{ asset('dynamic-pages/' . @$contact->image_one) }}"/>
                     </div>
                     <div class="pq-icon-box-content">
                         <h4 class="pq-icon-box-title">
-                            <a href="contact_us">Our Location</a>
+                            <a href="contact_us">{{ @$contact->title_one }}</a>
                         </h4>
-                        <p class="pq-icon-box-description">51, ALKA, 154 Major Parmeshwaran Road, Wadala (West), Mumbai - 400031
+                        <p class="pq-icon-box-description">{!! @$contact->content !!}
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+            <div class="col-lg-4 col-md-6">
                 <div class="pq-icon-box pq-style-7">
                     <div class="pq-icon">
-                        <a href="contact_us.html" class="animation-grow"><i class="ion ion-android-call"></i></a>
+                        <a href="" class="animation-grow"><img src="{{ asset('dynamic-pages/' . @$contact->image_two) }}"/></a>
                     </div>
                     <div class="pq-icon-box-content">
                         <h4 class="pq-icon-box-title">
-                            <a href="contact_us">Our Contact</a>
+                            <a href="contact_us">{{ @$contact->title_one }}</a>
                         </h4>
-                        <p class="pq-icon-box-description">+91 02027464855<br>
+                        <p class="pq-icon-box-description">{!! @$contact->content !!}
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+            <div class="col-lg-4 col-md-6">
                 <div class="pq-icon-box pq-style-7">
                     <div class="pq-icon">
-                        <a href="contact_us.html" class="animation-grow"><i class="ion ion-ios-email"></i></a>
+                        <a href="" class="animation-grow"><img src="{{ asset('dynamic-pages/' . @$contact->image_three) }}"/></a>
                     </div>
                     <div class="pq-icon-box-content">
                         <h4 class="pq-icon-box-title">
-                            <a href="contact-us">Our Contact</a>
+                            <a href="contact_us">{{ @$contact->title_one }}</a>
                         </h4>
-                        <p class="pq-icon-box-description"> reachus@siriem.com</p>
+                        <p class="pq-icon-box-description">{!! @$contact->content !!}
+                        </p>
                     </div>
                 </div>
             </div>
+          
+       
         </div>
     </div>
 </section>

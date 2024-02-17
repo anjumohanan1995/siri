@@ -8,7 +8,7 @@
 		<!-- breadcrumb -->
 		<div class="breadcrumb-header justify-content-between row me-0 ms-0" >
 			
-				<h4 class="content-title mb-2">create
+				<h4 class="content-title mb-2">{{ $vertical->id ? 'Update' : 'Create' }} {{ $vertical->id ? @$vertical->slug : @$slug }}
 
 </h4>
 				
@@ -30,15 +30,18 @@
                            
                             @if(@$vertical->id)
                             <form name="patientForm" id="patientForm" method="post" action="{{ route('admin-verticals.update',$vertical->id ) }}" enctype="multipart/form-data">
-                            @csrf
+                            
+                                @csrf
                                @method('PATCH')
                                @else
                                <form name="patientForm" id="patientForm" method="post" action="{{ route('admin-verticals.store') }}" enctype="multipart/form-data">
-                                @csrf
+                               
                             @endif
                         <div class="card">
                             <div class="card-body">
                         <div class="form-group">
+                            <input type="hidden" value="{{ $vertical->id ? @$vertical->slug : @$slug }}" name="slug">
+                            @csrf
                             <div class="row">   
                                 <div class="col-md-6 mb-6">
                                     <label class="form-label">
@@ -49,7 +52,19 @@
                                         <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
-
+                                <div class="col-md-6 mb-6">
+                                    <label class="form-label">
+                                        Title 1
+                                    </label>
+                                    <input type="text" value="{{ old('title1',@$vertical->title1) }}"  class="form-control" placeholder="Title 1 " name="title1" />
+                                    @error('title1')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                               
+                            </div>
+                           
+                               <div class="pt-5 row">   
                                 <div class="col-md-6 mb-6">
                                     <label class="form-label">Sub Title </label>
                                     <textarea type="text" value="{{ old('sub_title',@$vertical->sub_title) }}"  class="form-control" placeholder="Sub Title" name="sub_title" >{{ old('sub_title',@$vertical->sub_title) }}</textarea>
@@ -57,20 +72,24 @@
                                         <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
-                            </div>
-                           
-                               <div class="pt-5 row">   
                                 <div class="col-md-6 mb-6">
                                     <label class="form-label">Content
                                     </label>
                                     <textarea type="text" value="{{ old('content') }}"  class="form-control" placeholder="Content" name="content" id="content">{{ old('content',@$vertical->content) }}</textarea>
                                   
                                    
-                                    @error('class_start_date')
+                                    @error('content')
                                         <span class="text-danger">{{$message}}</span>
                                     @enderror
                                       </div>
-                                      <div class="col-md-6 mb-6">
+                                     
+                                    
+                                   
+                                   
+                                  
+                                </div>
+                                <div class="pt-5 row">  
+                                    <div class="col-md-6 mb-6">
                                         <label class="form-label">Image
                                         </label>
                                         <input type="file" value="{{ old('image') }}"  class="form-control" name="image" id="image" accept="image/*">                                     
@@ -82,12 +101,6 @@
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                           </div>
-                                    
-                                   
-                                   
-                                  
-                                </div>
-                                <div class="pt-5 row">  
                                     <div class="col-md-6 mb-6">
                                         <label class="form-label">Banner Image
                                         </label>
@@ -137,15 +150,9 @@
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 
 <script>
-    // Your CKEditor initialization without jQuery
-    document.addEventListener('DOMContentLoaded', function () {
-        CKEDITOR.replace('content', {
-            enterMode: CKEDITOR.ENTER_BR,
-            shiftEnterMode: CKEDITOR.ENTER_BR,
-            autoParagraph: false,
-        });
+  document.addEventListener('DOMContentLoaded', function () {
+        CKEDITOR.replace('content');
     });
 </script>
-
 <!-- main-content-body -->
 @endsection

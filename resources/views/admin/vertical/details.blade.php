@@ -153,8 +153,8 @@
                         <div class="col-md-4 mb-4">
                         </div>
                         <div class="col-md-6 mb-6">
-                           <a href="{{ route('admin-verticals.index') }}">  <input type="button" class="btn btn-primary" value="Back >>" >
-                           </a>  
+                           {{-- <a href="{{ route('admin-verticals.index') }}">  <input type="button" class="btn btn-primary" value="Back >>" >
+                           </a>   --}}
                         </div>
                      </div>
                      <br>
