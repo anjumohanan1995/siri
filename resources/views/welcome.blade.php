@@ -560,13 +560,14 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="pq-section-title-box text-center">
-                    <span class="pq-section-sub-title">Charging Brand</span>
-                    <h5 class="pq-section-title">Compatible With This Vehicle Brands</h5>
-                    <p class="pq-section-description">Lorem Ipsum is simply dummy It is a long established fact that
-                        a reader will be distracted by the readable content of a page when looking at its layout.
+                    <span class="pq-section-sub-title">{{ @$data->brand_sub_title }}</span>
+                    <h5 class="pq-section-title">{{ @$data->brand_title }}</h5>
+                    <p class="pq-section-description">{{ $data->brand_content }}
                     </p>
                 </div>
             </div>
+            @foreach ($brands as $brand)
+
             <div class="col-lg-3 col-md-4">
                 <div class="pq-client-box pq-client-style-2 ">
                     <div class="pq-client-item-2">
@@ -576,60 +577,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                <div class="pq-client-box pq-client-style-2 ">
-                    <div class="pq-client-item-2">
-                        <a href="about-us.html">
-                            <img class="pq-client-img" src="{{asset('images_home/4.png')}}" alt="pq-client-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                <div class="pq-client-box pq-client-style-2 ">
-                    <div class="pq-client-item-2">
-                        <a href="about-us.html">
-                            <img class="pq-client-img" src="{{asset('images_home/2.png')}}" alt="pq-client-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-                <div class="pq-client-box pq-client-style-2 ">
-                    <div class="pq-client-item-2">
-                        <a href="about-us.html">
-                            <img class="pq-client-img" src="{{asset('images_home/3.png')}}" alt="pq-client-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 mt-4 pq-ps-130">
-                <div class="pq-client-box pq-client-style-2 ">
-                    <div class="pq-client-item-2">
-                        <a href="about-us.html">
-                            <img class="pq-client-img" src="{{asset('images_home/1.png')}}" alt="pq-client-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 mt-4">
-                <div class="pq-client-box pq-client-style-2 ">
-                    <div class="pq-client-item-2">
-                        <a href="about-us.html">
-                            <img class="pq-client-img" src="{{asset('images_home/5.png')}}" alt="pq-client-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 mt-4 pq-pe-130">
-                <div class="pq-client-box pq-client-style-2 ">
-                    <div class="pq-client-item-2">
-                        <a href="about-us.html">
-                            <img class="pq-client-img" src="{{asset('images_home/4.png')}}" alt="pq-client-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+           
         </div>
     </div>
 </section>
@@ -641,11 +590,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="pq-section-title-box text-center">
-                    <span class="pq-section-sub-title">Recent Articles</span>
-                    <h5 class="pq-section-title">Our Latest Blog</h5>
-                    <p class="pq-section-description">Lorem Ipsum is simply dummy It is a long established fact that
-                        a reader will be distracted by the readable content of a page when looking at its layout.
-                    </p>
+                    <span class="pq-section-sub-title">{{ @$data->blog_sub_title }}</span>
+                    <h5 class="pq-section-title">{{ @$data->blog_title }}</h5>
+                    <p class="pq-section-description">{{ @$data->blog_content }}</p>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -653,10 +600,11 @@
                     <div class="owl-carousel owl-loaded owl-drag" data-dots="true" data-nav="false"
                         data-desk_num="3" data-lap_num="2" data-tab_num="2" data-mob_num="1" data-mob_sm="1"
                         data-autoplay="true" data-loop="true" data-margin="30">
+                        @foreach ($blogs as $blog)                        
                         <div class="item">
                             <div class="pq-blog-post pq-blog-style-1">
                                 <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/1.jpg')}}" alt="">
+                                    <img src="{{ asset('blogs/'.$blog->image)}}" alt="">
                                     <div class="pq-post-date">
                                         <a href="evs-play-an-important-role-in-transport.html">
                                             <span>30</span> Sep
@@ -680,11 +628,9 @@
                                         </ul>
                                     </div>
                                     <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">EVs play an important
-                                            role in transport</a>
+                                        <a href="evs-play-an-important-role-in-transport.html">{{ @$blog->title }}</a>
                                     </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
+                                    <p>{!! @$blog->content !!} </p>
                                     <a href="evs-play-an-important-role-in-transport.html"
                                         class="pq-button pq-btn-link">
                                         <div class="pq-button-block">
@@ -697,404 +643,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="pq-blog-post pq-blog-style-1">
-                                <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/2.jpg')}}" alt="">
-                                    <div class="pq-post-date">
-                                        <a href="evs-play-an-important-role-in-transport.html">
-                                            <span>27</span> Sep
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="pq-blog-contain pq-bg-grey">
-                                    <div class="pq-post-meta">
-                                        <ul>
-                                            <li class="pq-post-author">
-                                                <div class="pq-post-authors">
-                                                    <i class="fa fa-user"></i><span>By admin</span>
-                                                </div>
-                                            </li>
-                                            <li class="pq-post-comment">
-                                                <a href="evs-play-an-important-role-in-transport.html">
-                                                    <i class="fa fa-comments"></i>
-                                                    0 Comments
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">EVs give maximum
-                                            charging speed</a>
-                                    </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
-                                    <a href="evs-play-an-important-role-in-transport.html"
-                                        class="pq-button pq-btn-link">
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-line-left"></span>
-                                            <span class="pq-button-text">Read More</span>
-                                            <span class="pq-button-line-right"></span>
-                                            <i class="ion ion-android-arrow-dropright"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pq-blog-post pq-blog-style-1">
-                                <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/3.jpg')}}" alt="">
-                                    <div class="pq-post-date">
-                                        <a href="evs-play-an-important-role-in-transport.html">
-                                            <span>27</span> Sep
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="pq-blog-contain pq-bg-grey">
-                                    <div class="pq-post-meta">
-                                        <ul>
-                                            <li class="pq-post-author">
-                                                <div class="pq-post-authors">
-                                                    <i class="fa fa-user"></i><span>By admin</span>
-                                                </div>
-                                            </li>
-                                            <li class="pq-post-comment">
-                                                <a href="evs-play-an-important-role-in-transport.html">
-                                                    <i class="fa fa-comments"></i>
-                                                    0 Comments
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">Some vehicles take
-                                            additional cable for charging.</a>
-                                    </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
-                                    <a href="evs-play-an-important-role-in-transport.html"
-                                        class="pq-button pq-btn-link">
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-line-left"></span>
-                                            <span class="pq-button-text">Read More</span>
-                                            <span class="pq-button-line-right"></span>
-                                            <i class="ion ion-android-arrow-dropright"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pq-blog-post pq-blog-style-1">
-                                <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/4.jpg')}}" alt="">
-                                    <div class="pq-post-date">
-                                        <a href="evs-play-an-important-role-in-transport.html">
-                                            <span>27</span> Sep
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="pq-blog-contain pq-bg-grey">
-                                    <div class="pq-post-meta">
-                                        <ul>
-                                            <li class="pq-post-author">
-                                                <div class="pq-post-authors">
-                                                    <i class="fa fa-user"></i><span>By admin</span>
-                                                </div>
-                                            </li>
-                                            <li class="pq-post-comment">
-                                                <a href="evs-play-an-important-role-in-transport.html">
-                                                    <i class="fa fa-comments"></i>
-                                                    0 Comments
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">Electric Vehicle
-                                            Supply Equipment, or EVSE</a>
-                                    </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
-                                    <a href="evs-play-an-important-role-in-transport.html"
-                                        class="pq-button pq-btn-link">
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-line-left"></span>
-                                            <span class="pq-button-text">Read More</span>
-                                            <span class="pq-button-line-right"></span>
-                                            <i class="ion ion-android-arrow-dropright"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pq-blog-post pq-blog-style-1">
-                                <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/5.jpg')}}" alt="">
-                                    <div class="pq-post-date">
-                                        <a href="evs-play-an-important-role-in-transport.html">
-                                            <span>26</span> Jul
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="pq-blog-contain pq-bg-grey">
-                                    <div class="pq-post-meta">
-                                        <ul>
-                                            <li class="pq-post-author">
-                                                <div class="pq-post-authors">
-                                                    <i class="fa fa-user"></i><span>By admin</span>
-                                                </div>
-                                            </li>
-                                            <li class="pq-post-comment">
-                                                <a href="evs-play-an-important-role-in-transport.html">
-                                                    <i class="fa fa-comments"></i>
-                                                    1 Comment
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">EV Charging Station
-                                            Network Providers</a>
-                                    </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
-                                    <a href="evs-play-an-important-role-in-transport.html"
-                                        class="pq-button pq-btn-link">
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-line-left"></span>
-                                            <span class="pq-button-text">Read More</span>
-                                            <span class="pq-button-line-right"></span>
-                                            <i class="ion ion-android-arrow-dropright"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pq-blog-post pq-blog-style-1">
-                                <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/6.jpg')}}" alt="">
-                                    <div class="pq-post-date">
-                                        <a href="evs-play-an-important-role-in-transport.html">
-                                            <span>26</span> Jul
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="pq-blog-contain pq-bg-grey">
-                                    <div class="pq-post-meta">
-                                        <ul>
-                                            <li class="pq-post-author">
-                                                <div class="pq-post-authors">
-                                                    <i class="fa fa-user"></i><span>By admin</span>
-                                                </div>
-                                            </li>
-                                            <li class="pq-post-comment">
-                                                <a href="evs-play-an-important-role-in-transport.html">
-                                                    <i class="fa fa-comments"></i>
-                                                    0 Comments
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">Charging station
-                                            solution for transport</a>
-                                    </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
-                                    <a href="evs-play-an-important-role-in-transport.html"
-                                        class="pq-button pq-btn-link">
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-line-left"></span>
-                                            <span class="pq-button-text">Read More</span>
-                                            <span class="pq-button-line-right"></span>
-                                            <i class="ion ion-android-arrow-dropright"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pq-blog-post pq-blog-style-1">
-                                <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/7.jpg')}}" alt="">
-                                    <div class="pq-post-date">
-                                        <a href="evs-play-an-important-role-in-transport.html">
-                                            <span>24</span> Jul
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="pq-blog-contain pq-bg-grey">
-                                    <div class="pq-post-meta">
-                                        <ul>
-                                            <li class="pq-post-author">
-                                                <div class="pq-post-authors">
-                                                    <i class="fa fa-user"></i>
-                                                    <span>By admin</span>
-                                                </div>
-                                            </li>
-                                            <li class="pq-post-comment">
-                                                <a href="evs-play-an-important-role-in-transport.html">
-                                                    <i class="fa fa-comments"></i>
-                                                    0 Comments
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">How Does An Electric
-                                            Motor Work?</a>
-                                    </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
-                                    <a href="evs-play-an-important-role-in-transport.html"
-                                        class="pq-button pq-btn-link">
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-line-left"></span>
-                                            <span class="pq-button-text">Read More</span>
-                                            <span class="pq-button-line-right"></span>
-                                            <i class="ion ion-android-arrow-dropright"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pq-blog-post pq-blog-style-1">
-                                <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/8.jpg')}}" alt="">
-                                    <div class="pq-post-date">
-                                        <a href="evs-play-an-important-role-in-transport.html">
-                                            <span>24</span> Jul
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="pq-blog-contain pq-bg-grey">
-                                    <div class="pq-post-meta">
-                                        <ul>
-                                            <li class="pq-post-author">
-                                                <div class="pq-post-authors">
-                                                    <i class="fa fa-user"></i><span>By admin</span>
-                                                </div>
-                                            </li>
-                                            <li class="pq-post-comment">
-                                                <a href="evs-play-an-important-role-in-transport.html">
-                                                    <i class="fa fa-comments"></i>
-                                                    0 Comments
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">Dope Tech in EV’s
-                                            from CES 2018</a>
-                                    </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
-                                    <a href="evs-play-an-important-role-in-transport.html"
-                                        class="pq-button pq-btn-link">
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-line-left"></span>
-                                            <span class="pq-button-text">Read More</span>
-                                            <span class="pq-button-line-right"></span>
-                                            <i class="ion ion-android-arrow-dropright"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pq-blog-post pq-blog-style-1">
-                                <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/9.jpg')}}" alt="">
-                                    <div class="pq-post-date">
-                                        <a href="evs-play-an-important-role-in-transport.html">
-                                            <span>24</span> Jul
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="pq-blog-contain pq-bg-grey">
-                                    <div class="pq-post-meta">
-                                        <ul>
-                                            <li class="pq-post-author">
-                                                <div class="pq-post-authors">
-                                                    <i class="fa fa-user"></i><span>By admin</span>
-                                                </div>
-                                            </li>
-                                            <li class="pq-post-comment">
-                                                <a href="evs-play-an-important-role-in-transport.html">
-                                                    <i class="fa fa-comments"></i>
-                                                    0 Comments
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">Electric Vehicle
-                                            Motors: The Next Big Thing</a>
-                                    </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
-                                    <a href="evs-play-an-important-role-in-transport.html"
-                                        class="pq-button pq-btn-link">
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-line-left"></span>
-                                            <span class="pq-button-text">Read More</span>
-                                            <span class="pq-button-line-right"></span>
-                                            <i class="ion ion-android-arrow-dropright"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pq-blog-post pq-blog-style-1">
-                                <div class="pq-post-media">
-                                    <img src="{{asset('images_home/blog/10.jpg')}}" alt="">
-                                    <div class="pq-post-date">
-                                        <a href="evs-play-an-important-role-in-transport.html">
-                                            <span>24</span> Jul
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="pq-blog-contain pq-bg-grey">
-                                    <div class="pq-post-meta">
-                                        <ul>
-                                            <li class="pq-post-author">
-                                                <div class="pq-post-authors">
-                                                    <i class="fa fa-user"></i>
-                                                    <span>By admin</span>
-                                                </div>
-                                            </li>
-                                            <li class="pq-post-comment">
-                                                <a href="evs-play-an-important-role-in-transport.html">
-                                                    <i class="fa fa-comments"></i>
-                                                    0 Comments
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h5 class="pq-blog-title">
-                                        <a href="evs-play-an-important-role-in-transport.html">UltraCapacitors and
-                                            Electric Vehicles</a>
-                                    </h5>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. </p>
-                                    <a href="evs-play-an-important-role-in-transport.html"
-                                        class="pq-button pq-btn-link">
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-line-left"></span>
-                                            <span class="pq-button-text">Read More</span>
-                                            <span class="pq-button-line-right"></span>
-                                            <i class="ion ion-android-arrow-dropright"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                     
+                     
                     </div>
                 </div>
             </div>
