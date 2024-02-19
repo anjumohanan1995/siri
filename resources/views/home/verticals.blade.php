@@ -1,4 +1,4 @@
-@extends('layouts.home_app')
+@extends('layouts.inner_app')
 
 @section('content')
 
@@ -18,7 +18,7 @@
 <section class="about-us">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6 p-5">
                 <div class="pq-section-title-box">
                     <span class="pq-section-sub-title">{{ @$vertical->title1 }}</span>
                     <h4 class="pq-icon-box-title">

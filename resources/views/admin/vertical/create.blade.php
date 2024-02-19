@@ -147,7 +147,7 @@
 </div>
 
 <!-- Include CKEditor from CDN -->
-<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script src="{{ asset('js/ckeditor/ckeditor.js')}}"></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {

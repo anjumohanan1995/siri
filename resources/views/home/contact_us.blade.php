@@ -1,4 +1,4 @@
-@extends('layouts.home_app')
+@extends('layouts.inner_app')
 
 @section('content')
 
@@ -33,7 +33,7 @@
 <!--Contact Start-->
 <section class="contact">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center p-5">
            
             <div class="col-lg-4 col-md-6">
                 <div class="pq-icon-box pq-style-7">
@@ -44,7 +44,7 @@
                         <h4 class="pq-icon-box-title">
                             <a href="contact_us">{{ @$contact->title_one }}</a>
                         </h4>
-                        <p class="pq-icon-box-description">{!! @$contact->content !!}
+                        <p class="pq-icon-box-description">{!! @$contact->content_one !!}
                         </p>
                     </div>
                 </div>
@@ -56,9 +56,9 @@
                     </div>
                     <div class="pq-icon-box-content">
                         <h4 class="pq-icon-box-title">
-                            <a href="contact_us">{{ @$contact->title_one }}</a>
+                            <a href="contact_us">{{ @$contact->title_two }}</a>
                         </h4>
-                        <p class="pq-icon-box-description">{!! @$contact->content !!}
+                        <p class="pq-icon-box-description">{!! @$contact->content_two !!}
                         </p>
                     </div>
                 </div>
@@ -70,9 +70,9 @@
                     </div>
                     <div class="pq-icon-box-content">
                         <h4 class="pq-icon-box-title">
-                            <a href="contact_us">{{ @$contact->title_one }}</a>
+                            <a href="contact_us">{{ @$contact->title_three }}</a>
                         </h4>
-                        <p class="pq-icon-box-description">{!! @$contact->content !!}
+                        <p class="pq-icon-box-description">{!! @$contact->content_three !!}
                         </p>
                     </div>
                 </div>

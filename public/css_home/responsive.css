@@ -618,9 +618,63 @@ Design and Developed by: Peaceful Qode
 
 @media(max-width: 767px){
     section{
-        padding: 60px 0;
+        padding: 20px 0;
     }
+    body{
+        overflow: visible !important;
+    }
+    .feature .container, .pq-bg-grey .container{
+        width: 100%;
+    }
+    .pq-section-title-box .pq-section-description{
+        width: 100% !important;
+    }
+    footer#pq-footer{
 
+        margin-top:0 !important;
+    }
+    header#pq-header .pq-bottom-header .navbar .navbar-nav li a{
+        color: #000;
+    }
+   .download-app  .mt-5{
+        margin-top: 0 !important;
+    }
+    .blog .container{
+        width: 100%;
+        margin-top: 0 !important;
+    }
+    #rev_slider_2_1{
+        max-height: 382px;
+    }
+    .pq-header-sticky{
+        background: #fff;
+    }
+    .pt-10, .pt-5{
+        padding-top:0 !important ;
+    }
+    .p-5 {
+        padding: 2rem !important;
+      }
+     .tp-rs-img.rs-lazyload {
+      top: initial !important;
+    }
+    #slider-2-slide-2-layer-0 {
+      top: initial !important;
+    }
+    section {
+      height: auto !important;
+    }
+    header#pq-header {
+      background: #fff !important;
+    }
+    .logo {
+      display: none !important;
+    }
+    .logo1 {
+      display: block  !important;
+    }
+    
+    
     header#pq-header.pq-header-style-1.pq-has-sticky{
         position: relative;
         padding: 0;
@@ -781,6 +835,7 @@ Design and Developed by: Peaceful Qode
         margin-bottom: 20px;
         margin-right: 0;
     }
+    
 }
 
 @media(max-width: 479px){
@@ -809,6 +864,7 @@ Design and Developed by: Peaceful Qode
     .pq-error-block .pq-error-text {
 		font-size: 130px;
 	}
+   
 }
 
 @media(max-width: 397px){

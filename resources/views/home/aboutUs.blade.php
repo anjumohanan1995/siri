@@ -35,7 +35,7 @@
         <div class="row align-items-center">
             <div class="col-xl-6 order-2 order-xl-0 mt-4 mt-xl-0">
                 <div class="pq-section-title-box ">
-                    <span class="pq-section-sub-title">About Us</span>
+                    <span class="pq-section-sub-title">About Usffff</span>
                     <h5 class="pq-section-title">SIRI Electromotive crafts client centric solutions for charging and discharging commercial battery systems with a specific focus on EV charging</h5>
                     <p>Our AI powered proprietary charging technology and expertise encompasses provision of future ready features with complete interoperability across vehicle types and global protocols and yet, tailored for Indian operational conditions.</p>
                 </div>

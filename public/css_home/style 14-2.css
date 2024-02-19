@@ -119,7 +119,7 @@ General
 body {
     background: var(--white-color);
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
     font-weight: normal;
     line-height: 1.8;
@@ -133,11 +133,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     color: var(--dark-color);
     font-style: normal;
     text-transform: capitalize;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
@@ -165,19 +165,19 @@ h2 {
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 32px;
     font-style: normal;
     line-height: 40px;
 }
 
 h4 {
-    font-size: 22px;
+    font-size: 28px;
     font-style: normal;
-    line-height: 60px;
+    line-height: 36px;
 }
 
 h5 {
-    font-size: 16px;
+    font-size: 24px;
     font-style: normal;
     line-height: 32px;
 }
@@ -455,7 +455,7 @@ blockquote {
 }
 
 blockquote strong {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     color: var(--primary-color);
     font-style: italic;
     text-transform: uppercase;
@@ -1012,7 +1012,7 @@ Blog
 }
 
 .pq-blog .owl-carousel .pq-blog-post .pq-blog-contain .pq-blog-title {
-    font-size: 16px;
+    font-size: 25px;
     line-height: 26px;
     margin: 0 0 5px;
 }
@@ -1116,7 +1116,7 @@ Error
 
 .pq-error-block .pq-error-text {
     font-size: 420px;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     color: var(--primary-color);
     line-height: 0.8;
     margin-bottom: 30px;
@@ -1239,7 +1239,7 @@ header#pq-header .pq-bottom-header .navbar .navbar-brand {
 }
 
 header#pq-header .pq-bottom-header .navbar .navbar-brand img {
-    height: 65px;
+    height: 85px;
 }
 
 /*+++++ Header Navbar Bar +++++*/
@@ -1276,7 +1276,7 @@ header#pq-header .pq-bottom-header .navbar .navbar-nav li:last-child {
 
 header#pq-header .pq-bottom-header .navbar .navbar-nav li a {
     color: var(--white-color);
-    font-size: 14px;
+    font-size: 18px;
 }
 
 header#pq-header .pq-bottom-header .navbar .navbar-nav li a:focus,
@@ -1994,7 +1994,7 @@ Breadcrumb
 .pq-breadcrumb {
     background: var(--dark-color);
     color: var(--white-color);
-    padding: 190px 0 90px 0;
+    padding: 90px 0;
     position: relative;
     text-align: center;
 }
@@ -2048,7 +2048,7 @@ Breadcrumb
     font-family: "Ionicons";
     padding-right: 15px;
     color: var(--white-color);
-    line-height: 2;
+    line-height: 3;
 }
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -2067,7 +2067,7 @@ footer#pq-footer .pq-footer-top {
 }
 
 footer#pq-footer .pq-copyright-footer {
-    padding: 26px;
+    padding: 15px;
     background: #202020;
 }
 
@@ -2201,7 +2201,7 @@ footer#pq-footer ul li a.rsswidget {
     font-size: 16px;
     color: var(--white-color);
     font-weight: 500;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
 }
 
 footer#pq-footer ul li .rss-date {
@@ -2285,7 +2285,7 @@ footer#pq-footer .pq-widget-menu .pq-service li a {
     position: relative;
     border: none;
     padding: 5px 0 5px 15px;
-    font-size: 13px;
+    font-size: 16px;
     display: inline-block;
     width: 100%;
 }
@@ -2389,7 +2389,7 @@ footer#pq-footer .pq-footer-style-1 .widget ul li a:hover {
 }
 
 footer#pq-footer .pq-footer-style-1 .widget:first-child {
-    margin-bottom: 45px;
+    /*! margin-bottom: 45px; */
 }
 
 footer#pq-footer .pq-footer-style-1 .pq-footer-logo {
@@ -2571,13 +2571,13 @@ Footer Subscribe
 
 .pq-subscribe-location .pq-subscribe-title {
     margin-right: 15px;
-    font-size: 20px;
+    font-size: 32px;
     line-height: 40px;
 }
 
 .pq-subscribe-time .pq-subscribe-title {
     margin-left: 15px;
-    font-size: 20px;
+    font-size: 32px;
     line-height: 40px;
 }
 
@@ -2606,7 +2606,7 @@ Footer Subscribe
 }
 
 .pq-subscribe-contact span {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     font-size: 18px;
     line-height: 26px;
     display: block;
@@ -2637,7 +2637,7 @@ Section Title
 }
 
 .pq-section-title-box .pq-section-sub-title {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     text-transform: uppercase;
     font-size: 16px;
     line-height: 24px;
@@ -2651,10 +2651,10 @@ Section Title
 }
 
 .pq-section-title-box .pq-section-title {
-    font-size: 32px;
+    font-size: 40px;
     line-height: 40px;
-    font-weight: 600;
-    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-family: var(--title-fonts);
     margin: 0 0 5px;
 }
 
@@ -2714,7 +2714,7 @@ isotope Portfolio
     line-height: 24px;
     text-transform: uppercase;
     color: var(--dark-color);
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     display: inline-block;
     cursor: pointer;
     padding: 10px 30px;
@@ -2838,7 +2838,7 @@ isotope Portfolio
 }
 
 .pq-porfolio-info .pq-info-list li span {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     float: right;
     color: var(--primary-color);
 }
@@ -2926,7 +2926,7 @@ Portfolio Box
     font-size: 14px;
     line-height: 22px;
     text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
 }
 
 .pq-portfoliobox-2 .pq-portfolio-info .pq-portfolio-link a:after {
@@ -2934,7 +2934,7 @@ Portfolio Box
     top: -1px;
     right: -3px;
     content: '/';
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     font-size: 12px;
     line-height: inherit;
     color: var(--secondary-color);
@@ -3098,7 +3098,7 @@ Fancy Box
 
 .pq-fancy-box.pq-fancybox-2 .pq-fancybox-info .pq-fancy-box-title {
     margin-bottom: 5px;
-    font-size:22px;
+    font-size: 32px;
     line-height: 40px;
 }
 
@@ -3287,17 +3287,9 @@ Icon Box
 .ride .pq-icon-box.pq-style-3 .pq-icon-box-title{
     margin-bottom: 15px;
 }
-.inner #pq-header, .inner .pq-has-sticky  {
-    background: #fff;
-  }
-  .inner header#pq-header .pq-bottom-header .navbar .navbar-nav li a {
-    color: #000;
-  }
-  .inner header#pq-header .pq-menu-search-block a {
-    color: #000;
-  }
-.page2 .pq-icon-box.pq-style-4 {
-     display: flex;
+
+.pq-icon-box.pq-style-4 {
+    display: flex;
 }
 
 .pq-icon-box.pq-style-4 .pq-icon {
@@ -3630,7 +3622,7 @@ Background Images
     height: 100%;
     opacity: 0.1;
     background: url(../images_home/2.jpg);
-    background-position: bottom center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -3781,7 +3773,7 @@ Testimonial
 }
 
 .pq-testimonial-box.pq-testimonialbox-1 .pq-testimonial-img .pq-testimonial-meta span {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -3865,14 +3857,14 @@ Testimonial
 }
 
 .pq-testimonial.pq-testimonial-2 .pq-testimonialbox-2 .pq-testmonial-title {
-	font-family: "Roboto", sans-serif;
+	font-family: var(--title-fonts);
 	margin-bottom: 0;
 	text-transform: capitalize;
 	color: var(--dark-color);
 }
 
 .pq-testimonial.pq-testimonial-2 .pq-testimonialbox-2 .pq-testimonial-info span {
-	font-family: "Roboto", sans-serif;
+	font-family: var(--title-fonts);
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 24px;
@@ -3886,7 +3878,7 @@ Testimonial
 	border-top: 1px solid var(--grey-color);
 	padding-top: 15px;
 	margin-top: 15px;
-	font-family: "Roboto", sans-serif;
+	font-family: var(--title-fonts);
 	color: var(--dark-color);
 }
 
@@ -3953,7 +3945,7 @@ Price Box
 }
 
 .pq-pricebox.pq-pricebox-1 .pq-pricebox-info .pq-price-title {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     text-transform: uppercase;
     font-size: 20px;
     line-height: 28px;
@@ -4061,7 +4053,7 @@ Progressbar
     margin: 0;
     font-size: 20px;
     line-height: 28px;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     color: var(--white-color);
     font-weight: 500;
 }
@@ -4103,7 +4095,7 @@ Progressbar
     margin: 0;
     font-size: 20px;
     line-height: 28px;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     color: var(--white-color);
     font-weight: 500;
 }
@@ -4161,7 +4153,6 @@ Client
 }
 .blog .container{
     width: 90%;
-    margin-top: 112px;
 }
 .pq-client-box .pq-client-item-2 {
     padding: 30px;
@@ -4235,7 +4226,7 @@ Counter
 }
 
 .pq-counter.pq-counter-style-1 .pq-counter-description {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
@@ -4255,7 +4246,7 @@ Counter
 }
 
 .pq-counter.pq-counter-style-2 .timer {
-    font-size: 55px;
+    font-size: 69px;
     font-weight: 600;
     line-height: 1;
     color: var(--primary-color);
@@ -4264,7 +4255,7 @@ Counter
 
 .pq-counter.pq-counter-style-2 .pq-counter-num-prefix {
     display: flex;
-    font-size:50px;
+    font-size: 69px;
     font-weight: 600;
     line-height: 1;
     color: var(--primary-color);
@@ -4273,9 +4264,9 @@ Counter
 
 .pq-counter.pq-counter-style-2 .pq-counter-description {
     text-align: center;
-    font-size: 12px;
+    font-size: 19px;
     font-weight: 400;
-    line-height: 21px;
+    line-height: 2.5;
     margin-bottom: 0;
     color: var(--dark-color);
 }
@@ -4556,7 +4547,6 @@ FAQ
 
 .pq-accordion-block .pq-accordion-box.pq-active .pq-ad-title .ad-title-text {
     color: var(--white-color);
-    /*! font-size: 22px; */
 }
 
 .pq-bg-dark .pq-accordion-block .pq-accordion-box .pq-ad-title .ad-title-text {
@@ -4649,7 +4639,7 @@ Service
 }
 
 .pq-service-box.pq-service-box-slider-1 .pq-service-box-info .pq-service-subtitle {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--title-fonts);
     font-weight: 500;
     font-size: 14px;
     line-height: 22px;
@@ -4677,7 +4667,7 @@ Owl Carousel
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 .owl-carousel .owl-dots {
-    /*! margin-top: -30px; */
+    margin-top: 30px;
     line-height: normal;
     position: relative;
     width: 100%;
@@ -4922,7 +4912,7 @@ Custom CSS
 
 .charge {
     color: var(--dark-color);
-    font-size: 17px;
+    font-size: 22px;
     line-height: 30px;
 }
 
@@ -5107,21 +5097,19 @@ Custom CSS
 }
 
 .pq-title-text{
-    font-family: 'Futura PTM';
+    font-family: var(--title-fonts);
 }.banner.inner_banner h1 {
     position: absolute;
-    top: 220px;
+    top: 120px;
     left: 100px;
     z-index: 1000;
     color: #fff;
     font-size: 56px;
-    font-family: 'Futura PTM';
     font-weight: normal;
 }
 
 .banner.inner_banner {
     position: relative;
-    padding-top: 100px;
 }
 
 .feature .container, .pq-bg-grey .container {
@@ -5130,10 +5118,10 @@ Custom CSS
 .logo1{
     display: none;
 }
-.pq-header-sticky .logo1, .inner .logo1{
+.pq-header-sticky .logo1{
     display: block;
 }
-.pq-header-sticky .logo, .inner .logo{
+.pq-header-sticky .logo{
     display: none;
 }
 
@@ -5147,19 +5135,6 @@ Custom CSS
   }
 .blog p {
   line-height: 22px;
-  font-size: 12px;
+  font-size: 15px;
   margin-bottom: 10px;
-  color: #000;
-}.about-us h4 {
-    line-height: 31px;
-    margin-bottom: 10px;
-  }
-  .pq-icon-box-content {
-    margin-bottom: 10px;
-  }
-  .inner .pq-section-description{
-width: 100%;
-  }
-  .inner footer{
-    margin-top: 0 !important;
-  }
+}

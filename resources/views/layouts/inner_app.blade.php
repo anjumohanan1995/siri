@@ -34,7 +34,7 @@
 
 </head>
 
-<body>
+<body class="inner">
     <!-- Start Header -->
     <header id="pq-header" class="pq-header-default">
         {{-- <div class="pq-top-header">
@@ -205,7 +205,7 @@
     @yield('content')
 
 
-    {{-- <footer id="pq-footer">
+   <footer id="pq-footer">
         <div class="pq-subscribe align-items-center">
             <div class="container">
                 <div class="row">
@@ -360,7 +360,7 @@
                 </div>
             </div>
         </div>
-    </footer> --}}
+    </footer>  
     <!-- End Footer -->
     <div id="back-to-top">
         <a class="top" id="top" href="#top"> <i class="ion-ios-arrow-up"></i> </a>

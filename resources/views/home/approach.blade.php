@@ -1,4 +1,4 @@
-@extends('layouts.home_app')
+@extends('layouts.inner_app')
 
 @section('content')
 
@@ -21,19 +21,14 @@
 <section class="about-us">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6 p-5">
                 <div class="pq-section-title-box">
                     <span class="pq-section-sub-title">{{ @$approach->sub_title }}</span>
-                    <h4 class="pq-icon-box-title">
-                        <a href="">{{ @$approach->sub_title1 }}</a>
-                    </h4>
+                     
                 </div>
                 <div class="pq-icon-box pq-style-4 mt-4 mt-md-0">
                   
-                    <div class="pq-icon-box-content">
-                       
-                        <p class="pq-icon-box-description">{!! @$approach->content !!}</p>
-                    </div>
+                {!! @$approach->content !!} 
                 </div>
                
                 
@@ -79,7 +74,7 @@
 <!--Whyus End-->
 
 <!--Feature Start-->
-<section class="feature">
+<section class="feature pt-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -105,4 +100,7 @@
         </div>
     </div>
 </section>
+
+
+
 @endsection
