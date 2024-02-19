@@ -36,7 +36,7 @@ Route::get('/', [WebHomeController::class, 'index']);
 
 //admins routes starts here .
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
-Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+//Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
@@ -68,6 +68,7 @@ Route::post('/sub_sub_menus/{mainMenu}', [SubSubMenuController::class, 'destroy'
 //admins routes ends here .
 
 Auth::routes();
+Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/user-registration', [ApplicationController::class, 'userRegistration'])->name('userRegistration');
 Route::post('/user-store', [ApplicationController::class, 'userStore'])->name('userStore');
