@@ -28,11 +28,5 @@ class AuthController extends Controller
 
       
     }
-    public function loginPage(Request $request)
-    {
-       // dd("kk");
-        return view('auth.login');
-    }
-
 }
 

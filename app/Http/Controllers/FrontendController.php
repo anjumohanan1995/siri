@@ -23,16 +23,16 @@ class FrontendController extends Controller
     public function products(){
         return view('home.products');
     }
-    public function cmsServices(){
-        return view('home.cms_services');
-    }
+   // public function cmsServices(){
+     //   return view('home.cms_services');
+    //}
 
     public function consultingSiri(){
         return view('home.consulting_siri');
     }
-    public function Solutions(){
-        return view('home.solutions');
-    }
+   // public function Solutions(){
+//return view('home.solutions');
+   // }
     public function contact(){
         $contact=DynamicPage::where('slug','contact-us')->first();
         //dd($contact);
@@ -56,5 +56,20 @@ class FrontendController extends Controller
     public function dynamicPage($slug){
         $content=DynamicPage::where('slug',$slug)->first();
         return view('home.dynamic_page',compact('content'));
+    }
+      public function Charging(){
+        return view('home.charging');
+    }
+        public function ChargingServices(){
+        return view('home.charging_services');
+    }
+        public function cmsServices(){
+        return view('home.cms_services');
+    }
+        public function consulting(){
+        return view('home.charging');
+    }
+        public function solutions(){
+        return view('home.solutions');
     }
 }
