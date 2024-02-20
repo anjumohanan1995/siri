@@ -5,10 +5,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="Description" content="SC/ST" />
+		<meta name="Description" content="SIRI" />
 		<meta name="Author" content="" />
 		<!-- Title -->
-		<title>SC/ST</title>
+		<title>SIRI</title>
 		<!--- Favicon --->
 		<link rel="icon" href="img//favicon.png" type="image/x-icon" />
 		<!-- Bootstrap css -->
@@ -27,18 +27,7 @@
 		<meta http-equiv="imagetoolbar" content="no" />
 
 
-        @php
-        $domains = ['opportal.sha.kerala.gov.in', '61.0.248.21', '10.5.69.181', '127.0.0.1'];
-        if ( ! in_array($_SERVER['SERVER_NAME'], $domains)) {
-            header($_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request');
-            exit;
-        }
-		/*$host = request()->getHost();
-		if($host != 'opportal.sha.kerala.gov.in' && $host != '61.0.248.21' && $host != '10.5.69.181' && $host != '127.0.0.1'){
-			return false;exit();
-		}
-        */
-		@endphp
+        
 
 	</head>
  <body class="main-body  dark-theme">

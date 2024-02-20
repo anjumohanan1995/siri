@@ -9,7 +9,7 @@
             <div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-black"> 
                 <div class="my-auto authentication-pages"> 
                     <div>  <br><br><br><br>
-                    <img src="{{ asset('images_home/logo-1.png')}}" alt="logo"  class="main-logo">
+                    <img src="{{ asset('images_new/logo.png')}}" alt="logo"  class="main-logo">
                         {{-- <img src="imgages_new/logo.png" class="main-logo" alt="logo">  --}}
                     </div> 
                 </div> 
@@ -17,7 +17,7 @@
             
                 <div class="p-5 wd-md-50p"> 
                     <div class="main-signin-header"> 
-                        <h3 style="font-size: 18px;">Welcome to SIRI </h3> 
+                        <h3 style="font-size: 18px;">Welcome to SC/ST</h3> 
                         <h4>Please sign in to continue</h4> 
                         <form method="POST" action="{{ route('login') }}">
                         @csrf
