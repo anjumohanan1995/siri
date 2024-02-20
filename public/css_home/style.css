@@ -384,7 +384,7 @@ select.form-control {
 }
 
 section {
-  
+  z-index: 1;
     position: relative;
 }
 
@@ -1394,7 +1394,8 @@ header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-m
 header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li>.sub-menu {
     display: none;
     position: absolute;
-    left: 0;
+    left: 200px !important;
+    width: 300px !important;
 }
 
 header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li:hover>.sub-menu {
@@ -3719,7 +3720,7 @@ Background Images
 }
 
 .pq-dark-section-side-right:before {
-    content: "";
+    
     position: absolute;
     left: 100%;
     top: 0;
@@ -4940,10 +4941,7 @@ Custom CSS
 .service-2 .pq-button{
     background-color: var(--primary-color);
 }
-.page4.current {
-    justify-content: end;
-    align-items: end;
-  }
+
 .whyus .p-130-45 {
     padding: 30px 15px  85px 45px;
 }
@@ -5143,7 +5141,7 @@ Custom CSS
 .pt-10{
     padding-top: 10em;
 }.page5 {
-    display: inline-block;
+   
   }
 .blog p {
   line-height: 22px;
