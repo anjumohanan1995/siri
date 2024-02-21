@@ -389,7 +389,7 @@
 
                                 </li>
                                 @php
-                                    $menu = App\Models\MainMenu::where('slug', 'verticals')->first();
+                                    $menu = App\Models\MainMenu::where('title', 'Verticals')->first();
                                     $sub_menu = App\Models\SubMenu::where('menu_id', @$menu->id)->get();
                                 @endphp
                                 @if (!empty($sub_menu))
@@ -424,7 +424,7 @@
                                         <i class="angle fe fe-chevron-down"> </i>
                                     </a>
                                     @php
-                                        $innovation = \App\Models\MainMenu::where('slug', 'innovation')->first();
+                                        $innovation = \App\Models\MainMenu::where('title', 'Innovation')->first();
                                         $inn_datas = \App\Models\SubMenu::where('menu_id', @$innovation->id)->get();
                                     @endphp
                                     <ul class="slide-menu">
