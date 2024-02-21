@@ -87,7 +87,7 @@ Moz Selection
     --primary-color: #86bb45;
     --dark-color: #2c2c2c;
     --dark-page-dark-bg: #212121;
-    --secondary-color: #848484;
+    --secondary-color: #000000;
     --grey-color: #f7f9fa;
     --white-color: #ffffff;
     --body-fonts: 'Futura PT Book';
@@ -173,7 +173,7 @@ h3 {
 h4 {
     font-size: 22px;
     font-style: normal;
-    line-height: 60px;
+    line-height: 30px;
 }
 
 h5 {
@@ -1143,7 +1143,8 @@ header#pq-header {
     display: inline-block;
     width: 100%;
     clear: both;
-    z-index: 99;
+    z-index: 999;
+    background: #fff;
 }
 
 header#pq-header.pq-header-sticky {
@@ -1275,7 +1276,7 @@ header#pq-header .pq-bottom-header .navbar .navbar-nav li:last-child {
 }
 
 header#pq-header .pq-bottom-header .navbar .navbar-nav li a {
-    color: var(--white-color);
+    color: #000;
     font-size: 14px;
 }
 
@@ -1482,7 +1483,7 @@ header#pq-header .pq-button:hover .pq-button-line-left {
 
 /*+++++ Header Default +++++*/
 header#pq-header.pq-header-default .pq-bottom-header.pq-header-sticky {
-    position: fixed;
+    /*! position: fixed; */
     top: 0;
     left: 0;
     display: inline-block;
@@ -2415,7 +2416,7 @@ footer#pq-footer .pq-footer-style-1 .pq-footer-top:before {
     display: inline-block;
     width: 100%;
     height: 100%;
-    background: rgba(44, 44, 44, 0.9);
+    background: rgba(44, 44, 44);
 }
 
 #pq-footer .pq-footer-style-1 .widget:first-child {
@@ -2440,7 +2441,7 @@ footer#pq-footer .pq-footer-style-1 .pq-footer-top:before {
 #pq-footer .pq-footer-style-1 .pq-footer-top .pq-subscribe-content {
     padding: 30px 15px;
     text-align: center;
-    background: #2d2d2d;
+    background: #000;
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -2634,7 +2635,7 @@ Section Title
 
 .pq-section-title-box.text-center {
     position: relative; 
-    padding: 0 0 40px;text-align: center;
+    padding: 100px 0 40px;text-align: center;
 }
 
 .pq-section-title-box .pq-section-sub-title {
@@ -2643,7 +2644,7 @@ Section Title
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.1em;
-    font-weight: 500;
+    font-weight: 900;
     position: relative;
     color: var(--primary-color);
     width: 100%;
@@ -2652,11 +2653,12 @@ Section Title
 }
 
 .pq-section-title-box .pq-section-title {
-    font-size: 32px;
-    line-height: 40px;
-    font-weight: 600;
+    font-size: 21px;
+    line-height: 32px;
+    font-weight: 500;
     font-family: "Roboto", sans-serif;
     margin: 0 0 5px;
+    /*! font-style: italic; */
 }
 
 .pq-section-title-box .pq-section-sub-title::before {
@@ -2967,9 +2969,9 @@ Fancy Box
 
 .pq-fancy-box.pq-fancybox-1 .pq-fancy-media {
     display: flex;
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--grey-color);
-    margin-bottom: 15px;
+    /*! padding-bottom: 15px; */
+    /*! border-bottom: 1px solid var(--grey-color); */
+    /*! margin-bottom: 15px; */
     font-size: 48px;
     color: var(--primary-color);
     justify-content: space-between;
@@ -3300,7 +3302,9 @@ Icon Box
 .page2 .pq-icon-box.pq-style-4 {
      display: flex;
 }
-
+.page5{
+    background: #86bb45;
+}
 .pq-icon-box.pq-style-4 .pq-icon {
     margin-right: 20px;
 }
@@ -5125,9 +5129,7 @@ Custom CSS
 .feature .container, .pq-bg-grey .container {
     width: 85%;
   }
-.logo1{
-    display: none;
-}
+ 
 .pq-header-sticky .logo1, .inner .logo1{
     display: block;
 }
@@ -5157,7 +5159,44 @@ Custom CSS
   }
   .inner .pq-section-description{
 width: 100%;
+margin-bottom: 20px;
   }
-  .inner footer{
-    margin-top: 0 !important;
+  
+.w-80 {
+    width: 80%;
+    margin: 0 auto;
   }
+  .w-80 p {
+    margin-top: 20px;
+  }
+  .text-green{
+    color: #84f750;
+  }
+  section.page3 ul {
+    width: 80%;
+    font-size: 16px;
+  }
+  section.page3 ul li {
+    position: relative;
+    list-style: none;
+    margin-bottom: 10px;color: #fff;
+  }
+  section.page3 ul li:before {
+      content: '\f054';
+      position: absolute;
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 12px;
+      top: 3px;
+      left: -15px;
+      color: #fff;
+      display: inline-block;
+      margin: auto 0;
+  }
+
+  .page2 { background-color: rgb(134, 187, 69); }
+  .page1 { background-color: rgb(134, 187, 69); }  
+  .page3 { background: #182a32; }
+  .page4 { background: #ffffff; }
+  .page5{ background-color: rgb(134, 187, 69); }
+  section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;} 

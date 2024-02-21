@@ -125,8 +125,7 @@
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="/">
-                                <img class="img-fluid logo" src="{{ asset('images_home/header-logo.png') }}"
-                                    alt="ecofuel">
+                             
                                     <img class="img-fluid logo1" src="{{ asset('images_home/logo-1.png') }}"
                                     alt="ecofuel">
                             </a>

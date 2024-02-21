@@ -90,10 +90,9 @@
         <div class="row align-items-center">
             <div class="col-lg-6 " style="padding-top: 8em">
                 <div class="pq-section-title-box"> 
-                    <span class="pq-section-sub-title">About Us</span>
-                    <h5 class="pq-section-title">We Provide Best Charging Services For Your EV</h5>
-                    <p class="pq-section-description">Lorem Ipsum is simply dummy It is a long established fact that
-                        a reader will be distracted by the readable content of a page when looking at its layout.
+                    {{-- <span class="pq-section-sub-title">About Us</span> --}}
+                    <h4 class="pq-section-title">At SIRI Electromotive, we believe the future is electric. We actively participate in unlocking the full potential of clean energy, thereby building a sustainable future, and empowering everyone to participate in the transition.</h4>
+                    <p class="pq-section-description">With our revolutionary AI-powered charging technology, we build chargers, and we craft smart solutions that seamlessly work with any battery, no matter its complexity.
                     </p>
                 </div>
                 <div class="pq-icon-box pq-style-4 mt-4">
@@ -101,33 +100,14 @@
                         <a href=""><i class="flaticon-electric-car-4"></i></a>
                     </div>
                     <div class="pq-icon-box-content">
-                        <h4 class="pq-icon-box-title">
-                            <a href="">Charging Your EVs</a>
-                        </h4>
-                        <p class="pq-icon-box-description">Lorem Ipsum is simply dummy It is a long established fact
-                            that a reader will be by of a page when looking at its layout.</p>
-                    </div>
+                        <h5 class="pq-icon-box-title">
+                            <a href="">Our hardware, firmware, and AI-powered software work together in perfect harmony, delivering unmatched performance, optimized efficiency, and unparalleled reliability.
+                            </a>
+                        </h5>
+                           </div>
                 </div>
-                <div class="pq-icon-box pq-style-4 mt-4 mt-md-0">
-                    <div class="pq-icon">
-                        <a href=""><i class="flaticon-charging-battery-1"></i></a>
-                    </div>
-                    <div class="pq-icon-box-content">
-                        <h4 class="pq-icon-box-title">
-                            <a href="">0-80% Charge In 60 Minutes</a>
-                        </h4>
-                        <p class="pq-icon-box-description">Simply dummy It is a long established fact that a reader
-                            will be distracted by the of a when looking at its layout.</p>
-                    </div>
-                </div>
-                <a href="about-us.html" class="pq-button">
-                    <div class="pq-button-block">
-                        <span class="pq-button-line-left"></span>
-                        <span class="pq-button-text">Read More</span>
-                        <span class="pq-button-line-right"></span>
-                        <i class="ion ion-android-arrow-dropright"></i>
-                    </div>
-                </a>
+                 
+               
             </div>
             <div class="col-lg-6 mt-4 mt-lg-0 pt-10">
                 <img src="{{asset('images_home/3.jpg')}}" alt="">
@@ -143,22 +123,25 @@
       <div class="container">
           <div class="row justify-content-center">
               <div class="col-lg-12">
-                  <div class="pq-section-title-box text-center">
-                      <span class="pq-section-sub-title">Our Services</span>
-                      <h5 class="pq-section-title">Excellent and Best Services</h5>
+                  <div class="pq-section-title-box text-center" style="padding-bottom: 0">
+                     
+                      <h5 class="pq-section-title">We understand that every company's journey towards electrification is unique. That is why we tailor our solutions to meet the specific needs of each industry vertical.
+                    </h5>
                      
                   </div>
               </div>
-  
+              <div class="col-lg-12 text-center mb-3">
+                <p class="charge">  <a   class="pq-text-primary">Take A
+                  And here is how we make the difference:</a></p>
+            </div>
               <div class="col-lg-4 col-md-6">
                   <div class="pq-fancy-box pq-fancybox-1">
                       <div class="pq-fancy-media">
-                          <h5 class="pq-fancy-box-title">Public stations</h5>
+                          <h5 class="pq-fancy-box-title">Pioneering Innovation</h5>
                           <i class=" flaticon-electric-car"></i>
                       </div>
                       <div class="pq-fancybox-info">
-                          <p class="pq-fancybox-description">It is a long established fact that a reader will be
-                              distracted by the readable content of a page when looking at its layout.</p>
+                          <p class="pq-fancybox-description">We are at the forefront of smart charging technology, constantly pushing the boundaries with proprietary AI algorithms and industry-leading advancements. We are not keeping up; we are leading the way.</p>
                           <div class="pq-btn-container">
                               <div class="pq-button-block">
                                   <a class="pq-button" href="building-technology-services.html">
@@ -172,12 +155,11 @@
               <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
                   <div class="pq-fancy-box pq-fancybox-1 text-left active">
                       <div class="pq-fancy-media">
-                          <h5 class="pq-fancy-box-title">Home stations</h5>
+                          <h5 class="pq-fancy-box-title">Simplifying the Transition</h5>
                           <i class="flaticon-charging-battery-1"></i>
                       </div>
                       <div class="pq-fancybox-info">
-                          <p class="pq-fancybox-description">It is a long established fact that a reader will be
-                              distracted by the readable content of a page when looking at its layout.</p>
+                          <p class="pq-fancybox-description">We understand that entering the business of charging can be daunting. That is why we offer expert guidance and implement custom-built solutions, making the journey towards electrification smooth and efficient.</p>
                           <div class="pq-btn-container">
                               <div class="pq-button-block">
                                   <a class="pq-button pq-btn-link" href="home-charging-services.html">
@@ -191,12 +173,11 @@
               <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
                   <div class="pq-fancy-box pq-fancybox-1 ">
                       <div class="pq-fancy-media">
-                          <h5 class="pq-fancy-box-title">charge point stations</h5>
+                          <h5 class="pq-fancy-box-title">Intelligent Deployment and Scaling</h5>
                           <i class="flaticon-charger"></i>
                       </div>
                       <div class="pq-fancybox-info">
-                          <p class="pq-fancybox-description">It is a long established fact that a reader will be
-                              distracted by the readable content of a page when looking at its layout.</p>
+                          <p class="pq-fancybox-description">We not only install chargers; we design and implement the entire strategic charging infrastructure that can adapt and grow as your needs evolve. We help you deploy rapidly and scale intelligently, ensuring your investment keeps pace with the electric future.</p>
                           <div class="pq-btn-container">
                               <div class="pq-button-block">
                                   <a class="pq-button pq-btn-link" href="charge-point-services.html">
@@ -207,10 +188,7 @@
                       </div>
                   </div>
               </div>
-              <div class="col-lg-12 text-center pq-mt-60">
-                  <p class="charge">Success Your Technology. <a href="index.html" class="pq-text-primary">Take A
-                          Challenge!</a></p>
-              </div>
+              
           </div>
       </div>
     </div></section>
@@ -230,44 +208,12 @@
             <div class="col-lg-6 p-0">
                 <img src="{{asset('rev/whyus.jpg')}}" class="" alt="">
             </div>
-            <div class="col-lg-6 pq-bg-dark pq-dark-section-side-right p-130-45">
+            <div class="col-lg-4 pq-bg-dark pq-dark-section-side-right p-130-45">
                 <div class="pq-section-title-box">
-                    <span class="pq-section-sub-title pq-text-white">Why Choose Us</span>
-                    <h5 class="pq-section-title pq-text-white">accessible chargers provide the power for free</h5>
-                    <p class="pq-section-description pq-text-white">Lorem Ipsum is simply dummy text of the printing
-                        and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. </p>
+                    <span class="pq-section-sub-title pq-text-white">Our Approach</span>
+                    <p class="pq-section-description pq-text-white">We focus on creating appropriate solutions for charging EVs and other Storage Battery Systems of any size and complexity. As your partner, we also maintain and support the charging infrastructure for you as per your needs. </p>
                 </div>
-                <div class="pq-progressbar-box pq-progressbar-style-1">
-                    <div class="pq-progressbar-content">
-                        <span class="progress-title">AC Charger Services</span>
-                        <span class="prSectionogress-value pq-text-white">85%</span>
-                        <div class="pq-progress-bar">
-                            <span data-width="85" class="show-progress"></span>
-                        </div>
-                    </div>
-                    <div class="pq-progressbar-content">
-                        <span class="progress-title">DC Charger Services</span>
-                        <span class="progress-value pq-text-white">90%</span>
-                        <div class="pq-progress-bar">
-                            <span data-width="90" class="show-progress"></span>
-                        </div>
-                    </div>
-                    <div class="pq-progressbar-content">
-                        <span class="progress-title">Point Services</span>
-                        <span class="progress-value pq-text-white">90%</span>
-                        <div class="pq-progress-bar">
-                            <span data-width="90" class="show-progress"></span>
-                        </div>
-                    </div>
-                    <div class="pq-progressbar-content">
-                        <span class="progress-title">EV Drivers Services</span>
-                        <span class="progress-value pq-text-white">98%</span>
-                        <div class="pq-progress-bar">
-                            <span data-width="98" class="show-progress"></span>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -278,146 +224,14 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="pq-section-title-box text-center">
-                    <span class="pq-section-sub-title">Our Features</span>
-                    <h5 class="pq-section-title">Take Look Into Our Best Features</h5>
-                    <p class="pq-section-description">Lorem Ipsum is simply dummy It is a long established fact that
-                        a reader will be distracted by the readable content of a page when looking at its layout.
-                    </p>
+                    <span class="pq-section-sub-title">Our Offerings</span>
+                    <h5 class="pq-section-title">We provide a range of chargers both AC and DC Fast Chargers suitable for all kinds of electric vehicles. Our Charging Management System (CMS) provides seamless integration with ours as well as chargers from other manufacturers.</h5>
+                    <p >  We also provide turnkey services to examine feasibility, install, commission and maintain the charging solutions that we create for you.
+                        Our consulting services encompass OEM consulting on onboard chargers, Battery system design, etc. and Strategic Charging Advisory</p>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="pq-fancy-box pq-fancybox-2">
-                    <div class="pq-fancybox-icon">
-                        <i class="flaticon-ev"></i>
-                    </div>
-                    <div class="pq-fancybox-info">
-                        <h4 class="pq-fancy-box-title">ac charger</h4>
-                        <p class="pq-fancybox-description">Lorem Ipsum is simply dummy text of the printing and of
-                            the printing and typesetting industry.</p>
-                        <div class="pq-btn-container">
-                            <a class="pq-button pq-btn-link" href="ac-charger-services.html">
-                                <div class="pq-button-block">
-                                    <span class="pq-button-line-left"></span>
-                                    <span class="pq-button-text">Read More</span>
-                                    <span class="pq-button-line-right"></span>
-                                    <i class="ion ion-android-arrow-dropright"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
-                <div class="pq-fancy-box pq-fancybox-2">
-                    <div class="pq-fancybox-icon">
-                        <i class="flaticon-electric-car"></i>
-                    </div>
-                    <div class="pq-fancybox-info">
-                        <h4 class="pq-fancy-box-title">Dc charger</h4>
-                        <p class="pq-fancybox-description">Lorem Ipsum is simply dummy text of the printing and of
-                            the printing and typesetting industry.</p>
-                        <div class="pq-btn-container">
-                            <a class="pq-button pq-btn-link" href="dc-charger-services.html">
-                                <div class="pq-button-block">
-                                    <span class="pq-button-line-left"></span>
-                                    <span class="pq-button-text">Read More</span>
-                                    <span class="pq-button-line-right"></span>
-                                    <i class="ion ion-android-arrow-dropright"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
-                <div class="pq-fancy-box pq-fancybox-2">
-                    <div class="pq-fancybox-icon">
-                        <i class="flaticon-charging-battery-1"></i>
-                    </div>
-                    <div class="pq-fancybox-info">
-                        <h4 class="pq-fancy-box-title">EV drivers</h4>
-                        <p class="pq-fancybox-description">Lorem Ipsum is simply dummy text of the printing and of
-                            the printing and typesetting industry.</p>
-                        <div class="pq-btn-container">
-                            <a class="pq-button pq-btn-link" href="ev-driver-services.html">
-                                <div class="pq-button-block">
-                                    <span class="pq-button-line-left"></span>
-                                    <span class="pq-button-text">Read More</span>
-                                    <span class="pq-button-line-right"></span>
-                                    <i class="ion ion-android-arrow-dropright"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-5">
-                <div class="pq-fancy-box pq-fancybox-2">
-                    <div class="pq-fancybox-icon">
-                        <i class="flaticon-charging-station"></i>
-                    </div>
-                    <div class="pq-fancybox-info">
-                        <h4 class="pq-fancy-box-title">Charge Point </h4>
-                        <p class="pq-fancybox-description">Lorem Ipsum is simply dummy text of the printing and of
-                            the printing and typesetting industry.</p>
-                        <div class="pq-btn-container">
-                            <a class="pq-button pq-btn-link" href="charge-point-services.html">
-                                <div class="pq-button-block">
-                                    <span class="pq-button-line-left"></span>
-                                    <span class="pq-button-text">Read More</span>
-                                    <span class="pq-button-line-right"></span>
-                                    <i class="ion ion-android-arrow-dropright"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-5">
-                <div class="pq-fancy-box pq-fancybox-2">
-                    <div class="pq-fancybox-icon">
-                        <i class="flaticon-charging-station-1"></i>
-                    </div>
-                    <div class="pq-fancybox-info">
-                        <h4 class="pq-fancy-box-title">Home charging</h4>
-                        <p class="pq-fancybox-description">Lorem Ipsum is simply dummy text of the printing and of
-                            the printing and typesetting industry.</p>
-                        <div class="pq-btn-container">
-                            <a class="pq-button pq-btn-link" href="home-charging-services.html">
-                                <div class="pq-button-block">
-                                    <span class="pq-button-line-left"></span>
-                                    <span class="pq-button-text">Read More</span>
-                                    <span class="pq-button-line-right"></span>
-                                    <i class="ion ion-android-arrow-dropright"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-5">
-                <div class="pq-fancy-box pq-fancybox-2">
-                    <div class="pq-fancybox-icon">
-                        <i class="flaticon-charging-station-6"></i>
-                    </div>
-                    <div class="pq-fancybox-info">
-                        <h4 class="pq-fancy-box-title">Building Tech</h4>
-                        <p class="pq-fancybox-description">Lorem Ipsum is simply dummy text of the printing and of
-                            the printing and typesetting industry.</p>
-                        <div class="pq-btn-container">
-                            <a class="pq-button pq-btn-link" href="building-technology-services.html">
-                                <div class="pq-button-block">
-                                    <span class="pq-button-line-left"></span>
-                                    <span class="pq-button-text">Read More</span>
-                                    <span class="pq-button-line-right"></span>
-                                    <i class="ion ion-android-arrow-dropright"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+ 
         </div>
     </div>
 </section>
@@ -427,132 +241,29 @@
         <div class="row text-center justify-content-center">
             <div class="col-lg-12 p-0">
                 <div class="pq-section-title-box text-center">
-                    <span class="pq-section-sub-title">EV Counter</span>
-                    <h5 class="pq-section-title">What Our Happy Clients Say about us</h5>
-                    <p class="pq-section-description">Lorem Ipsum is simply dummy It is a long established fact that
-                        a reader will be distracted by the readable content of a page when looking at its layout.
-                    </p>
+                    <span class="pq-section-sub-title"> Verticals:</span>
+                    <h5 class="pq-section-title">Whether you are an EV manufacturer pushing the boundaries of performance, a forward-thinking fleet operator seeking operational excellence, a sustainability-focused property aiming for energy independence, or an energy storage provider maximizing the value of your batteries, we have the expertise and technology to help you achieve your goals.</h5>
+                     
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="pq-counter pq-counter-style-2">
-                    <div class="pq-counter-info">
-                        <div class="pq-counter-num-prefix">
-                            <h5 class="timer" data-to="330" data-speed="2000">330</h5>
-                            <span class="pq-counter-prefix">+</span>
-                        </div>
-                        <p class="pq-counter-description">Ev Charging Ports Installed</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 mt-4 mt-md-0">
-                <div class="pq-counter pq-counter-style-2">
-                    <div class="pq-counter-info">
-                        <div class="pq-counter-num-prefix">
-                            <h5 class="timer" data-to="250" data-speed="2000">250</h5>
-                            <span class="pq-counter-prefix">+</span>
-                        </div>
-                        <p class="pq-counter-description">Ev Charging Ports Installed</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 mt-4 mt-xl-0">
-                <div class="pq-counter pq-counter-style-2">
-                    <div class="pq-counter-info">
-                        <div class="pq-counter-num-prefix">
-                            <h5 class="timer" data-to="142" data-speed="2000">142</h5>
-                            <span class="pq-counter-prefix">+</span>
-                        </div>
-                        <p class="pq-counter-description">Trees Planted To Restore Planted</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 mt-4 mt-xl-0">
-                <div class="pq-counter pq-counter-style-2">
-                    <div class="pq-counter-info">
-                        <div class="pq-counter-num-prefix">
-                            <h5 class="timer" data-to="460" data-speed="2000">460</h5>
-                            <span class="pq-counter-prefix">+</span>
-                        </div>
-                        <p class="pq-counter-description">Dc fast Charging Installed</p>
-                    </div>
-                </div>
-            </div>
+          
         </div>
     </div>
 </section>
-<section>
-
-    <div class="videopopup pq-bg-img-3 pq-py-250">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-12">
-                    <div class="pq-popup-video-block">
-                        <div class="pq-video-icon">
-                            <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="pq-video popup-youtube">
-                                <i aria-hidden="true" class="ion ion-play"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
+ 
 
 <section class="download-app">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 order-2 order-lg-0 mt-4 mt-lg-0 p-5" >
                 <div class="pq-section-title-box pq-mb-30 pt-5 mt-5">
-                    <span class="pq-section-sub-title">Download App</span>
-                    <h5 class="pq-section-title">Become Our Partner or Host the charging Station</h5>
+                    <span class="pq-section-sub-title">Join us on the journey:</span>
+                    <h5 class="pq-section-title">At SIRI Electromotive, we believe in a world powered by clean energy, where the hum of electric engines replaces the roar of combustion. We are passionate about the power of sustainable energy and are committed to helping every company, every individual, play a part in the transition.
+                   </h5>
+                   <p> Ready to turbo-charge your electric future? Contact us today.</p>
                 </div>
-                <div class="pq-accordion-block ">
-                    <div class="pq-accordion-box pq-accordion-box-style-1 1 pq-active">
-                        <div class="pq-ad-title">
-                            <h5 class="ad-title-text">
-                                Brief Introduction for You
-                                <i aria-hidden="true" class="ion ion-ios-arrow-down active"></i>
-                                <i aria-hidden="true" class="ion ion-ios-arrow-up inactive"></i>
-                            </h5>
-                        </div>
-                        <div class="pq-accordion-details">
-                            <p class="pq-detail-text"> There are many variations of passages of in Ipsum available,
-                                but the majority have suffered alteration in some form, by injected humourLorem
-                                ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.</p>
-                        </div>
-                    </div>
-                    <div class="pq-accordion-box pq-accordion-box-style-1 2">
-                        <div class="pq-ad-title">
-                            <h5 class="ad-title-text">
-                                What Are the Different Services Offers
-                                <i aria-hidden="true" class="ion ion-ios-arrow-down active"></i>
-                                <i aria-hidden="true" class="ion ion-ios-arrow-up inactive"></i>
-                            </h5>
-                        </div>
-                        <div class="pq-accordion-details">
-                            <p class="pq-detail-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                                elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                        </div>
-                    </div>
-                    <div class="pq-accordion-box pq-accordion-box-style-1 3">
-                        <div class="pq-ad-title">
-                            <h5 class="ad-title-text">
-                                I'm Intrested To Open Charging Store
-                                <i aria-hidden="true" class="ion ion-ios-arrow-down active"></i>
-                                <i aria-hidden="true" class="ion ion-ios-arrow-up inactive"></i>
-                            </h5>
-                        </div>
-                        <div class="pq-accordion-details">
-                            <p class="pq-detail-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                                elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="col-lg-6">
                 <img src="{{asset('images_home/1.jpg')}}" alt="">
@@ -565,7 +276,7 @@
         </div>
     </div>
 </section>
-<section class="pq-bg-grey brand">
+{{-- <section class="pq-bg-grey brand">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -591,9 +302,9 @@
            
         </div>
     </div>
-</section>
+</section> --}}
 
-<section class="blog">
+{{-- <section class="blog">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -659,7 +370,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
   <section class="page5">    <footer id="pq-footer">
     <div class="pq-subscribe align-items-center">
