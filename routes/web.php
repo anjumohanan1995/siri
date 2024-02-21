@@ -137,7 +137,7 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/Solutions', 'Solutions')->name('home.solutions');
 
    Route::get('/page/contact-us', 'contact')->name('home.contact');
-   Route::get('/page/charging-management-system', 'Charging')->name('dynamicPage');
+   
    
    Route::get('/page/{slug}', 'dynamicPage')->name('dynamicPage');
 

@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\ContactUs;
 use App\Models\DynamicPage;
 use App\Models\SubMenu;
+use App\Models\SubSubMenu;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Validator;
@@ -81,29 +82,31 @@ class DynamicPageController extends Controller
         }
 
         // Initialize the query
-        $query = SubMenu::query();
-        $query->where('link', 'LIKE', '%page%');
-        //$query = $query->where('menu_id',$id);
+        $sub = SubMenu::where('link', 'LIKE', '%page%')->get();
+
+        $subsub = SubSubMenu::where('link', 'LIKE', '%page%')->get();
+
+    $records = $subsub->concat($sub);
 
 
         // dd($query);
 
         // Apply search filter if provided
         if (!empty($searchValue)) {
-            $query->where('title', 'like', '%' . $searchValue . '%');
+            $records->where('title', 'like', '%' . $searchValue . '%');
         }
 
         // Get total records and filtered records count
-        $totalRecords = $query->count();
-        $totalRecordswithFilter = $query->count();
+        $totalRecords = $records->count();
+        $totalRecordswithFilter = $records->count();
 
         // Fetch records with pagination and ordering
-        $records = $query->when(!empty($columnName), function ($query) use ($columnName, $columnSortOrder) {
-            return $query->orderBy($columnName, $columnSortOrder);
-        })
-            ->skip($start)
-            ->take($rowperpage)
-            ->get();
+     //   $records = $query->when(!empty($columnName), function ($query) use ($columnName, $columnSortOrder) {
+        //    return $query->orderBy($columnName, $columnSortOrder);
+     //   })
+          //  ->skip($start)
+          //  ->take($rowperpage)
+          //  ->get();
 
         // Build response data
         $data_arr = [];
@@ -165,8 +168,11 @@ class DynamicPageController extends Controller
 
             $data = $request->all();
             $subMenu = SubMenu::find($request->menu_id);
+            $subSubMenu = SubSubMenu::find($request->menu_id);
+            if($subMenu)
             $slug = basename($subMenu['link']);
-
+            else
+            $slug = basename($subSubMenu['link']);
             $page = DynamicPage::where('menu_id',$request->menu_id)->first();
 
 
