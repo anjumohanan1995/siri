@@ -13,7 +13,7 @@
 }
   .page1 { background: #86BB45; }
   .page2 { background: #ffffff; }
-  .page3 { background: #f7f9fa; }
+  .page3 { background: #111111; }
   .page4 { background: #f7f9fa; }
   .page5 { background: #ffffff; }
   section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; } 
@@ -88,7 +88,7 @@
   <div class="about-us">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 " style="padding-top: 8em">
+            <div class="col-lg-6 p-5" style="padding-top: 8em;padding-left: 7em !important">
                 <div class="pq-section-title-box"> 
                     {{-- <span class="pq-section-sub-title">About Us</span> --}}
                     <h4 class="pq-section-title">At SIRI Electromotive, we believe the future is electric. We actively participate in unlocking the full potential of clean energy, thereby building a sustainable future, and empowering everyone to participate in the transition.</h4>
@@ -109,7 +109,7 @@
                  
                
             </div>
-            <div class="col-lg-6 mt-4 mt-lg-0 pt-10">
+            <div class="col-lg-6 mt-4 mt-lg-0 p-5" style="margin-top:3em !important">
                 <img src="{{asset('images_home/3.jpg')}}" alt="">
             </div>
         </div>
@@ -142,13 +142,7 @@
                       </div>
                       <div class="pq-fancybox-info">
                           <p class="pq-fancybox-description">We are at the forefront of smart charging technology, constantly pushing the boundaries with proprietary AI algorithms and industry-leading advancements. We are not keeping up; we are leading the way.</p>
-                          <div class="pq-btn-container">
-                              <div class="pq-button-block">
-                                  <a class="pq-button" href="building-technology-services.html">
-                                      <span class="text"><i class="fas fa-angle-right"></i></span>
-                                  </a>
-                              </div>
-                          </div>
+                         
                       </div>
                   </div>
               </div>
@@ -160,13 +154,7 @@
                       </div>
                       <div class="pq-fancybox-info">
                           <p class="pq-fancybox-description">We understand that entering the business of charging can be daunting. That is why we offer expert guidance and implement custom-built solutions, making the journey towards electrification smooth and efficient.</p>
-                          <div class="pq-btn-container">
-                              <div class="pq-button-block">
-                                  <a class="pq-button pq-btn-link" href="home-charging-services.html">
-                                      <span class="text"><i class="fas fa-angle-right"></i></span>
-                                  </a>
-                              </div>
-                          </div>
+                           
                       </div>
                   </div>
               </div>
@@ -178,13 +166,7 @@
                       </div>
                       <div class="pq-fancybox-info">
                           <p class="pq-fancybox-description">We not only install chargers; we design and implement the entire strategic charging infrastructure that can adapt and grow as your needs evolve. We help you deploy rapidly and scale intelligently, ensuring your investment keeps pace with the electric future.</p>
-                          <div class="pq-btn-container">
-                              <div class="pq-button-block">
-                                  <a class="pq-button pq-btn-link" href="charge-point-services.html">
-                                      <span class="text"><i class="fas fa-angle-right"></i></span>
-                                  </a>
-                              </div>
-                          </div>
+                          
                       </div>
                   </div>
               </div>
@@ -220,26 +202,27 @@
   </div></section>
 
   <section class="feature">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
+    
                 <div class="pq-section-title-box text-center">
+                    <video width="100%"  autoplay muted loop>
+                        <source src="{{asset('images_home/Quench Banner.mp4.mp4')}}" type="video/mp4">
+                        <source src="{{asset('images_home/Quench Banner.mp4.ogg')}}" type="video/ogg">
+                        Your browser does not support HTML video.
+                      </video>
+
+                      <div class="video_text">
                     <span class="pq-section-sub-title">Our Offerings</span>
                     <h5 class="pq-section-title">We provide a range of chargers both AC and DC Fast Chargers suitable for all kinds of electric vehicles. Our Charging Management System (CMS) provides seamless integration with ours as well as chargers from other manufacturers.</h5>
                     <p >  We also provide turnkey services to examine feasibility, install, commission and maintain the charging solutions that we create for you.
                         Our consulting services encompass OEM consulting on onboard chargers, Battery system design, etc. and Strategic Charging Advisory</p>
-                </div>
-            </div>
-
- 
-        </div>
-    </div>
+                    </div>
+           
 </section>
 
-<section class="pq-bg-grey">
+<section class="pq-bg-grey car_bg">
     <div class="container">
-        <div class="row text-center justify-content-center">
-            <div class="col-lg-12 p-0">
+        <div class="row">
+            <div class="col-lg-12 pt-5">
                 <div class="pq-section-title-box text-center">
                     <span class="pq-section-sub-title"> Verticals:</span>
                     <h5 class="pq-section-title">Whether you are an EV manufacturer pushing the boundaries of performance, a forward-thinking fleet operator seeking operational excellence, a sustainability-focused property aiming for energy independence, or an energy storage provider maximizing the value of your batteries, we have the expertise and technology to help you achieve your goals.</h5>

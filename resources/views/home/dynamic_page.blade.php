@@ -39,7 +39,7 @@
    
 <section class="page4"><div class="row align-items-center">
   <div class="col-lg-5 mt-4 mt-lg-0 p-5" style="margin-top:6em !important">
-    <img src="{{ asset('dynamic-pages/' . @$content->image_one) }}" alt="">
+    <img src="{{ asset('dynamic-pages/' . @$content->image_two) }}" alt="">
 </div>
   <div class="col-lg-7 p-5 ">
    

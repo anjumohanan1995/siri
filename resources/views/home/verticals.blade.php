@@ -39,7 +39,7 @@
         </div>
     </div>
 </section> 
-    <section class="page3">{!! @$vertical->content !!}</section>
+    <section class="page3">  <div class="container">{!! @$vertical->content !!}   </div></section>
     <section class="page5">    <footer id="pq-footer">
         <div class="pq-subscribe align-items-center">
             <div class="container">
