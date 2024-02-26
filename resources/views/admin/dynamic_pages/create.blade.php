@@ -75,7 +75,10 @@
                                                     {{-- <input type="file" class="form-control" name="image" /> --}}
                                                     <span>Upload Maximum File Size is 2Mb</span>
                                                     <input type="file" id="img_file" name="image_one" class="form-control" accept=".png, .jpg, .jpeg"  onChange="img_pathUrl(this);"><br>
-                                                  
+                                                    @if(@$data->image_one)
+                                                    <br>
+                                                    <img src="{{ asset('dynamic-pages/'.@$data->image_one) }}" width ="150px" height="150px">
+                                                    @endif
 
                                                     @error('image')
                                                         <span class="text-danger">{{$message}}</span>
