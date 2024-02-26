@@ -16,7 +16,7 @@
     <section class="page1">
         
         <div class="row align-items-center">
-            <div class="col-lg-6 p-5 " style="padding-left: 7em !important">
+            <div class="col-lg-6 p-5 pl-7">
              
                 <div class="pq-breadcrumb-title">
                     <h2 class="text-white">{{ @$content->title_one }}</h2>
@@ -30,7 +30,7 @@
                
                 
             </div>
-            <div class="col-lg-5 mt-4 mt-lg-0 p-5" style="margin-top:7em !important">
+            <div class="col-lg-5 mt-6 p-5">
                 <img src="{{ asset('dynamic-pages/' . @$content->image_one) }}" alt="">
             </div>
         </div>
@@ -38,7 +38,7 @@
 </section>
    
 <section class="page4"><div class="row align-items-center">
-  <div class="col-lg-5 mt-4 mt-lg-0 p-5" style="margin-top:6em !important">
+  <div class="col-lg-5   p-5 mt-6" >
     <img src="{{ asset('dynamic-pages/' . @$content->image_two) }}" alt="">
 </div>
   <div class="col-lg-7 p-5 ">
@@ -57,6 +57,28 @@
   </div>
  
 </div></section>
+@if(@$content->content_three !== null)
+<section class="page6"><div class="row align-items-center">
+    <div class="col-lg-5   p-5 mt-6">
+      <img src="{{ asset('dynamic-pages/' . @$content->image_three) }}" alt="">
+  </div>
+    <div class="col-lg-7 p-5 ">
+     
+        <div class="pq-breadcrumb-title">
+            <h2 class="text-white">{{ @$content->title_three }}</h2>
+        </div>
+        <div class="pq-icon-box pq-style-4 mt-4 mt-md-0">
+          
+            <div class="pq-icon-box-content ">
+                {!! @$content->content_three !!}
+                  </div>
+        </div>
+       
+        
+    </div>
+   
+  </div></section>
+  @endif
 <section class="page5">    <footer id="pq-footer">
   <div class="pq-subscribe align-items-center">
       <div class="container">

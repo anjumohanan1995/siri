@@ -617,6 +617,26 @@ Design and Developed by: Peaceful Qode
     section{
         padding: 20px 0;
     }
+    .page1{
+        padding-top: 6em !important;
+    }
+    .video_text{
+        position: initial !important;
+        width: 100%;
+    }
+    header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li>.sub-menu {
+         
+        left: 0px !important;
+        
+    }.page2 .pq-icon-box.pq-style-4{
+        display: inline-block;
+    }
+    .pq-icon-box.pq-style-4 .pq-icon{
+        width: 100%;
+    }
+    .mt-6 {
+        margin-top: 0 !important;
+      }
     body{
         overflow: visible !important;
     }
@@ -882,8 +902,8 @@ Design and Developed by: Peaceful Qode
     }
 
     .pq-section-title-box .pq-section-title{
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 14px;
+    line-height: 21px;
     }
 
     .pq-icon-box.pq-style-9{
@@ -929,9 +949,18 @@ Design and Developed by: Peaceful Qode
 
 
 
-@media screen and (max-width:4000px) and (min-width:1023px) {
+@media screen and (max-width:4000px) and (min-width:1300px) {
 	
     header#pq-header .pq-bottom-header .navbar .navbar-nav li:hover > .sub-menu {
 		display: block !important;
 	}
+    .page5.current {
+        justify-content: end;
+        align-items: end;
+      }
+      footer#pq-footer .pq-footer-top{
+        padding: 60px 0;
+      }.pq-subscribe-location{
+        padding: 60px 0;
+      }
 }
