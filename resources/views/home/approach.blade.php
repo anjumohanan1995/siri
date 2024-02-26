@@ -118,7 +118,7 @@
                                         <i class="fa fa-envelope"></i>
                                         <div class="pq-footer-items-info">
                                             <a href="mailto:info@peacefuldesign.com">
-                                                <span>info@siri.com</span>
+                                                <span>reachus@siriem.com</span>
                                             </a>
                                         </div>
                                     </div>

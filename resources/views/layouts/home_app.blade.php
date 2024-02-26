@@ -60,7 +60,7 @@
                                 </li>
                                 <li>
                                     <a href="mailto:o@siri.com">
-                                        <i class="fas fa-envelope"></i><span>info@siri.com</span>
+                                        <i class="fas fa-envelope"></i><span>reachus@siriem.com</span>
                                     </a>
                                 </li>
                             </ul>
@@ -262,7 +262,7 @@
                                             <i class="fa fa-envelope"></i>
                                             <div class="pq-footer-items-info">
                                                 <a href="mailto:info@peacefuldesign.com">
-                                                    <span>info@siri.com</span>
+                                                    <span>reachus@siriem.com</span>
                                                 </a>
                                             </div>
                                         </div>

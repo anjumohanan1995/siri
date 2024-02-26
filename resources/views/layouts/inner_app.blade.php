@@ -60,7 +60,7 @@
                                 </li>
                                 <li>
                                     <a href="mailto:o@siri.com">
-                                        <i class="fas fa-envelope"></i><span>info@siri.com</span>
+                                        <i class="fas fa-envelope"></i><span>reachus@siriem.com</span>
                                     </a>
                                 </li>
                             </ul>
