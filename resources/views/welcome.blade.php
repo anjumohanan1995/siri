@@ -34,7 +34,7 @@
                     <!--
                         --><rs-layer id="slider-2-slide-2-layer-0" data-type="shape" data-rsp_ch="on" data-xy="x:c;y:b;"
                         data-text="w:normal;s:20,15,11,6;l:0,19,14,8;"
-                        data-dim="w:1372px,168px,169px,968px;h:140px,67px,40px,40px;minw:0px,none,none,none;"
+                        data-dim="w:2072px,168px,169px,968px;h:140px,67px,40px,40px;minw:0px,none,none,none;"
                         data-frame_0="y:0,39,29,17;" data-frame_1="st:500;sp:500;" data-frame_999="o:0;st:w;"
                         style="z-index:11;background-color:#86bb45;">
                     </rs-layer><!--
@@ -88,7 +88,7 @@
   <div class="about-us">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 p-5" style="padding-top: 8em;padding-left: 7em !important">
+            <div class="col-lg-6 p-5 pl-7 pt-8" >
                 <div class="pq-section-title-box"> 
                     {{-- <span class="pq-section-sub-title">About Us</span> --}}
                     <h4 class="pq-section-title">At SIRI Electromotive, we believe the future is electric. We actively participate in unlocking the full potential of clean energy, thereby building a sustainable future, and empowering everyone to participate in the transition.</h4>

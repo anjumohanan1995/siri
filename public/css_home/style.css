@@ -1510,7 +1510,7 @@ header#pq-header.pq-header-default .pq-toggle-btn a {
     padding: 0;
     font-size: 38px;
     background: var(--primary-color);
-    color: #fff;header#pq-header
+    color: #fff;
     line-height: 64px;
     width: 60px;
     height: 60px;
@@ -2975,7 +2975,9 @@ Fancy Box
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-
+.pt-8{
+    padding-top: 8em !important;
+}
 .pq-fancy-box.pq-fancybox-1 .pq-fancy-media {
     display: flex;
     /*! padding-bottom: 15px; */
@@ -5204,11 +5206,24 @@ margin-bottom: 20px;
       display: inline-block;
       margin: auto 0;
   }
-
+  .mt-6{
+    margin-top: 6em !important;
+  }
+  .pl-7{
+    padding-left: 7em !important;
+  }
+  .mt-7{
+    margin-top: 7em !important;
+  }
+   
+  .col-lg-5 img {
+    border-radius: 10px;
+  }
   .page2 { background-color: rgb(134, 187, 69); }
   .page1 { background-color: rgb(134, 187, 69); }  
   .page3 { background: #182a32; }
   .page4 { background: #ffffff; }
+  .page6 { background: #182a32; }
   .page5{ background-color: rgb(134, 187, 69); }
   section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;} 
   .page3 .pq-bg-grey .pq-section-title {
@@ -5250,9 +5265,11 @@ margin-bottom: 20px;
     width: 85%;
 }
 .inner .page3  {
-    background: url(../images_home/bg_car.jpg);
-    background-position: top left;
-    background-size: cover;
+    background: url(../images_home/bg_car.jpg) #141824;
+ 
+  background-position: bottom right;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 .inner .page3 h5{
     margin-bottom: 20px;
