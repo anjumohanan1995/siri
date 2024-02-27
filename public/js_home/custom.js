@@ -92,9 +92,9 @@ Design and Developed by: PeacefulQode
             jQuery(window).scroll(function () {
                 var scrollTop = jQuery(window).scrollTop();
                 if (scrollTop > 300) {
-                    jQuery('.pq-bottom-header').addClass('pq-header-sticky animated fadeInDown animate__faster');
+                   // jQuery('.pq-bottom-header').addClass('pq-header-sticky animated fadeInDown animate__faster');
                 } else {
-                    jQuery('.pq-bottom-header').removeClass('pq-header-sticky animated fadeInDown animate__faster');
+                   // jQuery('.pq-bottom-header').removeClass('pq-header-sticky animated fadeInDown animate__faster');
                 }
             });
         }

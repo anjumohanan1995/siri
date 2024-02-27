@@ -11,7 +11,7 @@
 #rev_slider_2_1 {
   height: 122vh !important;
 }
-  .page1 { background: #86BB45; }
+  .page1 { background: #2eb82e; }
   .page2 { background: #ffffff; }
   .page3 { background: #111111; }
   .page4 { background: #f7f9fa; }
@@ -36,10 +36,10 @@
                         data-text="w:normal;s:20,15,11,6;l:0,19,14,8;"
                         data-dim="w:2072px,168px,169px,968px;h:140px,67px,40px,40px;minw:0px,none,none,none;"
                         data-frame_0="y:0,39,29,17;" data-frame_1="st:500;sp:500;" data-frame_999="o:0;st:w;"
-                        style="z-index:11;background-color:#86bb45;">
+                        style="z-index:11;background-color:#2eb82e;">
                     </rs-layer><!--
 
-                        --><rs-layer id="slider-2-slide-2-layer-1" class="pq-title-text" data-type="text" data-color="#86bb45"
+                        --><rs-layer id="slider-2-slide-2-layer-1" class="pq-title-text" data-type="text" data-color="#2eb82e"
                         data-rsp_ch="on" data-xy="x:c;yo:250px,200px,180px,80px;"
                         data-text="w:normal;s:82,64,62,48;l:90,70,70,56;fw:500;a:center;"
                         data-frame_0="y:50,39,29,17;" data-frame_1="st:800;sp:1000;" data-frame_999="o:0;st:w;"
@@ -67,8 +67,8 @@
                         data-dim="minh:0px,none,none,none;" data-padding="r:20,20,20,15;l:20,20,20,15;"
                         data-border="bor:5px,5px,5px,5px;" data-frame_0="y:50,39,29,17;"
                         data-frame_1="st:1400;sp:1000;" data-frame_999="o:0;st:w;"
-                        data-frame_hover="bgc:#86bb45;bor:5px,5px,5px,5px;sp:50;e:power1.inOut;bri:100%;"
-                        style="z-index:13;background-color:#86bb45;">
+                        data-frame_hover="bgc:#2eb82e;bor:5px,5px,5px,5px;sp:50;e:power1.inOut;bri:100%;"
+                        style="z-index:13;background-color:#2eb82e;">
                         <div class="pq-button-block"><span class="pq-button-line-left"></span><span
                                 class="pq-button-text">Read More</span><span class="pq-button-line-right"></span><i
                                 class="ion ion-android-arrow-dropright"></i></div>

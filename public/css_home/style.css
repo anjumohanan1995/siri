@@ -84,7 +84,7 @@ Moz Selection
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root {
-    --primary-color: #86bb45;
+    --primary-color: #2eb82e;
     --dark-color: #2c2c2c;
     --dark-page-dark-bg: #212121;
     --secondary-color: #000000;
@@ -124,7 +124,7 @@ body {
     font-weight: normal;
     line-height: 1.8;
     color: var(--secondary-color);
-    overflow-x: hidden;
+    overflow: scroll !important;
 }
 
 h1,
@@ -268,7 +268,9 @@ table th {
     padding: 8px;
     text-align: center;
 }
-
+.contact {
+    padding-top: 85px;
+  }
 /*+++++ Input Textarea +++++*/
 input,
 input.form-control {
@@ -343,6 +345,7 @@ select.form-control {
     background-repeat: no-repeat;
     background-position: right 16px bottom 50%;
     background-size: 20px 20px;
+    margin-bottom: 30px;
 }
 
 .pq-bg-grey {
@@ -533,7 +536,7 @@ Button Core
 .pq-button {
     position: relative;
     width: auto;
-    background:#54ab2d ;
+    background:#2eb82e ;
     color: var(--white-color);
     font-weight: 400;
     padding: 12px 20px;
@@ -3314,7 +3317,7 @@ Icon Box
      display: flex;
 }
 .page5{
-    background: #86bb45;
+    background: #2eb82e;
 }
 .pq-icon-box.pq-style-4 .pq-icon {
     margin-right: 20px;
@@ -3363,21 +3366,27 @@ Icon Box
 }
 
 .pq-icon-box.pq-style-7 {
-    padding: 60px 45px;
-    text-align: center;
+    padding: 0px 5px;
+    text-align: left;
     background-color: var(--grey-color);
+    display: inline-block;
+    height: 100%;
 }
 
 .pq-icon-box.pq-style-7 .pq-icon {
     margin-bottom: 15px;
+    width: 15%;
+    float: left;
 }
-
+.pq-icon-box.pq-style-7 .pq-icon img{
+    width: 59%;
+}
 .pq-icon-box.pq-style-7 .pq-icon a {
-    background: var(--primary-color);
-    width: 112px;
-    height: 112px;
+    /*! background: var(--primary-color); */
+    /*! width: 112px; */
+    /*! height: 112px; */
     display: block;
-    line-height: 112px;
+    /*! line-height: 112px; */
     margin: 0 auto;
     border-radius: 50%;
 }
@@ -3549,7 +3558,7 @@ Tab
 
 .pq-tabs-1 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-    border-bottom: 1px solid #86bb45;
+    border-bottom: 1px solid #2eb82e;
     position: relative;
     background: unset !important;
 }
@@ -3563,7 +3572,7 @@ Tab
 }
 
 .pq-bg-dark .pq-tabs-1 .nav-tabs .nav-link.active{
-    border-bottom: 1px solid #86bb45;
+    border-bottom: 1px solid #2eb82e;
 }
 
 .pq-bg-dark .pq-tabs-1 .nav-tabs .nav-link{
@@ -3577,7 +3586,7 @@ Tab
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-    color: #86bb45;
+    color: #2eb82e;
 }
 
 .pq-tabs-1 .tab-content .pq-tab-info ul li:before {
@@ -5169,6 +5178,8 @@ Custom CSS
   }
   .pq-icon-box-content {
     margin-bottom: 10px;
+    width: 80%;
+    float: left;
   }
   .inner .pq-section-description{
 width: 100%;
