@@ -124,7 +124,7 @@ body {
     font-weight: normal;
     line-height: 1.8;
     color: var(--secondary-color);
-    overflow: scroll !important;
+   
 }
 
 h1,
@@ -155,6 +155,7 @@ h1 {
     font-size: 40px;
     font-style: normal;
     line-height: 48px;
+    margin-bottom: 10px;
 }
 
 h2 {
@@ -347,15 +348,25 @@ select.form-control {
     background-size: 20px 20px;
     margin-bottom: 30px;
 }
+.pq-bg-grey.car_bg {
 
+    background-color: #141824 !important;  
+   
+}
 .pq-bg-grey {
-     background-color: #111 !important;  
+    background-color: #111 !important;
+    padding-top: 100px !important;
+    display: inline-block;
     
 }
 .car_bg{
-    background: url(../images_home/bg_car.jpg);
-    background-size: cover;
-    justify-content: start;
+    background: url(../images_home/bg_car.jpg) #141824 no-repeat bottom right !important;
+     
+    background-repeat: repeat;
+    background-size: auto;
+  background-position: bottom right;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 
 .pq-bg-dark {
@@ -525,6 +536,33 @@ Button Core
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+.accordion-item
+[type="button"]{
+    background: none;
+    color: #000;
+    padding: 0;
+    font-size: 14px;cursor:auto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.8;width: 100%;
+  
+}.pq-fancy-box button::after {
+    right: 0;top: 0;
+    position: absolute;
+  }
+.accordion-item {
+     
+    --bs-accordion-border-width: none;
+  }
+#panelsStayOpen-collapseOne{
+    border: none !important;
+}
+.accordion-item
+[type="button"]:hover{
+    background: none;
+    color: #000;
+    
+}
 
 [type="button"]:hover,
 [type="reset"]:hover,
@@ -536,7 +574,7 @@ Button Core
 .pq-button {
     position: relative;
     width: auto;
-    background:#2eb82e ;
+    background:#2eb82e;
     color: var(--white-color);
     font-weight: 400;
     padding: 12px 20px;
@@ -2398,7 +2436,7 @@ footer#pq-footer .pq-footer-style-1 .widget ul li a:hover {
 }
 
 footer#pq-footer .pq-footer-style-1 .widget:first-child {
-    margin-bottom: 45px;
+    margin-bottom: 25px;
 }
 
 footer#pq-footer .pq-footer-style-1 .pq-footer-logo {
@@ -2566,11 +2604,11 @@ Footer Subscribe
 .pq-subscribe-location,
 .pq-subscribe-time {
     display: flex;
-    padding: 30px 0;
+    padding: 50px 0;
 }
 
 .pq-subscribe-time {
-    padding: 30px 0;
+    padding: 50px 0;
     justify-content: flex-end;
 }
 
@@ -2619,7 +2657,7 @@ Footer Subscribe
     font-size: 18px;
     line-height: 26px;
     display: block;
-    color: var(--white-color);
+    color: #fff;
     font-weight: 500;
 }
 
@@ -2642,7 +2680,7 @@ Section Title
 
 .pq-section-title-box.text-center {
     position: relative; 
-    padding: 100px 0 40px;text-align: center;
+    padding: 50px 0 100px;text-align: center;
     float: left;
     width: 100%;
 }
@@ -2655,11 +2693,11 @@ Section Title
     /*! letter-spacing: 0.1em; */
     font-weight: 900;
     position: relative;
-    color: #b2fa59;
+    color: #2eb82e;
     width: 100%;
-    margin: 0 0 10px;
+    margin: 0 0 20px;
     padding-right: 45px;
-    /*! display: inline-block; */
+    display: inline-block;
 }
 
 .pq-section-title-box .pq-section-title {
@@ -2667,13 +2705,14 @@ Section Title
     line-height: 26px;
     font-weight: 500;
     font-family: "Roboto", sans-serif;
-    margin: 0 0 5px;
+    margin: 0 0 15px;
     /*! font-style: italic; */
     /*! color: #fff; */
+    display: inline-block;
 }
 
 .pq-section-title-box .pq-section-sub-title::before {
-    content: "";
+    /* content: ""; */
     position: absolute;
     right: 0;
     top: 0;
@@ -2685,7 +2724,7 @@ Section Title
 }
 
 .pq-section-title-box.text-center .pq-section-sub-title:after {
-    content: "";
+    /* content: ""; */
     position: absolute;
     left: 0;
     top: 0;
@@ -2968,11 +3007,11 @@ Fancy Box
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 .pq-fancy-box.pq-fancybox-1 {
-    padding: 30px 30px 60px;
+    padding: 30px 30px 0px;
     background: var(--white-color);
     display: inline-block;
     width: 100%;
-    height: 330px;
+    min-height: 120px;
     position: relative;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -3313,7 +3352,7 @@ Icon Box
   .inner header#pq-header .pq-menu-search-block a {
     color: #000;
   }
-.page2 .pq-icon-box.pq-style-4 {
+  .pq-icon-box.pq-style-4 {
      display: flex;
 }
 .page5{
@@ -4515,11 +4554,14 @@ FAQ
 .pq-accordion-block .pq-accordion-box {
     background: var(--white-color);
     margin-bottom: 5px;
-    position: relative;
+    /*! position: relative; */
     width: 100%;
     display: inline-block;
 }
-
+.service .pq-accordion-block .pq-accordion-box {
+    background: none;
+     
+}
 .pq-accordion-block .pq-accordion-box:last-child {
     margin-bottom: 0;
 }
@@ -4531,20 +4573,27 @@ FAQ
     cursor: pointer;
     border-radius: 5px;
 }
-
-.pq-accordion-block .pq-accordion-box .pq-ad-title i {
+.service .pq-accordion-block .pq-accordion-box .pq-ad-title i {
     position: absolute;
     top: 20px;
     right: 30px;
     opacity: 1;
     color: var(--dark-color);
 }
-
+.pq-accordion-block .pq-accordion-box .pq-ad-title i.fa-minus {
+    float: right;
+}
+.pq-accordion-block .pq-accordion-box .pq-ad-title i.fa-plus{
+    float: right;
+}
+.pq-accordion-block .pq-accordion-box.pq-active .pq-ad-title i.fa-plus{
+    display: none;
+}
 .pq-accordion-block .pq-accordion-box .pq-ad-title i.inactive {
     opacity: 0;
 }
 
-.pq-accordion-block .pq-accordion-box.pq-active .pq-ad-title i {
+.service .pq-accordion-block .pq-accordion-box.pq-active .pq-ad-title i {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -5230,12 +5279,12 @@ margin-bottom: 20px;
   .col-lg-5 img {
     border-radius: 10px;
   }
-  .page2 { background-color: rgb(134, 187, 69); }
-  .page1 { background-color: rgb(134, 187, 69); }  
+  .page2 { background-color:#2eb82e }
+  .page1 { background-color:#2eb82e }  
   .page3 { background: #182a32; }
   .page4 { background: #ffffff; }
   .page6 { background: #182a32; }
-  .page5{ background-color: rgb(134, 187, 69); }
+  .page5{ background-color:#2eb82e }
   section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;} 
   .page3 .pq-bg-grey .pq-section-title {
     color: #fff;
@@ -5263,7 +5312,7 @@ margin-bottom: 20px;
     top: 27%;
     width: 500px;
     color: #fff;
-    background: #6c9d2f;
+    background: #2eb82e;
     padding: 40px 20px 20px;
     /*! display: inline-block; */
   }
@@ -5276,7 +5325,7 @@ margin-bottom: 20px;
     width: 85%;
 }
 .inner .page3  {
-    background: url(../images_home/bg_car.jpg) #141824;
+    background: url(../images_home/bg_car.jpg) #141824 bottom right no-repeat !important;
  
   background-position: bottom right;
   background-size: 60%;
@@ -5285,21 +5334,97 @@ margin-bottom: 20px;
 .inner .page3 h5{
     margin-bottom: 20px;
 }
+.bg_section{
+    background: #fff !important;
+}
 .feature .pq-section-sub-title {
   color: #f7ff00;
   font-size: 23px;
   /*! padding-top: 30px; */
   /*! display: inline-block; */
 }
-
+.car_top img{
+    margin-top:-117px !important;
+}
 .pq-bg-grey .pq-section-title {
   color: #fff;
   font-size: 22px;
   line-height: 34px;
-}
+}#slider-2-slide-2-layer-0 {
+     top: -135px  !important;
+  }
 .download-app .pq-section-sub-title {
-  color: #1d450f;
+  color: #2eb82e;
+  display: inline-block;
+  padding-bottom: 10px;
 }
 .download-app {
   overflow: hidden;
 }
+.download-app h5 {
+  /*! margin-bottom: 30px; */
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.bordersucces a span {
+    text-align: center;
+    margin-top: 15px;
+    background: #fff;
+    padding: 6px 0px;
+    border: none;
+    cursor: pointer;
+    float: inherit;
+    width: 200px !important;
+    display: inline-block !important;
+    border-radius: 5px;
+    color: #000;
+  }
+.bordersucces a span:hover{
+   background: #088d1c;
+   color: #fff;
+}
+.car_bg .pq-section-title {
+  color: #fff;
+}section {
+    overflow: hidden;width: 100%;
+  }
+  .first-section{
+    background: url(../rev/bg-home.png);
+  }.accordion-button.collapsed:after {
+    content: "\002B";
+    /*! background: none; */
+    background: #4eb85b !important;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+  }
+  .accordion-button:after {
+    content: "\2212";
+    background: none !important;
+    background: #000 !important;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+  }
+  .pq-fancy-box.pq-fancybox-1.active h5,  .pq-fancy-box.pq-fancybox-1.active p{
+    color: #fff;
+  }.pq-fancy-box .pq-icon-box-content {
+    width: 100%;
+  }
+.service .pq-accordion-details {
+  width: 50%;
+  float: right;
+  top: 0;
+  position: absolute;
+  right: 0;
+  border-radius: 5px;
+  height: 215px;
+}
+.service .pq-ad-title {
+  width: 49%;
+  position: relative;
+  float: left;
+}
+.pq-accordion-block {
+    position: relative;
+  }

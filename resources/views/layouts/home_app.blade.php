@@ -27,6 +27,21 @@
     <link rel="stylesheet" href="{{ asset('css_home/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css_home/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css_home/themify-icons.css') }}">
+
+    <link
+rel="stylesheet"
+onload="NPRL.onLoadStyle(this)"
+onerror="NPRL.onErrorStyle(this)"
+href="{{ asset('css_home/stylesheet.css') }}"
+/>
+
+<link
+rel="stylesheet"
+onload="NPRL.onLoadStyle(this)"
+onerror="NPRL.onErrorStyle(this)"
+href="{{ asset('css_home/stylesheet-1.css') }}"
+/>
+
     <!--style css-->
     <link rel="stylesheet" href="{{ asset('css_home/style.css') }}">
     <!--responsive css-->

@@ -963,4 +963,12 @@ Design and Developed by: Peaceful Qode
       }.pq-subscribe-location{
         padding: 60px 0;
       }
+      .car_top img {
+        margin-top: -17px !important;
+    }#slider-2-slide-2-layer-0 {
+        top: -15px  !important;
+     }
+     .pq-copyright-footer{
+        padding-bottom: 150px !important;
+     }
 }

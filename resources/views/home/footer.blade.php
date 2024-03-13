@@ -2,7 +2,7 @@
     <div class="pq-subscribe align-items-center">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 col-lg-4 col-md-4">
+                <div class="col-xl-4 col-lg-4 col-md-4">
                     <div class="pq-subscribe-location align-items-center text-center">
                         <a href="{{ route('home.contact') }}">
                             <h4 class="pq-subscribe-title">Find Our near Branches </h4>
@@ -10,18 +10,24 @@
                         <i class="fas fa-globe-americas"></i>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-4 col-md-4 center">
+                <div class="col-xl-3 col-lg-4 col-md-4 center">
                     <div class="pq-subscribe-contact">
                         <div>
-                            <img src="{{ asset('images_home/call.png') }}" alt="subscribe-contact">
-                            <span>Talk to an expert On</span>
-                            <a href="tel:+1800001658">
-                                <span>+91 02027464855</span>
-                            </a>
+                           
+                             
+                            <div class="pq-footer-items bordersucces">
+                                {{-- <i class="fa fa-phone-alt"></i> --}}
+                                <div class="pq-footer-items-info bo" >
+                                    <a href="{{ route('home.contact') }}" >
+                                        <span>Talk to an expert</span>
+                                    </a>
+                                </div>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-4 col-md-4">
+                <div class="col-xl-4 col-lg-4 col-md-4">
                     <div class="pq-subscribe-time align-items-center">
                         <i class="far fa-clock"></i>
                         <a href="{{ route('home.contact') }}">
@@ -44,10 +50,11 @@
                                         alt="gym-footer-logo">
                                     {{--  <p>It is a long established fact that a reader by the readable content of a page
                                         when looking at its layout.</p>  --}}
+                                       
                                     <div class="pq-footer-items">
-                                        <i class="fa fa-phone-alt"></i>
+                                        <i class="fa fa-phone"></i>
                                         <div class="pq-footer-items-info">
-                                            <a href="tel:+1800001658">
+                                            <a href="tel:+91 02027464855">
                                                 <span>+91 02027464855</span>
                                             </a>
                                         </div>
@@ -55,7 +62,7 @@
                                     <div class="pq-footer-items">
                                         <i class="fa fa-envelope"></i>
                                         <div class="pq-footer-items-info">
-                                            <a href="mailto:info@peacefuldesign.com">
+                                            <a href="mailto:reachus@siriem.com">
                                                 <span>reachus@siriem.com</span>
                                             </a>
                                         </div>
