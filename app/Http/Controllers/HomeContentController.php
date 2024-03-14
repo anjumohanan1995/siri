@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Models\HomeContent;
+use App\Models\PanelThreeContent;
+use App\Models\PanelTwoContent;
 use App\Models\SubMenu;
 use Illuminate\Http\Request;
 use App\User;
@@ -326,4 +328,378 @@ class HomeContentController extends Controller
                     ]);
 
     }
+
+    public function panel_one(Request $request)
+    {
+        $data = HomeContent::first();
+        return view('admin.homecontent.panel_one_create',compact('data'));
+    }
+
+    public function panelOneStore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'panel_one_title' => 'required',
+        'panel_one_bgimage' => 'nullable|max:2048',
+       
+             
+    ]);
+  
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+    $data = $request->all();
+    $home = HomeContent::first();
+   
+if ($request->hasfile('panel_one_bgimage')) {
+
+    $images = $request->panel_one_bgimage;
+    $img = time() . rand(100, 999) . '.' . $images->extension();
+
+    $images->move(public_path('/homecontent'), $img);
+
+    $data['image'] = $img;
+
+}else{
+    $data['image'] = @$home->panel_one_bgimage;
+}
+
+        $home = HomeContent::first();
+        if($home == ''){
+
+            $home=   HomeContent::create([
+            'panel_one_title' => @$request->panel_one_title? $request->panel_one_title:'']);
+        }
+        $home->panel_one_title = @$request->panel_one_title;
+        $home->panel_one_subtitle = @$request->panel_one_subtitle;
+        $home->panel_one_link = @$request->panel_one_link;
+        $home->panel_one_link_label = @$request->panel_one_link_label;
+        $home->panel_one_bgimage = $data['image']??'';
+        $home->created_by = auth()->user()->id;
+        $home->save();
+     
+        return redirect()->back()->with('status','Panel One Updated Successfully.');
+    }
+    public function panel_two(Request $request)
+    {
+        $data = HomeContent::first();
+        $contents = PanelTwoContent::where('deleted_at',null)->get();
+        return view('admin.homecontent.panel_two_create',compact('data','contents'));
+    }
+
+    public function panelTwoStore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'panel_two_description' => 'required',
+        'panel_two_image' => 'nullable|max:2048',
+       
+             
+    ]);
+  
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+    $data = $request->all();
+    $home = HomeContent::first();
+  // dd($request);
+if ($request->hasfile('panel_two_image')) {
+
+    $images = $request->panel_two_image;
+    $img = time() . rand(100, 999) . '.' . $images->extension();
+
+    $images->move(public_path('/homecontent/panel_two'), $img);
+
+    $data['image'] = $img;
+
+}else{
+    $data['image'] = @$home->panel_two_image;
+}
+
+        $home = HomeContent::first();
+        if($home == ''){
+
+            $home=   HomeContent::create([
+            'panel_two_description' => @$request->panel_two_description? $request->panel_two_description:'']);
+        }
+        $home->panel_two_description = @$request->panel_two_description;
+        $home->panel_two_image = $data['image']??'';
+        $home->created_by = auth()->user()->id;
+        $home->save();
+
+        $title=$request->input('title', []);
+        $content=$request->input('content', []);
+       // dd(count($center_name));
+
+       PanelTwoContent::where('panel_id',$home->id)->delete();
+     
+        for ($p=0; $p < count($title); $p++) {
+
+                    if (!empty($title[$p]) ) {
+
+                            $code=new PanelTwoContent();
+                            $code->panel_id = $home->id;
+                            $code->title = $title[$p];
+                            $code->content = $content[$p];
+                            $code->save();
+                    }
+
+            }
+     
+        return redirect()->back()->with('status','Panel Two Updated Successfully.');
+    }
+
+
+    public function panel_three(Request $request)
+    {
+        $data = HomeContent::first();
+        $contents = PanelThreeContent::where('deleted_at',null)->get();
+        return view('admin.homecontent.panel_three_create',compact('data','contents'));
+    }
+
+    public function panelThreeStore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'panel_three_title' => 'required',
+        'panel_three_subtitle' => 'required',
+       
+             
+    ]);
+  
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+    $data = $request->all();
+   
+
+        $home = HomeContent::first();
+        if($home == ''){
+
+            $home=   HomeContent::create([
+            'panel_three_title' => @$request->panel_three_title? $request->panel_three_title:'']);
+        }
+        $home->panel_three_title = @$request->panel_three_title;
+        $home->panel_three_subtitle = @$request->panel_three_subtitle;
+        $home->created_by = auth()->user()->id;
+        $home->save();
+
+        $title=$request->input('title', []);
+        $content=$request->input('content', []);
+       // dd(count($center_name));
+
+       PanelThreeContent::where('panel_id',$home->id)->delete();
+     
+        for ($p=0; $p < count($title); $p++) {
+
+                    if (!empty($title[$p]) ) {
+
+                            $code=new PanelThreeContent();
+                            $code->panel_id = $home->id;
+                            $code->title = $title[$p];
+                            $code->content = $content[$p];
+                            $code->save();
+                    }
+
+            }
+     
+        return redirect()->back()->with('status','Panel Three Updated Successfully.');
+    }
+
+    public function panel_four(Request $request)
+    {
+        $data = HomeContent::first();
+        return view('admin.homecontent.panel_four_create',compact('data'));
+    }
+
+    public function panelFourStore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'panel_four_title' => 'required',
+        'panel_four_image' => 'nullable|max:2048',
+       
+             
+    ]);
+  
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+    $data = $request->all();
+    $home = HomeContent::first();
+   
+if ($request->hasfile('panel_four_image')) {
+
+    $images = $request->panel_four_image;
+    $img = time() . rand(100, 999) . '.' . $images->extension();
+
+    $images->move(public_path('/homecontent/panel_four'), $img);
+
+    $data['image'] = $img;
+
+}else{
+    $data['image'] = @$home->panel_four_image;
+}
+
+        $home = HomeContent::first();
+        if($home == ''){
+
+            $home=   HomeContent::create([
+            'panel_four_title' => @$request->panel_four_title? $request->panel_four_title:'']);
+        }
+        $home->panel_four_title = @$request->panel_four_title;
+        $home->panel_four_description = @$request->panel_four_description;
+        $home->panel_four_image = $data['image']??'';
+        $home->created_by = auth()->user()->id;
+        $home->save();
+     
+        return redirect()->back()->with('status','Panel Four Updated Successfully.');
+    }
+
+    public function panel_five(Request $request)
+    {
+        $data = HomeContent::first();
+        return view('admin.homecontent.panel_five_create',compact('data'));
+    }
+
+    public function panelFiveStore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'panel_five_title' => 'required',
+        'panel_five_video' => 'nullable|max:2048',
+       
+             
+    ]);
+  
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+    $data = $request->all();
+    $home = HomeContent::first();
+   
+if ($request->hasfile('panel_five_video')) {
+
+    $vid = $request->panel_five_video;
+    $video = time() . rand(100, 999) . '.' . $vid->extension();
+
+    $vid->move(public_path('/homecontent/panel_five'), $video);
+
+    $data['video'] = $video;
+
+}else{
+    $data['video'] = @$home->panel_five_video;
+}
+
+        $home = HomeContent::first();
+        if($home == ''){
+
+            $home=   HomeContent::create([
+            'panel_five_title' => @$request->panel_five_title? $request->panel_five_title:'']);
+        }
+        $home->panel_five_title = @$request->panel_five_title;
+        $home->panel_five_description = @$request->panel_five_description;
+        $home->panel_five_video = $data['video']??'';
+        $home->created_by = auth()->user()->id;
+        $home->save();
+     
+        return redirect()->back()->with('status','Panel Five Updated Successfully.');
+    }
+
+    public function panel_six(Request $request)
+    {
+        $data = HomeContent::first();
+        return view('admin.homecontent.panel_six_create',compact('data'));
+    }
+
+    public function panelSixStore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'panel_six_title' => 'required',
+        'panel_six_image' => 'nullable|max:2048',
+       
+             
+    ]);
+  
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+    $data = $request->all();
+    $home = HomeContent::first();
+   
+if ($request->hasfile('panel_six_image')) {
+
+    $images = $request->panel_six_image;
+    $img = time() . rand(100, 999) . '.' . $images->extension();
+
+    $images->move(public_path('/homecontent/panel_six'), $img);
+
+    $data['image'] = $img;
+
+}else{
+    $data['image'] = @$home->panel_six_image;
+}
+
+        $home = HomeContent::first();
+        if($home == ''){
+
+            $home=   HomeContent::create([
+            'panel_six_title' => @$request->panel_six_title? $request->panel_six_title:'']);
+        }
+        $home->panel_six_title = @$request->panel_six_title;
+        $home->panel_six_description = @$request->panel_six_description;
+        $home->panel_six_image = $data['image']??'';
+        $home->created_by = auth()->user()->id;
+        $home->save();
+     
+        return redirect()->back()->with('status','Panel Six Updated Successfully.');
+    }
+
+    public function panel_seven(Request $request)
+    {
+        $data = HomeContent::first();
+        return view('admin.homecontent.panel_seven_create',compact('data'));
+    }
+
+    public function panelSevenStore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'panel_seven_title' => 'required',
+        'panel_seven_image' => 'nullable|max:2048',
+       
+             
+    ]);
+  
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+    $data = $request->all();
+    $home = HomeContent::first();
+   
+if ($request->hasfile('panel_seven_image')) {
+
+    $images = $request->panel_seven_image;
+    $img = time() . rand(100, 999) . '.' . $images->extension();
+
+    $images->move(public_path('/homecontent/panel_seven'), $img);
+
+    $data['image'] = $img;
+
+}else{
+    $data['image'] = @$home->panel_seven_image;
+}
+
+        $home = HomeContent::first();
+        if($home == ''){
+
+            $home=   HomeContent::create([
+            'panel_seven_title' => @$request->panel_seven_title? $request->panel_seven_title:'']);
+        }
+        $home->panel_seven_title = @$request->panel_seven_title;
+        $home->panel_seven_description = @$request->panel_seven_description;
+        $home->panel_seven_image = $data['image']??'';
+        $home->panel_seven_link = @$request->panel_seven_link;
+        $home->panel_seven_link_label = @$request->panel_seven_link_label;
+        $home->created_by = auth()->user()->id;
+        $home->save();
+     
+        return redirect()->back()->with('status','Panel Seven Updated Successfully.');
+    }
+
+
 }

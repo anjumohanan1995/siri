@@ -456,8 +456,50 @@
 											<i class="angle fe fe-chevron-down"> </i>
 										</a>
 
-										<ul class="slide-menu">										
-											<li class="sub-slide">
+										<ul class="slide-menu">			
+                                            <li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ route('panel_one.index') }}">
+													<span class="sub-side-menu__label">Panel 1</span>
+												</a>
+											</li>
+                                            <li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ route('panel_two.index') }}">
+													<span class="sub-side-menu__label">Panel 2</span>
+												</a>
+											</li>
+                                            <li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ route('panel_three.index') }}">
+													<span class="sub-side-menu__label">Panel 3</span>
+												</a>
+											</li>
+                                            <li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ route('panel_four.index') }}">
+													<span class="sub-side-menu__label">Panel 4</span>
+												</a>
+											</li>	
+                                            <li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ route('panel_five.index') }}">
+													<span class="sub-side-menu__label">Panel 5</span>
+												</a>
+											</li>	
+                                            <li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ route('panel_six.index') }}">
+													<span class="sub-side-menu__label">Panel 6</span>
+												</a>
+											</li>	
+                                            <li class="sub-slide">
+												<a class="slide-item" data-bs-toggle="sub-slide"
+													href="{{ route('panel_seven.index') }}">
+													<span class="sub-side-menu__label">Panel 7</span>
+												</a>
+											</li>								
+											{{--  <li class="sub-slide">
 												<a class="slide-item" data-bs-toggle="sub-slide"
 													href="{{ route('blogs.index') }}">
 													<span class="sub-side-menu__label">Blogs</span>
@@ -468,7 +510,7 @@
 													href="{{ route('brands.index') }}">
 													<span class="sub-side-menu__label">Brands</span>
 												</a>
-											</li>
+											</li>  --}}
 										</ul>
 									</li> 
 
