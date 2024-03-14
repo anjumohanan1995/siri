@@ -87,7 +87,7 @@ class FrontendController extends Controller
                 //return response()->json(['errors' => $validate->request()->all()]);
                 return response()->json(['errors' => $validate->errors()->all()]);
             }
-dd($request);
+
             $query = ContactUs::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -105,7 +105,7 @@ dd($request);
                     //     $message->subject('Contact Us');
                     // });
 
-                    return response()->json(['success'=> 'Successfully submitted']);
+                    return response()->json(['success'=> 'Form Submitted Successfully']);
                 }
             }
         }

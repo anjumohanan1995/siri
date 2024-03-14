@@ -126,11 +126,19 @@
                     url: '{{ url("contact-store") }}', // Replace with your actual URL for form submission
                     data: formData,
                     success: function(response) {
-                      // console.log(response.errors);
-                        // Handle success response
-                        jQuery("<span class='pq-thank-you-message pq-text-primary ms-5'> "+response.errors+"</span>").insertAfter('#contact-form');
-                       // alert('Form submitted successfully');
-                        // You can show a success message or redirect the user here
+                        if (response.success) {
+                         //   alert(response.success);
+                            // Reset the form
+                           // $('#contactForm')[0].reset();
+                            
+                            // Display success message
+                            jQuery("<span class='pq-thank-you-message pq-text-primary ms-5'> "+response.success+"</span>").insertAfter('#contact-form');
+                            $("#contact-form")[0].reset();
+                        }else{
+                            jQuery("<span class='pq-thank-you-message pq-text-primary ms-5'> "+response.errors+"</span>").insertAfter('#contact-form');
+
+                        }
+                
                     },
                     error: function(xhr, status, error) {
                         // Handle error response
