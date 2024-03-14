@@ -196,3 +196,5 @@ Route::post('admin/panel_six/store',[HomeContentController::class,'panelSixStore
 
 Route::get('/admin/panel_seven', [HomeContentController::class, 'panel_seven'])->name('panel_seven.index');
 Route::post('admin/panel_seven/store',[HomeContentController::class,'panelSevenStore'])->name('panel_seven.store');
+
+Route::post('contact-store', [FrontendController::class, 'contactStore'])->name('contact-store');

@@ -22,27 +22,28 @@
                             <span class="pq-section-sub-title">Contact us</span>
                             <h5 class="pq-section-title">Request A Quote</h5>
                         </div>
-                        <form class="contact-form pq-applyform" novalidate="">
+                        <form class="" novalidate="" id="contact-form">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="text" id="first-name" class="pq-bg-white name-field" placeholder="Your Name">
+                                    <input type="text" id="first-name" name="name" class="pq-bg-white name-field" placeholder="Your Name">
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="text" id="e-mail" class="pq-bg-white e-mail-field" placeholder="Email">
+                                    <input type="text" id="e-mail" name="name" class="pq-bg-white e-mail-field" placeholder="Email">
                                 </div>
                                 <div class="col-lg-12 col-md-12">
-                                    <select class="pq-bg-white" id="query" aria-required="true" aria-invalid="false" name="selected-query"><option value="General Query">General Query</option><option value="Investor Relations">Investor Relations</option><option value="Media Relations">Media Relations</option><option value="Job Related">Job Related</option><option value="Pre-Order">Pre-Order</option><option value="Motor Sample">Motor Sample</option></select>
+                                    <select class="pq-bg-white" id="query" name="subject" aria-required="true" aria-invalid="false"><option value="General Query">General Query</option><option value="Investor Relations">Investor Relations</option><option value="Media Relations">Media Relations</option><option value="Job Related">Job Related</option><option value="Pre-Order">Pre-Order</option><option value="Motor Sample">Motor Sample</option></select>
                                 </div>
                                 
                                 <div class="col-lg-12">
-                                    <textarea id="message" cols="30" rows="4" placeholder="Your Message" class="pq-bg-white"></textarea>
+                                    <textarea id="message" cols="30" rows="4" name="message" placeholder="Your Message" class="pq-bg-white"></textarea>
                                 </div>
                                 <div class="col-lg-12">
-                                    <a class="pq-button form-btn">
-                                        <div class="pq-button-block">
+                                    <button type="button" class="pq-button form-btn" id="submitBtn">
+                                     
                                             <span class="pq-button-text">Send</span>
-                                        </div>
-                                    </a>
+                                       
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -105,5 +106,39 @@
     </div>
     </main>
     </body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#submitBtn').click(function(e) {
+                e.preventDefault(); // Prevent default form submission
+            //alert($('#first-name').val());
+                // Collect form data
+                var formData = {
+                    name: $('#first-name').val(),
+                    email: $('#e-mail').val(),
+                    query: $('#query').val(),
+                    message: $('#message').val()
+                };
+                formData['_token'] = '{{ csrf_token() }}';
+                // AJAX request
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ url("contact-store") }}', // Replace with your actual URL for form submission
+                    data: formData,
+                    success: function(response) {
+                      // console.log(response.errors);
+                        // Handle success response
+                        jQuery("<span class='pq-thank-you-message pq-text-primary ms-5'> "+response.errors+"</span>").insertAfter('#contact-form');
+                       // alert('Form submitted successfully');
+                        // You can show a success message or redirect the user here
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error response
+                        console.error('Form submission failed:', error);
+                        // You can display an error message to the user here
+                    }
+                });
+            });
+        });
+        </script>
 @endsection

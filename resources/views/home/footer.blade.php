@@ -71,29 +71,22 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-xl-3  col-md-6">
                         <div class="widget">
                             <h1 class="footer-title">Our Services</h1>
                             <div class="menu-our-services-container">
                                 <ul id="menu-our-services" class="menu">
                                     <li class="menu-item">
-                                        <a href="ac-charger-services.html">AC Charger Services</a>
+                                        <a href="/page/charging-services">Charging Services</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="dc-charger-services.html">DC Charger Services</a>
+                                        <a href="/page/cms-services">CMS Services</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="ev-driver-services.html">EV drivers Services</a>
+                                        <a href="/page/consulting">Consulting</a>
                                     </li>
-                                    <li class="menu-item">
-                                        <a href="charge-point-services.html">Charge Point Services</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="home-char;ging-services.html">Home charging</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="building-technology-services.html">Building Services</a>
-                                    </li>
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -104,23 +97,21 @@
                             <div class="menu-usefull-link-container">
                                 <ul id="menu-usefull-link" class="menu">
                                     <li class="menu-item">
-                                        <a href="home-charging-services.html">Home charging</a>
+                                        <a href="/">Home</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="building-technology-services.html">Building technology</a>
+                                        <a href="/our_approach">Our Approach</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="charge-point-services.html">Charge Point</a>
+                                        <a href="/page/about-us">About Us</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="ev-driver-services.html">EV drivers</a>
+                                        <a href="/page/team">Team</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="ac-charger-services.html">AC Charger</a>
+                                        <a href="/page/contact-us">Contact Us</a>
                                     </li>
-                                    <li class="menu-item">
-                                        <a href="dc-charger-services.html">24/7 Hour Support</a>
-                                    </li>
+                                 
                                 </ul>
                             </div>
                         </div>
@@ -129,18 +120,17 @@
                         <div class="widget">
                             <div class="pq-subscribe-content">
                                 <img src="{{ asset('images_home/mail.png') }}" alt="subscribe">
-                                <h4 class="footer-title text-center">Newsletter</h4>
+                                <h4 class="footer-title text-center">Keep In Touch</h4>
                                 <p class="text-center">Sign up to get exclusive offers from our favorite brands</p>
                                 <form novalidate>
                                     <div class="row text-center">
+                                       <a href="/page/contact-us">
                                         <div class="col-lg-12">
-                                            <input type="email" name="EMAIL" placeholder="Your email address"
-                                                required="">
+                                            <input type="submit" value="Contact Us">
                                         </div>
-                                        <div class="col-lg-12">
-                                            <input type="submit" value="Subscribe">
-                                        </div>
+                                    </a>
                                     </div>
+
                                 </form>
                             </div>
                         </div>

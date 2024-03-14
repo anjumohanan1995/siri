@@ -181,7 +181,7 @@ href="{{ asset('css_home/stylesheet-1.css') }}"
 
                                 </div>
                             </div>
-                            <div class="pq-menu-search-block">
+                            <div class="pq-menu-search-block" style="display: none">
                                 <a href="javascript:void(0)" id="pq-seacrh-btn"><i class="fa fa-search"></i></a>
                                 <div class="pq-search-form">
                                     <form role="search" method="get" class="search-form" action="/">
@@ -196,7 +196,7 @@ href="{{ asset('css_home/stylesheet-1.css') }}"
                                     </form>
                                 </div>
                             </div>
-                            <a href="\" class="pq-button">
+                            <a href="/page/contact-us" class="pq-button">
                                 <div class="pq-button-block">
                                     <span class="pq-button-line-left"></span>
                                     <span class="pq-button-text">Get a Quote</span>

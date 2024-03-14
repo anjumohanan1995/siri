@@ -8,6 +8,7 @@ use App\Models\DynamicPage;
 use App\Models\Innovation;
 use App\Models\Vertical;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class FrontendController extends Controller
 {
@@ -71,5 +72,46 @@ class FrontendController extends Controller
     }
         public function solutions(){
         return view('home.solutions');
+    }
+
+    public function contactStore(Request $request){
+        try{
+            $validate = Validator::make($request->all(),[
+                'name' => 'required|regex:/^[\pL\s\-]+$/u|max:50',
+                'email' => 'required|email',
+            ]);
+
+            if($validate->fails()){
+                //dd("ffffff");
+               // dd($validate->request()->all());
+                //return response()->json(['errors' => $validate->request()->all()]);
+                return response()->json(['errors' => $validate->errors()->all()]);
+            }
+dd($request);
+            $query = ContactUs::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'message' => $request->message,
+            ]);
+            if($query){
+                if (@$request->email) {
+                    $email = $request->email;
+                    $name = $request->name;
+                    // $messagess = $request->message;
+                    // Mail::send('mail.mail', compact('name','email','messagess'), function ($message) use ($email) {
+                    //     $message->to('namkerala@gmail.com');
+                    //     $message->bcc('sujiraj@kawikatechnologies.com');
+                    //     $message->subject('Contact Us');
+                    // });
+
+                    return response()->json(['success'=> 'Successfully submitted']);
+                }
+            }
+        }
+
+        catch( \Exception $e){
+
+        }
     }
 }
