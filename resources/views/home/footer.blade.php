@@ -122,16 +122,16 @@
                                 <img src="{{ asset('images_home/mail.png') }}" alt="subscribe">
                                 <h4 class="footer-title text-center">Keep In Touch</h4>
                                 <p class="text-center">Sign up to get exclusive offers from our favorite brands</p>
-                                <form novalidate>
+                              
                                     <div class="row text-center">
-                                       <a href="/page/contact-us">
+                                       <a href="{{ route('home.contact') }}">
                                         <div class="col-lg-12">
                                             <input type="submit" value="Contact Us">
                                         </div>
                                     </a>
                                     </div>
 
-                                </form>
+                                
                             </div>
                         </div>
                     </div>
