@@ -6,18 +6,16 @@ namespace App;
 
 
 use Illuminate\Notifications\Notifiable;
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
-use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class User extends Eloquent implements Authenticatable
+class User extends Authenticatable
 {
     use AuthenticatableTrait;
     use SoftDeletes;
 
-    protected $connection = 'mongodb';
 
     protected $collection = 'users';
 

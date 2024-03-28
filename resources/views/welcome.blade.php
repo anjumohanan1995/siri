@@ -37,7 +37,7 @@
                             </rs-layer><!--
         
                                 --><rs-layer id="slider-2-slide-2-layer-1" class="pq-title-text" data-type="text" data-color="#2eb82e"
-                                data-rsp_ch="on" data-xy="x:c;yo:250px,200px,180px,80px;"
+                                data-rsp_ch="on" data-xy="x:c;yo:250px,200px,180px,90px;"
                                 data-text="w:normal;s:82,64,62,48;l:90,70,70,56;fw:500;a:center;"
                                 data-frame_0="y:50,39,29,17;" data-frame_1="st:800;sp:1000;" data-frame_999="o:0;st:w;"
                                 style="z-index:9;">{{ @$data->panel_one_title }}
@@ -138,27 +138,31 @@
                     <div class="col-lg-12">
                         <div class="pq-section-title-box text-center" style="padding-bottom: 0">
                            
-                            <h5 class="pq-section-title">{{ @$data->panel_three_title }}
+                            <h5 class="pq-section-title">{{ @$data->panel_three_title }}<br> {{ @$data->panel_three_subtitle }}
                           </h5>
                            
                         </div>
                     </div>
-                    <div class="col-lg-12 text-center mb-3">
-                      <p class="charge">  <a   class="pq-text-primary"> 
-                        {{ @$data->panel_three_subtitle }}</a></p>
-                  </div>
+                   
                   <div class="pq-accordion-block ">
+                    @php $i=1; @endphp
                     @foreach ($panel3_data as $panel3)
-                    <div class="pq-accordion-box pq-accordion-box-style-1 1">
-                        <div class="pq-ad-title">
-                        <h5 class="ad-title-text">{{ @$panel3->title }}<i aria-hidden="true" class="fa fa-plus"></i>
-                        <i aria-hidden="true" class="fa fa-minus inactive"></i></h5>
-                        </div>
-                        
-                        <div class="pq-accordion-details" style="display: none;">
-                        <p class="pq-detail-text">{{ @$panel3->content }}</p>
-                        </div>
-                        </div>
+
+
+
+
+                    <div class="accordion w-50" id="accordionPanelsStayOpenExample">
+<div class="accordion-item" style="border: none">
+<h2 class="accordion-header" id="panelsStayOpen-headingOne">
+    <button aria-controls="panelsStayOpen-collapse{{$i}}" aria-expanded="true" class="accordion-button collapsed" data-bs-target="#panelsStayOpen-collapse{{$i}}" data-bs-toggle="collapse" type="button">{{ @$panel3->title }}</button></h2>
+
+<div aria-labelledby="panelsStayOpen-headingOne" class="accordion-collapse collapse hide" id="panelsStayOpen-collapse{{$i}}">{{ @$panel3->content }}</div>
+ 
+ </div>
+</div>
+ 
+
+ @php $i++; @endphp
                     @endforeach
                     
                     
@@ -203,12 +207,8 @@
              
             
         >
-        <div class="pq-section-title-box text-center">
-            <video width="100%"  autoplay muted loop>
-                <source src="{{ asset('homecontent/panel_five/'.@$data->panel_five_video) }}" type="video/mp4">
-               // <source src="{{asset('images_home/Quench Banner.mp4.ogg')}}" type="video/ogg">
-                Your browser does not support HTML video.
-              </video>
+        <div class="pq-section-title-box ">
+        <img src="{{ asset('homecontent/car.jpg') }}" alt="">
 
               <div class="video_text">
             <span class="pq-section-sub-title">{{ @$data->panel_five_title }}</span>

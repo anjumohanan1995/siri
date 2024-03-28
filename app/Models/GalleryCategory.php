@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class GalleryCategory extends Eloquent
+class GalleryCategory extends Model
 {
     use SoftDeletes;
 
-    protected $connection = 'mongodb';
-    protected $collection = 'galleryCategory';
+    protected $collection = 'gallery_categories';
 
     protected $fillable = [
         'name','status'

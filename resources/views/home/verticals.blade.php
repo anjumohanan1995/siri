@@ -19,7 +19,7 @@
             >
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 p-5 " style="padding-left: 7em !important">
+                    <div class="col-lg-6 p-5 " style="padding-left: 7em ">
                         <div class="pq-section-title-box">
                             <h1 class="text-white">{{ @$vertical->title }}
                             </h1>
@@ -37,7 +37,7 @@
         
                        
                     </div>
-                    <div class="col-lg-5 mt-4 mt-lg-0 p-5" style="margin-top:7em !important">
+                    <div class="col-lg-5 mt-4 mt-lg-0 p-5" style="margin-top:7em">
                         @if(@$vertical->image !=null)
                         <img src="{{ asset('vertical/'.@$vertical->image) }}" alt="" title="1">
                         @else

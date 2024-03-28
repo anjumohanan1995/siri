@@ -116,7 +116,7 @@ class DynamicPageController extends Controller
                 'menu' => $record->title,
                 "link" => $record->link_type == 'link' ? $record->link : $record->slug,
                 "edit" => '<div class="d-flex">
-                    <a class="btn btn-primary m-1" href="' . route('dynamic-pages.create', $record->id) . '">Update Content</a>
+                    <a class="btn btn-primary m-1" href="' . route('dynamic-pages.create', @$record->page_id) . '">Update Content</a>
                    
                 </div>'
             ];
@@ -167,12 +167,13 @@ class DynamicPageController extends Controller
             }
 
             $data = $request->all();
-            $subMenu = SubMenu::find($request->menu_id);
-            $subSubMenu = SubSubMenu::find($request->menu_id);
-            if($subMenu)
-            $slug = basename($subMenu['link']);
-            else
+            $subMenu = SubMenu::where('page_id',$request->menu_id)->first();
+          //  dd($request->menu_id);
+            $subSubMenu = SubSubMenu::where('page_id',$request->menu_id)->first();
+            if($subSubMenu)
             $slug = basename($subSubMenu['link']);
+            else
+            $slug = basename($subMenu['link']);
             $page = DynamicPage::where('menu_id',$request->menu_id)->first();
 
 

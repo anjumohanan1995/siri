@@ -14,9 +14,9 @@
             class="page1 elementor-section elementor-top-section elementor-element elementor-element-abf0cc8 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch"
             data-settings=' '
              
-        >
+        > <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-6 p-5"  style="padding-left: 7em !important">
+          <div class="col-lg-6 p-5"  style="padding-left: 7em ">
               <div class="pq-breadcrumb-title">
                   <h1 class="text-white">{{ @$approach->title }}
                   </h1>
@@ -30,12 +30,12 @@
                   <div class="pq-section-title-box "> {!! @$approach->content !!} 
  
 </div>
-                    </div>
+                    </div> 
               </div>
              
               
           </div>
-          <div class="col-lg-5 mt-4 mt-lg-0 p-5" style="margin-top:7em !important">
+          <div class="col-lg-5 mt-4 mt-lg-0 p-5">
               @if(@$approach->image !=null)
               <img src="{{ asset('Approach/'.@$approach->image) }}" alt="" title="1">
               @else
@@ -43,7 +43,7 @@
               @endif
              
           </div>
-      </div>
+      </div>  </div>
         </section>
         <section
             data-id="43822f7"

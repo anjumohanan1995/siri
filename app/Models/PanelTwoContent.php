@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-class PanelTwoContent extends Eloquent
+use Illuminate\Database\Eloquent\SoftDeletes;
+class PanelTwoContent extends Model
 {
     use SoftDeletes;
 

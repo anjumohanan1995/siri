@@ -179,7 +179,7 @@ h4 {
 h5 {
     font-size: 16px;
     font-style: normal;
-    line-height: 32px;
+    line-height: 25px;
 }
 
 h6 {
@@ -371,6 +371,10 @@ select.form-control {
 
 .pq-bg-dark {
     background-color: var(--dark-color) !important;
+    flex: 0 0 auto;
+    width: 50%;
+    height: 100%;
+    padding: 500px 45px !important;
 }
 
 .pq-dark-page-bg-dark {
@@ -541,7 +545,7 @@ Button Core
     background: none;
     color: #000;
     padding: 0;
-    font-size: 14px;cursor:auto;
+    font-size: 16px;cursor:auto;
   font-style: normal;
   font-weight: normal;
   line-height: 1.8;width: 100%;
@@ -575,6 +579,7 @@ Button Core
     position: relative;
     width: auto;
     background:#2eb82e;
+    border-color:#2eb82e;
     color: var(--white-color);
     font-weight: 400;
     padding: 12px 20px;
@@ -1387,7 +1392,7 @@ header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li a {
     display: inline-block;
     width: 100%;
     color: var(--dark-color);
-    font-size: 16px;
+    font-size: 14px;
     position: relative;
     overflow: hidden;
     float: left;
@@ -2445,7 +2450,7 @@ footer#pq-footer .pq-footer-style-1 .pq-footer-logo {
 }
 
 .pq-footer-style-1 .widget ul li {
-    margin: 0 0 5px 0;
+    margin: 0 0 0px 0;
 }
 
 /*++++++++*/
@@ -2598,17 +2603,17 @@ Footer Subscribe
 .pq-subscribe {
     position: relative;
     display: flex;
-    background: var(--primary-color);
+    background: #202020;
 }
 
 .pq-subscribe-location,
 .pq-subscribe-time {
     display: flex;
-    padding: 50px 0;
+    padding: 25px 0 25px;
 }
 
 .pq-subscribe-time {
-    padding: 50px 0;
+    padding: 25px 0 25px;
     justify-content: flex-end;
 }
 
@@ -2631,7 +2636,7 @@ Footer Subscribe
 .pq-subscribe-contact {
     padding: 0 5px;
     height: 100%;
-    background: var(--primary-color);
+    background: #202020;
     text-align: center;
     color: var(--white-color);
     position: relative;
@@ -2689,7 +2694,7 @@ Section Title
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     font-size: 30px;
-    line-height: 24px;
+    line-height: 30px;
     /*! letter-spacing: 0.1em; */
     font-weight: 900;
     position: relative;
@@ -4560,7 +4565,7 @@ FAQ
 }
 .service .pq-accordion-block .pq-accordion-box {
     background: none;
-     
+    /* margin: 0 auto; */
 }
 .pq-accordion-block .pq-accordion-box:last-child {
     margin-bottom: 0;
@@ -4569,16 +4574,19 @@ FAQ
 .pq-accordion-block .pq-accordion-box .pq-ad-title {
     background: var(--grey-color);
     border: 1px solid var(--grey-color);
-    padding: 5px 30px;
+    padding: 5px 20px 5px 10px;
     cursor: pointer;
     border-radius: 5px;
 }
 .service .pq-accordion-block .pq-accordion-box .pq-ad-title i {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 10px;
+    right: 10px;
     opacity: 1;
-    color: var(--dark-color);
+    color: #fff;
+}
+.overflow_hidden{
+    overflow: hidden;
 }
 .pq-accordion-block .pq-accordion-box .pq-ad-title i.fa-minus {
     float: right;
@@ -4595,14 +4603,15 @@ FAQ
 
 .service .pq-accordion-block .pq-accordion-box.pq-active .pq-ad-title i {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 10px;
+    right: 10px;
     opacity: 0;
-    color: var(--dark-color);
+    color: #fff;
 }
 
 .pq-accordion-block .pq-accordion-box.pq-active .pq-ad-title i.inactive {
-    opacity: 1;
+    opacity: 1;display: block;
+    float: right;
 }
 
 .pq-accordion-block .pq-accordion-box.pq-active .pq-ad-title i {
@@ -5011,7 +5020,7 @@ Custom CSS
 }
 .whyus img {
     max-width: 138%;
-    height: auto;
+    /* height: auto; */
   }
 .service-2 .pq-button{
     background-color: var(--primary-color);
@@ -5368,16 +5377,17 @@ margin-bottom: 20px;
 }
 .bordersucces a span {
     text-align: center;
-    margin-top: 15px;
-    background: #fff;
+    margin-top: 0px;
+    background: #2c2c2c;
     padding: 6px 0px;
     border: none;
     cursor: pointer;
     float: inherit;
     width: 200px !important;
     display: inline-block !important;
-    border-radius: 5px;
-    color: #000;
+    border-radius: 15px;
+    color: #fff;
+    border: 2px solid #ffff;
   }
 .bordersucces a span:hover{
    background: #088d1c;
@@ -5412,19 +5422,26 @@ margin-bottom: 20px;
     width: 100%;
   }
 .service .pq-accordion-details {
-  width: 50%;
-  float: right;
+  width: 100%;
+  /* float: right; */
   top: 0;
-  position: absolute;
+  /* position: absolute; */
   right: 0;
   border-radius: 5px;
-  height: 215px;
+  /* height: 215px; */
 }
 .service .pq-ad-title {
-  width: 49%;
+  width: 100%;
   position: relative;
   float: left;
 }
 .pq-accordion-block {
     position: relative;
+    width: 50%;
   }
+  .whyus .container {
+    max-width: 100%;
+}
+.service div .accordion.w-50 {
+    width: 100% !important;
+}

@@ -14,11 +14,10 @@ class AuthController extends Controller
         $credentials = $request->only(['password']);
 
         $user = User::orWhere('email', $request->input('email'))
-                     ->orWhere('application_number', $request->input('email'))
                      ->first();
-                  //   dd($user);
+                    // dd($user);
     
-        if ($user && Auth::guard('web')->attempt(['_id' => $user->_id, 'password' => $request->input('password')])) {
+        if ($user && Auth::guard('web')->attempt(['id' => $user->id, 'password' => $request->input('password')])) {
             // Authentication passed
             return redirect()->intended('/home');
         } else {

@@ -19,7 +19,7 @@
                                 {{-- <i class="fa fa-phone-alt"></i> --}}
                                 <div class="pq-footer-items-info bo" >
                                     <a href="{{ route('home.contact') }}" >
-                                        <span>Talk to an expert</span>
+                                        <span>Talk to our expert</span>
                                     </a>
                                 </div>
                             </div>
@@ -42,11 +42,11 @@
         <div class="pq-footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-3 col-md-3">
                         <div class="widget">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <img src="{{ asset('images_home/footer-logo.png') }}" class="pq-footer-logo"
+                                    <img src="{{ asset('images_home/logo-1.png') }}" class="pq-footer-logo"
                                         alt="gym-footer-logo">
                                     {{--  <p>It is a long established fact that a reader by the readable content of a page
                                         when looking at its layout.</p>  --}}
@@ -71,70 +71,83 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-xl-3  col-md-6">
+                     
+                    <div class="col-xl-3  col-md-3">
                         <div class="widget">
-                            <h1 class="footer-title">Our Services</h1>
-                            <div class="menu-our-services-container">
-                                <ul id="menu-our-services" class="menu">
-                                    <li class="menu-item">
-                                        <a href="/page/charging-services">Charging Services</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="/page/cms-services">CMS Services</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="/page/consulting">Consulting</a>
-                                    </li>
-                                  
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3  col-md-6">
-                        <div class="widget">
-                            <h1 class="footer-title">Useful link</h1>
+                            <h1 class="footer-title">Verticals</h1>
                             <div class="menu-usefull-link-container">
                                 <ul id="menu-usefull-link" class="menu">
                                     <li class="menu-item">
-                                        <a href="/">Home</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="/our_approach">Our Approach</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="/page/about-us">About Us</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="/page/team">Team</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="/page/contact-us">Contact Us</a>
-                                    </li>
-                                 
+                                        <a href="/verticals/fleets">Fleets</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/verticals/commercial">Workplace</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/verticals/residential">Residential</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/verticals/cpos">CPOs</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/verticals/retail &amp; hospitality">Retail &amp; Hospitality</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/verticals/oems">OEMs</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/verticals/energystorage">Energy Storage</a>
+                                                                                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3  col-md-6">
+                     <div class="col-xl-3  col-md-3">
                         <div class="widget">
-                            <div class="pq-subscribe-content">
-                                <img src="{{ asset('images_home/mail.png') }}" alt="subscribe">
-                                <h4 class="footer-title text-center">Keep In Touch</h4>
-                                <p class="text-center">Sign up to get exclusive offers from our favorite brands</p>
-                              
-                                    <div class="row text-center">
-                                       <a href="{{ route('home.contact') }}">
-                                        <div class="col-lg-12">
-                                            <input type="submit" value="Contact Us">
-                                        </div>
-                                    </a>
-                                    </div>
+                            <h1 class="footer-title">Products</h1>
+                            <div class="menu-usefull-link-container">
+                                <ul id="menu-usefull-link" class="menu">
+                                    <li class="menu-item">
+                                        <a href="/page/ac-chargers">AC Chargers</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/page/dc-chargers">DC Chargers</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/page/onboard-chargers">Onboard Chargers
+</a>
+                                                                                                    </li>
+                                                                                                     <li class="menu-item">
+                                        <a href="/page/charging-management-system">Charging Management System
 
-                                
+</a>
+                                                                                                    </li>
+                                                                                                    
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-3  col-md-3">
+                        <div class="widget">
+                            <h1 class="footer-title">Services</h1>
+                            <div class="menu-usefull-link-container">
+                                <ul id="menu-usefull-link" class="menu">
+                                    <li class="menu-item">
+                                        <a href="/page/charger-services">Charger Services
+</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/page/cms-services">Charging Management Services
+</a>
+                                                                                                    </li>
+                                                                                            <li class="menu-item">
+                                        <a href="/page/consulting">Consulting</a>
+                                                                                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

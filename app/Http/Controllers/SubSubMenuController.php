@@ -58,6 +58,7 @@ class SubSubMenuController extends Controller
 
             $validatedData['slug'] = $slug;
         }
+        $validatedData['page_id'] = time().rand(100,999);
 
         // Create a new Menu instance with the validated data
         $menu = SubSubMenu::create($validatedData);
@@ -132,6 +133,7 @@ class SubSubMenuController extends Controller
         } else {
             $validatedData['slug'] = "";
         }
+      //  $validatedData['page_id'] = time().rand(100,999);
 
         // Update the subMenu record
         $subMenu->update($validatedData);

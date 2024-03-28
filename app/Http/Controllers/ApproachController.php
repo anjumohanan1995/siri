@@ -241,7 +241,7 @@ class ApproachController extends Controller
     {
        
        
-        $approach=Approach::where('_id',$id)->first();
+        $approach=Approach::where('id',$id)->first();
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'image' => 'nullable|max:2048',

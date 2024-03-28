@@ -13,9 +13,9 @@
               class="page1 elementor-section elementor-top-section elementor-element elementor-element-abf0cc8 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch"
               data-settings=' '
                
-          >
+          > <div class="container">
           <div class="row align-items-center">
-            <div class="col-lg-6 p-5 pl-7">
+            <div class="col-lg-6 p-5 ">
              
                 <div class="pq-breadcrumb-title">
                     <h2 class="text-white">{{ @$content->title_one }}</h2>
@@ -32,7 +32,7 @@
             <div class="col-lg-5 mt-6 p-5">
                 <img src="{{ asset('dynamic-pages/' . @$content->image_one) }}" alt="">
             </div>
-        </div>
+        </div> </div>
           </section>
           <section
               data-id="43822f7"
