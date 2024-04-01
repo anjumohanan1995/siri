@@ -2,7 +2,6 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DynamicPageController;
-use App\Http\Controllers\HomeContentController;
 use App\Http\Controllers\InnovationController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,7 +36,7 @@ Route::get('/', [WebHomeController::class, 'index']);
 
 //admins routes starts here .
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
-//Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
@@ -69,7 +68,6 @@ Route::post('/sub_sub_menus/{mainMenu}', [SubSubMenuController::class, 'destroy'
 //admins routes ends here .
 
 Auth::routes();
-Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/user-registration', [ApplicationController::class, 'userRegistration'])->name('userRegistration');
 Route::post('/user-store', [ApplicationController::class, 'userStore'])->name('userStore');
@@ -138,8 +136,7 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/Solutions', 'Solutions')->name('home.solutions');
 
    Route::get('/page/contact-us', 'contact')->name('home.contact');
-   
-   Route::get('/page/careers', 'careers')->name('careers');
+
    Route::get('/page/{slug}', 'dynamicPage')->name('dynamicPage');
 
    Route::get('/verticals/{slug}', 'verticals')->name('home.verticals');
@@ -176,27 +173,3 @@ Route::get('getDynamicMenus', [DynamicPageController::class, 'getDynamicMenus'])
 Route::get('dynamic-pages/create/{id}',[DynamicPageController::class,'create'])->name('dynamic-pages.create');
 Route::post('dynamic-pages/store',[DynamicPageController::class,'store'])->name('dynamic-pages.store');
 
-Route::get('/admin/panel_one', [HomeContentController::class, 'panel_one'])->name('panel_one.index');
-Route::post('admin/panel_one/store',[HomeContentController::class,'panelOneStore'])->name('panel_one.store');
-
-Route::get('/admin/panel_two', [HomeContentController::class, 'panel_two'])->name('panel_two.index');
-Route::post('admin/panel_two/store',[HomeContentController::class,'panelTwoStore'])->name('panel_two.store');
-
-Route::get('/admin/panel_three', [HomeContentController::class, 'panel_three'])->name('panel_three.index');
-Route::post('admin/panel_three/store',[HomeContentController::class,'panelThreeStore'])->name('panel_three.store');
-
-Route::get('/admin/panel_four', [HomeContentController::class, 'panel_four'])->name('panel_four.index');
-Route::post('admin/panel_four/store',[HomeContentController::class,'panelFourStore'])->name('panel_four.store');
-
-Route::get('/admin/panel_five', [HomeContentController::class, 'panel_five'])->name('panel_five.index');
-Route::post('admin/panel_five/store',[HomeContentController::class,'panelFiveStore'])->name('panel_five.store');
-
-Route::get('/admin/panel_six', [HomeContentController::class, 'panel_six'])->name('panel_six.index');
-Route::post('admin/panel_six/store',[HomeContentController::class,'panelSixStore'])->name('panel_six.store');
-
-Route::get('/admin/panel_seven', [HomeContentController::class, 'panel_seven'])->name('panel_seven.index');
-Route::post('admin/panel_seven/store',[HomeContentController::class,'panelSevenStore'])->name('panel_seven.store');
-
-Route::post('contact-store', [FrontendController::class, 'contactStore'])->name('contact-store');
-
-Route::post('career-store', [FrontendController::class, 'careerStore'])->name('career-store');

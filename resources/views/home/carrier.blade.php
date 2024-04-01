@@ -16,20 +16,35 @@
                  
             >
             <div class="row">
+                
                 <div class="col-xl-6 p-xl-0">
+                
                     <div class="pq-form-box ">
                         <div class="pq-section-title-box pq-mb-15">
-                            <span class="pq-section-sub-title">Contact us</span>
-                            <h5 class="pq-section-title">Request A Quote</h5>
+                            <span class="pq-section-sub-title">Career</span>
+                            <h5 class="pq-section-title">Apply Now</h5>
+                            @if (session('success'))
+                            <div class="alert alert-success alert-dismissible fade show w-100" role="alert">
+                                {{ session('success') }}
+                     
+                            </div>
+                        @endif
                         </div>
-                        <form class="" novalidate="" id="contact-form">
+                        <form method="POST" action="{{ route('career-store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
+                                Please select appropriate Profile and upload your profile in a PDF format.
                                 <div class="col-lg-6 col-md-6">
                                     <input type="text" id="first-name" name="name" class="pq-bg-white name-field" placeholder="Your Name">
+                                	@error('name')
+													<span class="text-danger">{{$message}}</span>
+												@enderror
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="text" id="e-mail" name="name" class="pq-bg-white e-mail-field" placeholder="Email">
+                                    <input type="text" id="e-mail" name="email" class="pq-bg-white e-mail-field" placeholder="Email">
+                                    @error('email')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <select class="pq-bg-white" id="query" name="subject" aria-required="true" aria-invalid="false">
@@ -44,9 +59,16 @@
                                 
                                 <div class="col-lg-12">
                                     <textarea id="message" cols="30" rows="4" name="message" placeholder="Your Message" class="pq-bg-white"></textarea>
+                                    @error('message')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                                 </div>
                                 <div class="col-lg-12">
-                                    <button type="button" class="pq-button form-btn" id="submitBtn">
+                                   
+                                    <input type="file" id="doc" name="doc" class="form-control"  ><br>
+                                                                 </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="pq-button form-btn" >
                                      
                                             <span class="pq-button-text">Send</span>
                                        

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Approach;
+use App\Models\Career;
 use App\Models\ContactUs;
 use App\Models\DynamicPage;
 use App\Models\Innovation;
@@ -57,6 +58,10 @@ class FrontendController extends Controller
     public function dynamicPage($slug){
         $content=DynamicPage::where('slug',$slug)->first();
         return view('home.dynamic_page',compact('content'));
+    }
+    public function careers(){
+        $contact=DynamicPage::where('slug','contact-us')->first();
+        return view('home.carrier',compact('contact'));
     }
       public function Charging(){
         return view('home.charging');
@@ -114,4 +119,59 @@ class FrontendController extends Controller
 
         }
     }
+
+    public function careerStore(Request $request){
+        try{
+            $validate = Validator::make($request->all(),[
+                'name' => 'required|regex:/^[\pL\s\-]+$/u|max:50',
+                'email' => 'required|email',
+            ]);
+
+            if($validate->fails()){
+                $messages = $validate->getMessageBag();
+                return redirect()->back()->withErrors($validate);
+            }
+
+            if ($request->hasfile('doc')) {
+
+                $docc = $request->doc;
+                $dc = time() . rand(100, 999) . '.' . $docc->extension();
+            
+                $docc->move(public_path('/careers'), $dc);
+            
+                $data['icon'] = $dc;
+            
+            }
+         //   dd($request);
+
+            $query = Career::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'message' => $request->message,
+                'file' => $data['icon']??'',
+            ]);
+            if($query){
+                if (@$request->email) {
+                    $email = $request->email;
+                    $name = $request->name;
+                    // $messagess = $request->message;
+                    // Mail::send('mail.mail', compact('name','email','messagess'), function ($message) use ($email) {
+                    //     $message->to('namkerala@gmail.com');
+                    //     $message->bcc('sujiraj@kawikatechnologies.com');
+                    //     $message->subject('Contact Us');
+                    // });
+
+                    return redirect()->back()
+                       ->with('success','Form Submitted successfully');
+                }
+            }
+        }
+
+        catch( \Exception $e){
+
+        }
+    }
+
+
 }
