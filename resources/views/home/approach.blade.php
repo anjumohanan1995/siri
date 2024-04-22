@@ -17,21 +17,12 @@
         > <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 p-5"  style="padding-left: 7em ">
-              <div class="pq-breadcrumb-title">
+              <div class="pq-breadcrumb-title text-white">
                   <h1 class="text-white">{{ @$approach->title }}
                   </h1>
+                  {!! @$approach->content !!}
               </div>
           
-              <div class="pq-icon-box pq-style-4 mt-4 mt-md-0">
-              
-
-
-               <div class="pq-icon-box-content ">
-                  <div class="pq-section-title-box "> {!! @$approach->content !!} 
- 
-</div>
-                    </div> 
-              </div>
              
               
           </div>
@@ -45,6 +36,25 @@
           </div>
       </div>  </div>
         </section>
+        <!-- <section data-id="43822f7" data-element_type="section" nitro-elementor-animation="animated fadeIn" class="elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn">
+            <div class="row align-items-center">
+                  <div class="col-lg-5   p-5 mt-6">
+                    <img src="https://sirinew.kawikatech.com/dynamic-pages/1708579389680.jpg" alt="">
+                </div>
+                  <div class="col-lg-7 p-5 ">
+                   
+                   
+                      <div class="pq-icon-box pq-style-4 mt-4 mt-md-0">
+                        
+                          <div class="pq-icon-box-content ">
+                        
+                                </div>
+                      </div>
+                     
+                      
+                  </div>
+                 
+                </div></section> -->
         <section
             data-id="43822f7"
             data-element_type="section"
@@ -54,6 +64,7 @@
 
              <div class="row align-items-center">
               <div class="pq-icon-box-content p-5 w-80"> 
+             
                   {!! @$approach->content1 !!}
                     </div>
                   </div>
@@ -64,7 +75,7 @@
         data-id="43822f7"
         data-element_type="section"
         nitro-elementor-animation="animated fadeIn"
-        class="elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
+        class="footer elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
           
     >
 

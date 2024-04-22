@@ -4,13 +4,13 @@
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4">
                     <div class="pq-subscribe-location align-items-center text-center">
-                        <a href="{{ route('home.contact') }}">
-                            <h4 class="pq-subscribe-title">Find Our near Branches </h4>
+                       <!--   <a href="{{ route('home.contact') }}">
+                           <h4 class="pq-subscribe-title">Find Our near Branches </h4> 
                         </a>
-                        <i class="fas fa-globe-americas"></i>
+                        <i class="fas fa-globe-americas"></i>-->
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-4 center">
+                <div class="col-xl-4 col-lg-4 col-md-4 center">
                     <div class="pq-subscribe-contact">
                         <div>
                            
@@ -29,10 +29,10 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4">
                     <div class="pq-subscribe-time align-items-center">
-                        <i class="far fa-clock"></i>
+                     <!--   <i class="far fa-clock"></i>
                         <a href="{{ route('home.contact') }}">
-                            <h4 class="pq-subscribe-title text-center">24/7 Emergency Services </h4>
-                        </a>
+                             <h4 class="pq-subscribe-title text-center">24/7 Emergency Services </h4> 
+                        </a>-->
                     </div>
                 </div>
             </div>
@@ -46,8 +46,8 @@
                         <div class="widget">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <img src="{{ asset('images_home/logo-1.png') }}" class="pq-footer-logo"
-                                        alt="gym-footer-logo">
+                                    <a href="/"><img src="{{ asset('images_home/logo-1.png') }}" class="pq-footer-logo"
+                                        alt="gym-footer-logo"></a>
                                     {{--  <p>It is a long established fact that a reader by the readable content of a page
                                         when looking at its layout.</p>  --}}
                                        

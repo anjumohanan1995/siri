@@ -103,6 +103,7 @@ href="{{ asset('css_home/stylesheet-1.css') }}"
                 // Get the submenus for the current main menu.
                 $subMenus = App\Models\SubMenu::where('menu_id', $mainMenu->id)
                     ->whereNull('deleted_at')
+                    ->where('status',1)
                     ->get();
 
                 // Loop through each submenu.
@@ -181,22 +182,8 @@ href="{{ asset('css_home/stylesheet-1.css') }}"
 
                                 </div>
                             </div>
-                            <div class="pq-menu-search-block">
-                                <a href="javascript:void(0)" id="pq-seacrh-btn"><i class="fa fa-search"></i></a>
-                                <div class="pq-search-form">
-                                    <form role="search" method="get" class="search-form" action="/">
-                                        <label>
-                                            <span class="screen-reader-text">Search for:</span>
-                                            <input type="search" class="search-field" placeholder="Search …"
-                                                value="" name="s">
-                                        </label>
-                                        <button type="submit" class="search-submit">
-                                            <span class="screen-reader-text">Search</span>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                            <a href="\" class="pq-button">
+                           
+                            <a href="/page/contact-us" class="pq-button">
                                 <div class="pq-button-block">
                                     <span class="pq-button-line-left"></span>
                                     <span class="pq-button-text">Talk to our expert</span>
@@ -220,7 +207,7 @@ href="{{ asset('css_home/stylesheet-1.css') }}"
 
 
     {{-- <footer id="pq-footer">
-        <div class="pq-subscribe align-items-center">
+        <div class="pq-subscribe align-items-center footer ">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-4 col-md-4">

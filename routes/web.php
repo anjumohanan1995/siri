@@ -63,6 +63,7 @@ Route::get('getSubSubMenus', [SubSubMenuController::class, 'getSubSubMenus'])->n
 Route::post('/sub_sub_menus/{mainMenu}', [SubSubMenuController::class, 'destroy'])->name('sub_sub_menus.delete');
 //sub sub menus route ends here.
 
+Route::get('/sub_menus/{id}/{status}', [SubMenuController::class, 'statusUpdate'])->name('sub_menus.statusUpdate');
 
 
 

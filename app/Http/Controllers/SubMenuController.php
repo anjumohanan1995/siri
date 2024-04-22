@@ -247,6 +247,12 @@ class SubMenuController extends Controller
         $data_arr = [];
         $i = 1;
         foreach ($records as $record) {
+            if($record->status == 1){
+                $status = '<a class="btn btn-danger m-1" href="' . route('sub_menus.statusUpdate', ['id' => $record->id, 'status' => 2]) . '" onclick="return confirm(\'Are you sure you want to deactivate?\')">Deactive</a>';
+            }
+            else{
+                $status = '<a class="btn btn-primary m-1" href="' . route('sub_menus.statusUpdate', ['id' => $record->id, 'status' => 1]) . '" onclick="return confirm(\'Are you sure you want to activate?\')">Active</a>';
+            }
             $data_arr[] = [
                 'no' => $i++,
                 "title" => $record->title,
@@ -259,6 +265,7 @@ class SubMenuController extends Controller
                         <button type="submit" class="btn btn-danger m-1">Delete</button>
                     </form>
                     <a class="btn btn-secondary m-1" href="' . route('sub_sub_menus.indexWithId', $record->id) . '">Sub Sub Menus</a>
+                    '.$status.'
 
                 </div>'
             ];
@@ -278,5 +285,12 @@ class SubMenuController extends Controller
 
         // Return the response as JSON
         return response()->json($response);
+    }
+    public function statusUpdate(Request $request, $id,$status)
+    {
+        $subMenu = SubMenu::find($id);
+        $subMenu->status = @$status;
+        $subMenu->save();
+        return redirect()->back()->with('success', 'Status updated successfully');
     }
 }

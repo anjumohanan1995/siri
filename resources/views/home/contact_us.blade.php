@@ -20,7 +20,7 @@
                     <div class="pq-form-box ">
                         <div class="pq-section-title-box pq-mb-15">
                             <span class="pq-section-sub-title">Contact us</span>
-                            <h5 class="pq-section-title">Request A Quote</h5>
+                            <!-- <h5 class="pq-section-title">Request A Quote</h5> -->
                         </div>
                         <form class="" novalidate="" id="contact-form">
                             @csrf
@@ -31,7 +31,7 @@
                                 <div class="col-lg-6 col-md-6">
                                     <input type="text" id="e-mail" name="name" class="pq-bg-white e-mail-field" placeholder="Email">
                                 </div>
-                                <div class="col-lg-12 col-md-12">
+                                <div class="col-lg-6 col-md-6">
                                     <select class="pq-bg-white" id="query" name="subject" aria-required="true" aria-invalid="false">
                                         <option value="General Query">General Query</option>
                                         <option value="Products">Products</option>
@@ -40,7 +40,9 @@
                                         <option value="Career">Career</option>
                                         <option value="Other">Other</option></select>
                                 </div>
-
+                                <div class="col-lg-6 col-md-6">
+                                    <input type="text" id="e-mail" name="name" class="pq-bg-white e-mail-field" placeholder="Phone Number">
+                                </div>
                                 
                                 <div class="col-lg-12">
                                     <textarea id="message" cols="30" rows="4" name="message" placeholder="Your Message" class="pq-bg-white"></textarea>
@@ -58,7 +60,7 @@
                 </div>
                 <div class="col-xl-4 m-5">
                     <div class="pq-icon-box pq-style-7 p-5">
-                        <div class="pq-icon">
+                        <!-- <div class="pq-icon">
                             <img src="{{ asset('dynamic-pages/' . @$contact->image_one) }}"/>
                         </div>
                         <div class="pq-icon-box-content">
@@ -67,7 +69,7 @@
                             </h4>
                             <p class="pq-icon-box-description">{!! @$contact->content_one !!}
                             </p>
-                        </div>
+                        </div> -->
                      
                         <div class="pq-icon">
                             <a href="" class="animation-grow"><img src="{{ asset('dynamic-pages/' . @$contact->image_two) }}"/></a>
@@ -101,7 +103,7 @@
             data-id="43822f7"
             data-element_type="section"
             nitro-elementor-animation="animated fadeIn"
-            class="elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
+            class="footer elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
               
         >
     

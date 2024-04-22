@@ -3,9 +3,6 @@
 @section('content')
 
 
-
-
-
 </head>
 <body data-rsssl="1" class="page-template-default page page-id-1754 unselectable elementor-default elementor-kit-8 elementor-page elementor-page-1754" unselectable="on">
 
@@ -17,65 +14,33 @@
             data-id="abf0cc8"
             data-element_type="section"
             class="first-section elementor-section elementor-top-section elementor-element elementor-element-abf0cc8 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch"
-            data-settings=' '>
-        <div class="banner">
-            <p class="rs-p-wp-fix"></p>
-            <rs-module-wrap id="rev_slider_2_1_wrapper" data-alias="home-1" data-source="gallery"
-                style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-                <rs-module id="rev_slider_2_1" data-version="6.5.15">
-                    <rs-slides>
-                        <rs-slide style="position: absolute;" data-key="rs-2" data-title="Slide" data-anim="ms:600;"
-                            data-in="o:0;" data-out="a:false;">
-                            <img src="{{asset('rev/dummy.png')}}" alt="" title="1" width="1920" height="665"
-                                class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{asset('rev/1.jpg')}}" data-no-retina>
-                            <!--
-                                --><rs-layer id="slider-2-slide-2-layer-0" data-type="shape" data-rsp_ch="on" data-xy="x:c;y:b;"
-                                data-text="w:normal;s:20,15,11,6;l:0,19,14,8;"
-                                data-dim="w:2072px,168px,169px,968px;h:140px,67px,40px,40px;minw:0px,none,none,none;"
-                                data-frame_0="y:0,39,29,17;" data-frame_1="st:500;sp:500;" data-frame_999="o:0;st:w;"
-                                style="z-index:11;background-color:#2eb82e;">
-                            </rs-layer><!--
+            data-settings=' '> <div class="banner">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background:url({{ asset('images_home/banner.png')}}) center top no-repeat #2f2f2f">
+        <img src="{{ asset('images_home/dummy.png') }}" alt="">
+        </div>
+        <div class="carousel-item" style="background:url({{ asset('images_home/banner3.png')}}) center top no-repeat #2f2f2f ">
+        <img src="{{ asset('images_home/dummy.png') }}" alt="">
+        </div>
+        <div class="carousel-item" style="background:url({{ asset('images_home/banner1.png')}}) center top no-repeat #2f2f2f ">
+        <img src="{{ asset('images_home/dummy.png') }}" alt="">
+        </div>
+        <div class="carousel-item" style="background:url({{ asset('images_home/banner2.png')}}) center top no-repeat #2f2f2f ">
+        <img src="{{ asset('images_home/dummy.png') }}" alt="">
+        </div>
+       
         
-                                --><rs-layer id="slider-2-slide-2-layer-1" class="pq-title-text" data-type="text" data-color="#2eb82e"
-                                data-rsp_ch="on" data-xy="x:c;yo:250px,200px,180px,90px;"
-                                data-text="w:normal;s:82,64,62,48;l:90,70,70,56;fw:500;a:center;"
-                                data-frame_0="y:50,39,29,17;" data-frame_1="st:800;sp:1000;" data-frame_999="o:0;st:w;"
-                                style="z-index:9;">{{ @$data->panel_one_title }}
-                            </rs-layer><!--
-        
-                                --><rs-layer id="slider-2-slide-2-layer-2" data-type="image" data-rsp_ch="on" data-xy="x:c;y:b;yo:0,0,0,1px;"
-                                data-text="w:normal;s:220,15,11,6;l:10,19,14,8;"
-                                data-dim="w:1000px,900px,780px,450px;h:390px,350px,304px,175px;"
-                                data-frame_0="y:150,139,129,17;" data-frame_1="st:1800;sp:1000;" data-frame_999="o:0;st:w;"
-                                style="z-index:12;"><img src="{{asset('rev/dummy.png')}}" alt="" class="tp-rs-img rs-lazyload"
-                                    width="1402" height="546" data-lazyload="{{ asset('homecontent/'.@$data->panel_one_bgimage) }}" data-no-retina>
-                            </rs-layer><!--
-        
-                                --><rs-layer id="slider-2-slide-2-layer-3" class="pq-title-text" data-type="text" data-rsp_ch="on"
-                                data-xy="x:c;xo:0,30px,0,0;yo:330px,180px,160px,140px;"
-                                data-text="w:normal;s:82,64,62,48;l:90,70,70,56;fw:500;a:center;"
-                                data-frame_0="y:100,39,29,17;" data-frame_1="st:1000;sp:1000;" data-frame_999="o:0;st:w;"
-                                style="z-index:8;">{{ @$data->panel_one_subtitle }}
-                            </rs-layer><!--
-        
-                                --><a id="slider-2-slide-2-layer-4" class="rs-layer pq-button pq-body-text rev-btn"
-                                href="{{ @$data->panel_one_link }}" target="_self" data-type="button" data-rsp_ch="on"
-                                data-xy="x:c;yo:430px,340px,260px,210px;" data-text="w:normal;s:18,14,10,6;l:30,39,29,17;"
-                                data-dim="minh:0px,none,none,none;" data-padding="r:20,20,20,15;l:20,20,20,15;"
-                                data-border="bor:5px,5px,5px,5px;" data-frame_0="y:50,39,29,17;"
-                                data-frame_1="st:1400;sp:1000;" data-frame_999="o:0;st:w;"
-                                data-frame_hover="bgc:#2eb82e;bor:5px,5px,5px,5px;sp:50;e:power1.inOut;bri:100%;"
-                                style="z-index:13;background-color:#2eb82e;">
-                                <div class="pq-button-block"><span class="pq-button-line-left"></span><span
-                                        class="pq-button-text">{{ @$data->panel_one_link_label }}</span><span class="pq-button-line-right"></span><i
-                                        class="ion ion-android-arrow-dropright"></i></div>
-                            </a><!--
-        
-                               
-        --> </rs-slide>
-                    </rs-slides>
-                </rs-module>
-            </rs-module-wrap>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
         </div>
         </section>
         <section
@@ -90,25 +55,20 @@
                         <div class="col-lg-6 p-5 pl-7 pt-8" >
                             <div class="pq-icon-box-content" style="width: 100%"> 
                                 {{-- <span class="pq-section-sub-title">About Us</span> --}}
-                                <p class="pq-section-title">{!! @$data->panel_two_description !!}</p>
+                                <p class="pq-section-title"> <b>{!! @$data->panel_two_description !!} </b></p>
                                
-                                <div class="accordion" id="accordionPanelsStayOpenExample">
+                               
                                     @foreach ($panel2_data as $panel2)
-                                    <div class="accordion-item" style="border: none">
-                                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                            {!! @$panel2->title !!}
+                                   
+                                       <b>  {!! @$panel2->title !!}
   
                                              
-                                          </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse hide" aria-labelledby="panelsStayOpen-headingOne">
-                                          {!! @$panel2->content !!}
-                                        </div>
-                                      </div>
+                                       {!! @$panel2->content !!}</b>
+                                        
+                                      
                                     @endforeach
                                     
-                                </div>
+                              
                                 <div class="clear"></div>
                            
                              </div>
@@ -144,30 +104,79 @@
                         </div>
                     </div>
                    
-                  <div class="pq-accordion-block ">
+                    <!-- <div class="pq-accordion-block ">
+                        <div class="accordion w-50" id="accordionPanelsStayOpenExample">
                     @php $i=1; @endphp
                     @foreach ($panel3_data as $panel3)
 
 
+                        <div class="accordion" id="accordionExample">
+                         <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading{{$i}}">
+                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$i}}" aria-expanded="false" aria-controls="collapse{{$i}}">
+                    {{ @$panel3->title }}
+                    </button>
+                    </h2>
+                    <div id="collapse{{$i}}" class="accordion-collapse collapse" aria-labelledby="heading{{$i}}" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                    {{ @$panel3->content }}
+                    </div>
+                    </div>
+                    </div>
+
+                    </div>
 
 
-                    <div class="accordion w-50" id="accordionPanelsStayOpenExample">
-<div class="accordion-item" style="border: none">
-<h2 class="accordion-header" id="panelsStayOpen-headingOne">
-    <button aria-controls="panelsStayOpen-collapse{{$i}}" aria-expanded="true" class="accordion-button collapsed" data-bs-target="#panelsStayOpen-collapse{{$i}}" data-bs-toggle="collapse" type="button">{{ @$panel3->title }}</button></h2>
 
-<div aria-labelledby="panelsStayOpen-headingOne" class="accordion-collapse collapse hide" id="panelsStayOpen-collapse{{$i}}">{{ @$panel3->content }}</div>
  
- </div>
-</div>
- 
 
- @php $i++; @endphp
+                        @php $i++; @endphp
                     @endforeach
                     
-                    
+           </div>         
                      
-                    </div>
+                    </div> -->
+
+
+                    <div class="accordion w-50" id="accordionExample">
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingOne"><button aria-controls="collapseOne" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapseOne" data-bs-toggle="collapse" type="button">Pioneering Innovation</button></h2>
+
+<div aria-labelledby="headingOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseOne" style="">
+<div class="accordion-body">We are at the forefront of smart charging technology, constantly pushing the boundaries with proprietary AI algorithms and industry-leading advancements. We are not keeping up; we are leading the way.</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingTwo"><button aria-controls="collapseTwo" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapseTwo" data-bs-toggle="collapse" type="button">Simplifying the Transition</button></h2>
+
+<div aria-labelledby="headingTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTwo" style="">
+<div class="accordion-body">We understand that entering the business of charging can be daunting. That is why we offer expert guidance and implement custom built solutions, making the journey towards electrification smooth and efficient.</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingThree"><button aria-controls="collapseThree" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapseThree" data-bs-toggle="collapse" type="button">Intelligent Deployment and Scaling</button></h2>
+
+<div aria-labelledby="headingThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseThree" style="">
+<div class="accordion-body"> We not only install chargers; we design and implement the entire strategic charging infrastructure that can adapt and grow as your needs evolve. We help you deploy rapidly and scale intelligently, ensuring your investment keeps pace with the electric future.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4"><button aria-controls="collapse4" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse4" data-bs-toggle="collapse" type="button">Maximizing Value</button></h2>
+
+<div aria-labelledby="heading4" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse4" style="">
+<div class="accordion-body">We are partners in maximizing the value of your energy assets. Our solutions extend the life of your batteries, optimize energy usage, and minimize downtime, ensuring you get the most out of every watt.</div>
+</div>
+</div>
+
+ 
+</div>
+
+
+
                     
                 </div>
             </div>
@@ -268,7 +277,7 @@
         data-id="43822f7"
         data-element_type="section"
         nitro-elementor-animation="animated fadeIn"
-        class="elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
+        class="footer elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
           
     >
 

@@ -29,6 +29,7 @@
 }.accordion.w-50 h2 {
     margin-top: 10px;
     background:#ffff;
+    padding-left: 10px !important;
     border-radius:  0 ;
 }
 .accordion-item{
@@ -15600,4 +15601,7 @@ img.mfp-img {
 .fa,
 .fas {
   /*! font-family:"Font Awesome 5 Free"; *//*! font-weight:900; */
+}
+.accordion-body{
+  padding: 0 !important;
 }

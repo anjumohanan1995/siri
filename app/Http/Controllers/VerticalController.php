@@ -219,7 +219,7 @@ class VerticalController extends Controller
     {
        
        
-        $verticals=Vertical::where('_id',$id)->first();
+        $verticals=Vertical::where('id',$id)->first();
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'image' => 'nullable|max:2048',

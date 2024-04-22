@@ -332,7 +332,7 @@
                                     </a>
 
                                 </li>
-                                {{--  <li class="slide">
+                                <li class="slide">
                                     <a class="side-menu__item {{ \Request::route()->getName() == 'roles.index' || \Request::route()->getName() == 'roles.create' || \Request::route()->getName() == 'roles.edit' ? 'active' : '' }}"
                                         href="{{ url('roles') }}">
                                         <i class="side-menu__icon fe fe-file-plus"> </i>
@@ -340,7 +340,7 @@
 
                                     </a>
 
-                                </li>  --}}
+                                </li>
 
                                 <li class="slide">
                                     <a class="side-menu__item {{ \Request::route()->getName() == 'settings.index' ? 'active' : '' }}"

@@ -50,17 +50,7 @@ Design and Developed by: PeacefulQode
         });
 
 
-        /*==================================================
-        [ Accordion ]
-        ==================================================*/
-        jQuery('.pq-accordion-block .pq-accordion-box .pq-accordion-details').hide();
-        jQuery('.pq-accordion-block .pq-accordion-box:first').addClass('pq-active').children().slideDown('slow');
-        jQuery('.pq-accordion-block .pq-accordion-box').on("click", function () {
-            if (jQuery(this).children('div.pq-accordion-details').is(':hidden')) {
-                jQuery('.pq-accordion-block .pq-accordion-box').removeClass('pq-active').children('div.pq-accordion-details').slideUp('slow');
-                jQuery(this).toggleClass('pq-active').children('div.pq-accordion-details').slideDown('slow');
-            }
-        });
+     
 
 
         /*==================================================
