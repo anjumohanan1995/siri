@@ -13,7 +13,7 @@
                 data-element_type="section"
                 class="pq-bg-grey elementor-section elementor-top-section elementor-element elementor-element-abf0cc8 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch"
                 data-settings=' '
-                 
+
             >
             <div class="row">
                 <div class="col-xl-6 p-xl-0">
@@ -41,17 +41,17 @@
                                         <option value="Other">Other</option></select>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="text" id="e-mail" name="name" class="pq-bg-white e-mail-field" placeholder="Phone Number">
+                                    <input type="text" id="phone" name="phone" class="pq-bg-white e-mail-field" placeholder="Phone Number">
                                 </div>
-                                
+
                                 <div class="col-lg-12">
                                     <textarea id="message" cols="30" rows="4" name="message" placeholder="Your Message" class="pq-bg-white"></textarea>
                                 </div>
                                 <div class="col-lg-12">
                                     <button type="button" class="pq-button form-btn" id="submitBtn">
-                                     
+
                                             <span class="pq-button-text">Send</span>
-                                       
+
                                     </button>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             <p class="pq-icon-box-description">{!! @$contact->content_one !!}
                             </p>
                         </div> -->
-                     
+
                         <div class="pq-icon">
                             <a href="" class="animation-grow"><img src="{{ asset('dynamic-pages/' . @$contact->image_two) }}"/></a>
                         </div>
@@ -81,7 +81,7 @@
                             <p class="pq-icon-box-description">{!! @$contact->content_two !!}
                             </p>
                         </div>
-                    
+
                         <div class="pq-icon">
                             <a href="" class="animation-grow"><img src="{{ asset('dynamic-pages/' . @$contact->image_three) }}"/></a>
                         </div>
@@ -95,21 +95,21 @@
                     </div>
                 </div>
             </div>
-        
+
             </section>
-          
-            
+
+
             <section
             data-id="43822f7"
             data-element_type="section"
             nitro-elementor-animation="animated fadeIn"
             class="footer elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
-              
+
         >
-    
+
         @include('home.footer')
     </section>
-    
+
         </div>
         <div class="post-tags"></div>
     </div>
@@ -139,7 +139,7 @@
                          //   alert(response.success);
                             // Reset the form
                            // $('#contactForm')[0].reset();
-                            
+
                             // Display success message
                             jQuery("<span class='pq-thank-you-message pq-text-primary ms-5'> "+response.success+"</span>").insertAfter('#contact-form');
                             $("#contact-form")[0].reset();
@@ -147,7 +147,7 @@
                             jQuery("<span class='pq-thank-you-message pq-text-primary ms-5'> "+response.errors+"</span>").insertAfter('#contact-form');
 
                         }
-                
+
                     },
                     error: function(xhr, status, error) {
                         // Handle error response

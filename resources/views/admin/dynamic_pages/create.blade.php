@@ -37,7 +37,7 @@
 
 							<div class="card-body">
 
-							
+
 								<form name="createForm"  method="post" action="{{route('dynamic-pages.store')}}" enctype="multipart/form-data">
                            @csrf
 									<input type="hidden" name="user_id" value="{{ \Auth::user()->id}}">
@@ -60,7 +60,7 @@
                                                     @enderror
                                                 </div>
                                             </div><br>
-                                         
+
                                             <div class="row">
                                                 <div class="col-md-3"><label class="form-label"> Content One</label></div>
                                                 <div class="col-md-9"><textarea id="" class="ckeditor editor1 form-control" placeholder=" Content" name="content_one">{{ @$data->content_one }}</textarea>
@@ -68,14 +68,14 @@
                                                         <span class="text-danger">{{$message}}</span>
                                                     @enderror
                                                 </div>
-                                            </div>   <br>                                       
+                                            </div>   <br>
                                             <div class="row">
                                                 <div class="col-md-3"><label class="form-label">Image/Icon</label></div>
                                                 <div class="col-md-9">
                                                     {{-- <input type="file" class="form-control" name="image" /> --}}
                                                     <span>Upload Maximum File Size is 2Mb</span>
                                                     <input type="file" id="img_file" name="image_one" class="form-control" accept=".png, .jpg, .jpeg"  onChange="img_pathUrl(this);"><br>
-                                                  
+
 
                                                     @error('image')
                                                         <span class="text-danger">{{$message}}</span>
@@ -91,7 +91,7 @@
                                                     @enderror
                                                 </div>
                                             </div><br>
-                                         
+
                                             <div class="row">
                                                 <div class="col-md-3"><label class="form-label"> Content Two</label></div>
                                                 <div class="col-md-9"><textarea class="ckeditor form-control" placeholder=" Content" name="content_two">{{ @$data->content_two }}</textarea>
@@ -99,14 +99,14 @@
                                                         <span class="text-danger">{{$message}}</span>
                                                     @enderror
                                                 </div>
-                                            </div>   <br>                                       
+                                            </div>   <br>
                                             <div class="row">
                                                 <div class="col-md-3"><label class="form-label">Image/Icon</label></div>
                                                 <div class="col-md-9">
                                                     {{-- <input type="file" class="form-control" name="image" /> --}}
                                                     <span>Upload Maximum File Size is 2Mb</span>
                                                     <input type="file" id="img_file" name="image_two" class="form-control" accept=".png, .jpg, .jpeg"  onChange="img_pathUrl(this);"><br>
-                                                  
+
 
                                                     @error('image_two')
                                                         <span class="text-danger">{{$message}}</span>
@@ -116,13 +116,13 @@
 											<br>
 											<div class="row">
                                                 <div class="col-md-3"><label class="form-label">Title Three</label></div>
-                                                <div class="col-md-9"><input type="text" class="form-control" placeholder="Title " name="title_three" id="title_three" value="{{ @$data->heading }}" />
+                                                <div class="col-md-9"><input type="text" class="form-control" placeholder="Title " name="title_three" id="title_three" value="{{ @$data->title_three }}" />
                                                     @error('title_three')
                                                         <span class="text-danger">{{$message}}</span>
                                                     @enderror
                                                 </div>
                                             </div><br>
-                                         
+
                                             <div class="row">
                                                 <div class="col-md-3"><label class="form-label"> Content Three</label></div>
                                                 <div class="col-md-9"><textarea class="ckeditor form-control" placeholder=" Content" name="content_three">{{ @$data->content_three }}</textarea>
@@ -130,21 +130,21 @@
                                                         <span class="text-danger">{{$message}}</span>
                                                     @enderror
                                                 </div>
-                                            </div>   <br>                                       
+                                            </div>   <br>
                                             <div class="row">
                                                 <div class="col-md-3"><label class="form-label">Image/Icon</label></div>
                                                 <div class="col-md-9">
                                                     {{-- <input type="file" class="form-control" name="image" /> --}}
                                                     <span>Upload Maximum File Size is 2Mb</span>
                                                     <input type="file" id="img_file" name="image_three" class="form-control" accept=".png, .jpg, .jpeg"  onChange="img_pathUrl(this);"><br>
-                                                  
+
 
                                                     @error('image_three')
                                                         <span class="text-danger">{{$message}}</span>
                                                     @enderror
                                                 </div>
                                             </div>
-                                           
+
 
 									</div>
 
@@ -174,7 +174,7 @@
 </div>
 <!-- /main-content -->
 					<!-- /main-content -->
-  
+
   <script src="{{ asset('js/ckeditor/ckeditor.js')}}"></script>
   <script>
 

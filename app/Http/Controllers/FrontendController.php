@@ -52,7 +52,7 @@ class FrontendController extends Controller
     }
     public function innovation($slug){
         $innovation=Innovation::where('slug',$slug)->first();
-       
+
         return view ('home.innovation', compact('innovation','slug'));
     }
     public function dynamicPage($slug){
@@ -96,6 +96,7 @@ class FrontendController extends Controller
             $query = ContactUs::create([
                 'name' => $request->name,
                 'email' => $request->email,
+                'phone' => @$request->phone,
                 'subject' => $request->subject,
                 'message' => $request->message,
             ]);
@@ -136,11 +137,11 @@ class FrontendController extends Controller
 
                 $docc = $request->doc;
                 $dc = time() . rand(100, 999) . '.' . $docc->extension();
-            
+
                 $docc->move(public_path('/careers'), $dc);
-            
+
                 $data['icon'] = $dc;
-            
+
             }
          //   dd($request);
 
