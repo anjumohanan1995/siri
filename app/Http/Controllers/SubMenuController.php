@@ -134,12 +134,12 @@ class SubMenuController extends Controller
 
         // Generate a slug from the title
         if ($request->link_type == 'slug') {
-            
+
             if(!$subMenu->slug){
                 $slug = Str::slug($validatedData['title'], '_');
                 $validatedData['slug'] = $slug;
             }
-     
+
             $validatedData['link'] = "";
         } else {
             $validatedData['slug'] = "";
@@ -180,7 +180,7 @@ class SubMenuController extends Controller
         // get id.
         $id = $request->id;
 
-        
+
         // Get DataTables parameters
         $draw = $request->get('draw');
         $start = $request->get("start");

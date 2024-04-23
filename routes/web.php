@@ -54,6 +54,8 @@ Route::resource('sub_menus', SubMenuController::class);
 Route::get('/sub_menus/index/{id}', [SubMenuController::class, 'indexWithId'])->name('sub_menus.indexWithId');
 Route::get('getSubMenus', [SubMenuController::class, 'getSubMenus'])->name('getSubMenus');
 Route::post('/sub_menus/{mainMenu}', [SubMenuController::class, 'destroy'])->name('sub_menus.delete');
+Route::post('/sub_menus/statusUpdate', [SubMenuController::class, 'statusUpdate'])->name('sub_menus.statusUpdate');
+
 //sub menus route ends here.
 
 //sub sub menu route starts here.
@@ -63,7 +65,6 @@ Route::get('getSubSubMenus', [SubSubMenuController::class, 'getSubSubMenus'])->n
 Route::post('/sub_sub_menus/{mainMenu}', [SubSubMenuController::class, 'destroy'])->name('sub_sub_menus.delete');
 //sub sub menus route ends here.
 
-Route::get('/sub_menus/{id}/{status}', [SubMenuController::class, 'statusUpdate'])->name('sub_menus.statusUpdate');
 
 
 
@@ -139,7 +140,7 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/Solutions', 'Solutions')->name('home.solutions');
 
    Route::get('/page/contact-us', 'contact')->name('home.contact');
-   
+
    Route::get('/page/careers', 'careers')->name('careers');
    Route::get('/page/{slug}', 'dynamicPage')->name('dynamicPage');
 
@@ -148,7 +149,7 @@ Route::controller(FrontendController::class)->group(function(){
    Route::get('/Team', 'team')->name('home.team');
 
    Route::get('/innovation/{slug}', 'innovation')->name('home.innovation');
-  
+
 });
 Route::Resource('/admin-approach', ApproachController::class);
 Route::get('getApproach',[ApproachController::class, 'getApproach'])->name('getApproach');
@@ -199,5 +200,5 @@ Route::get('/admin/panel_seven', [HomeContentController::class, 'panel_seven'])-
 Route::post('admin/panel_seven/store',[HomeContentController::class,'panelSevenStore'])->name('panel_seven.store');
 
 Route::post('contact-store', [FrontendController::class, 'contactStore'])->name('contact-store');
-
 Route::post('career-store', [FrontendController::class, 'careerStore'])->name('career-store');
+

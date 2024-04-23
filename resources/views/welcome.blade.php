@@ -29,8 +29,8 @@
         <div class="carousel-item" style="background:url({{ asset('images_home/banner2.png')}}) center top no-repeat #2f2f2f ">
         <img src="{{ asset('images_home/dummy.png') }}" alt="">
         </div>
-       
-        
+
+
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -48,31 +48,31 @@
             data-element_type="section"
             nitro-elementor-animation="animated fadeIn"
             class="elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
-             > 
+             >
              <div class="about-us">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6 p-5 pl-7 pt-8" >
-                            <div class="pq-icon-box-content" style="width: 100%"> 
+                            <div class="pq-icon-box-content" style="width: 100%">
                                 {{-- <span class="pq-section-sub-title">About Us</span> --}}
                                 <p class="pq-section-title"> <b>{!! @$data->panel_two_description !!} </b></p>
-                               
-                               
+
+
                                     @foreach ($panel2_data as $panel2)
-                                   
+
                                        <b>  {!! @$panel2->title !!}
-  
-                                             
+
+
                                        {!! @$panel2->content !!}</b>
-                                        
-                                      
+
+
                                     @endforeach
-                                    
-                              
+
+
                                 <div class="clear"></div>
-                           
+
                              </div>
-                           
+
                         </div>
                         <div class="col-lg-6 mt-4 mt-lg-0 p-5" style="margin-top:3em !important">
                             <img src="{{ asset('homecontent/panel_two/'.@$data->panel_two_image) }}" alt="">
@@ -80,16 +80,16 @@
                     </div>
                 </div>
               </div>
-            
-       
-         
+
+
+
         </section>
         <section
             data-id="c225a6a"
             data-element_type="section"
             nitro-elementor-animation="animated fadeIn"
             class=" pq-bg-grey elementor-section elementor-top-section elementor-element elementor-element-c225a6a elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
-            
+
             style=""
         >
         <div class="service">
@@ -97,13 +97,13 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="pq-section-title-box text-center" style="padding-bottom: 0">
-                           
+
                             <h5 class="pq-section-title">{{ @$data->panel_three_title }}<br> {{ @$data->panel_three_subtitle }}
                           </h5>
-                           
+
                         </div>
                     </div>
-                   
+
                     <!-- <div class="pq-accordion-block ">
                         <div class="accordion w-50" id="accordionPanelsStayOpenExample">
                     @php $i=1; @endphp
@@ -128,13 +128,13 @@
 
 
 
- 
+
 
                         @php $i++; @endphp
                     @endforeach
-                    
-           </div>         
-                     
+
+           </div>
+
                     </div> -->
 
 
@@ -172,12 +172,12 @@
 </div>
 </div>
 
- 
+
 </div>
 
 
 
-                    
+
                 </div>
             </div>
           </div>
@@ -187,9 +187,9 @@
             data-element_type="section"
             nitro-elementor-animation="animated fadeIn"
             class="elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
-              
+
         >
-           
+
       <div class="whyus py-0 pq-bg-img-6 pt-5">
         <div class="container">
             <div class="row align-items-center">
@@ -201,20 +201,20 @@
                         <span class="pq-section-sub-title pq-text-white">{{ @$data->panel_four_title }}</span>
                         <p class="pq-section-description pq-text-white">{!! @$data->panel_four_description !!} </p>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
       </div>
-         
+
         </section>
         <section
             data-id="9a1022d"
             data-element_type="section"
             nitro-elementor-animation="animated fadeIn"
             class="feature elementor-section elementor-top-section elementor-element elementor-element-9a1022d elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
-             
-            
+
+
         >
         <div class="pq-section-title-box ">
         <img src="{{ asset('homecontent/car.jpg') }}" alt="">
@@ -229,7 +229,7 @@
             data-element_type="section"
             nitro-elementor-animation="animated fadeIn"
             class="car_bg current elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
-        
+
         >
         <div class="container">
             <div class="row">
@@ -237,11 +237,11 @@
                     <div class="pq-section-title-box text-center">
                         <span class="pq-section-sub-title"> {{ @$data->panel_six_title }}</span>
                         <h5 class="pq-section-title">{!! @$data->panel_six_description !!}</h5>
-                         
+
                     </div>
                 </div>
-    
-              
+
+
             </div>
         </div>
         </section>
@@ -249,9 +249,9 @@
             data-id="7a7a5cb"
             data-element_type="section"
             class="bg_section download-app elementor-section elementor-top-section elementor-element elementor-element-7a7a5cb elementor-section-stretched elementor-section-boxed elementor-section-height-default nitro-stretch nitro-offscreen"
-             
-         
-            
+
+
+
         >
         <div class="container">
             <div class="row align-items-center">
@@ -260,7 +260,7 @@
                         <span class="pq-section-sub-title">{{ @$data->panel_seven_title }}</span>
                         {!! @$data->panel_seven_description !!}
                     </div>
-                    
+
                 </div>
                 <div class="col-lg-6">
                     <img src="{{ asset('homecontent/panel_seven/'.@$data->panel_seven_image) }}" alt="">
@@ -278,7 +278,7 @@
         data-element_type="section"
         nitro-elementor-animation="animated fadeIn"
         class="footer elementor-section elementor-top-section elementor-element elementor-element-43822f7 elementor-section-full_width elementor-section-height-full elementor-section-stretched elementor-section-height-default elementor-section-items-middle nitro-stretch animated fadeIn"
-          
+
     >
 
     @include('home.footer')
