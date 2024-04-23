@@ -538,15 +538,16 @@ Button Core
 [type="submit"] {
     position: relative;
     width: auto;
-    background: var(--dark-color);
+    /* background: #00c333; */
     color: var(--white-color);
     font-weight: 400;
-    padding: 12px 45px;
+    padding: 12px 0px;
     line-height: 2;
     vertical-align: middle;
     display: inline-block;
     cursor: pointer;
     height: auto;
+    opacity: 1;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -5463,7 +5464,7 @@ margin-bottom: 20px;
 }.carousel-control-next, .carousel-control-prev {
     top: 0%;
     position: absolute;
-    background: none;
+    /* background: none; */
 }
 .carousel-control-next:hover, .carousel-control-prev:hover {
    
@@ -5497,7 +5498,7 @@ select.pq-bg-white {
     background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 10px) calc(1em + 2px), 100% 0;
     background-size: 10px 10px, 10px 10px, 6.5em 6.5em;
     background-repeat: no-repeat;
-    width: 50%;
+    width: 100%;
 }div#accordionExample {
     height: 350px;
 }
@@ -5510,3 +5511,9 @@ section.page3 .accordion ul {
     width:100% !important;
     
   }
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    background-color: #00c333;
+    padding: 10px;
+    width: 2.5rem;
+    height: 4rem;
+}
